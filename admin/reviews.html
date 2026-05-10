@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+          <span class="badge">6</span>
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Reviews</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search reviews..." id="searchInput">
+        </div>
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Reviews</h1>
+          <p class="page-subtitle">Manage all AI tool reviews</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-secondary" onclick="exportReviews()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn btn-primary" onclick="openModal('reviewModal')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Review
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <select class="form-select" style="width:auto;padding:.5rem 1rem;font-size:.85rem" id="filterCategory" onchange="filterReviews()">
+          <option value="">All Categories</option>
+          <option value="writing">Writing</option>
+          <option value="coding">Coding</option>
+          <option value="productivity">Productivity</option>
+          <option value="image">Image & Video</option>
+          <option value="audio">Audio</option>
+          <option value="business">Business</option>
+        </select>
+        <select class="form-select" style="width:auto;padding:.5rem 1rem;font-size:.85rem" id="filterStatus" onchange="filterReviews()">
+          <option value="">All Status</option>
+          <option value="published">Published</option>
+          <option value="draft">Draft</option>
+          <option value="archived">Archived</option>
+        </select>
+      </div>
+
+      <!-- Reviews Table -->
+      <div class="card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll"></th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th>Featured</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reviewsTable">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" style="display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:.85rem;color:var(--muted)">
+            <span id="reviewCount">0</span> reviews found
+          </div>
+          <div class="pagination">
+            <button disabled>←</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Review Modal -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal" style="max-width:700px">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">New Review</h3>
+      <button class="modal-close" onclick="closeModal('reviewModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="reviewForm">
+        <input type="hidden" id="reviewId">
+        <div class="form-group">
+          <label class="form-label">Title *</label>
+          <input type="text" class="form-input" id="reviewTitle" placeholder="Enter review title" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Slug *</label>
+            <input type="text" class="form-input" id="reviewSlug" placeholder="review-slug" required>
+            <div class="form-hint">URL-friendly version of the title</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category *</label>
+            <select class="form-select" id="reviewCategory" required>
+              <option value="">Select category</option>
+              <option value="writing">Writing</option>
+              <option value="coding">Coding</option>
+              <option value="productivity">Productivity</option>
+              <option value="image">Image & Video</option>
+              <option value="audio">Audio</option>
+              <option value="business">Business</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Excerpt *</label>
+          <textarea class="form-textarea" id="reviewExcerpt" placeholder="Brief description of the review" required style="min-height:80px"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Score (1-10) *</label>
+            <input type="number" class="form-input" id="reviewScore" min="1" max="10" step="0.1" placeholder="9.4" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="reviewStatus">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="archived">Archived</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Author</label>
+            <input type="text" class="form-input" id="reviewAuthor" value="StackHK Team">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="reviewDate">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-checkbox">
+            <input type="checkbox" id="reviewFeatured">
+            Featured review (show on homepage)
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('reviewModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveReview()">Save Review</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+let currentReviews = [];
+
+// Load reviews
+function loadReviews() {
+  currentReviews = getStorageData('reviews') || [];
+  renderReviews(currentReviews);
+}
+
+// Render reviews table
+function renderReviews(reviews) {
+  const tbody = document.getElementById('reviewsTable');
+  const count = document.getElementById('reviewCount');
+  
+  if (reviews.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="8" style="text-align:center;padding:3rem;color:var(--muted)">
+          No reviews found
+        </td>
+      </tr>
+    `;
+  } else {
+    tbody.innerHTML = reviews.map(review => `
+      <tr>
+        <td><input type="checkbox" class="review-check" data-id="${review.id}"></td>
+        <td>
+          <div style="font-weight:500">${review.title}</div>
+          <div style="font-size:.78rem;color:var(--muted)">/${review.slug}</div>
+        </td>
+        <td><span class="badge ${getCategoryBadgeClass(review.category)}">${getCategoryName(review.category)}</span></td>
+        <td><span style="font-family:var(--font-mono);font-weight:600;color:var(--gold)">${review.score}</span></td>
+        <td><span class="table-status ${review.status}">${review.status}</span></td>
+        <td>${review.featured ? '<span style="color:var(--gold)">★</span>' : '-'}</td>
+        <td style="color:var(--muted)">${formatDate(review.date)}</td>
+        <td>
+          <div class="table-actions">
+            <button class="btn btn-ghost btn-sm" onclick="editReview(${review.id})" title="Edit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-sm" onclick="deleteReview(${review.id})" title="Delete" style="color:var(--danger)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+  
+  count.textContent = reviews.length;
+}
+
+// Filter reviews
+function filterReviews() {
+  const category = document.getElementById('filterCategory').value;
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  
+  let filtered = [...currentReviews];
+  
+  if (category) {
+    filtered = filtered.filter(r => r.category === category);
+  }
+  if (status) {
+    filtered = filtered.filter(r => r.status === status);
+  }
+  if (search) {
+    filtered = filtered.filter(r => r.title.toLowerCase().includes(search));
+  }
+  
+  renderReviews(filtered);
+}
+
+// Open new review modal
+function openNewReview() {
+  document.getElementById('modalTitle').textContent = 'New Review';
+  document.getElementById('reviewForm').reset();
+  document.getElementById('reviewId').value = '';
+  document.getElementById('reviewDate').value = new Date().toISOString().split('T')[0];
+  openModal('reviewModal');
+}
+
+// Edit review
+function editReview(id) {
+  const review = currentReviews.find(r => r.id === id);
+  if (!review) return;
+  
+  document.getElementById('modalTitle').textContent = 'Edit Review';
+  document.getElementById('reviewId').value = review.id;
+  document.getElementById('reviewTitle').value = review.title;
+  document.getElementById('reviewSlug').value = review.slug;
+  document.getElementById('reviewCategory').value = review.category;
+  document.getElementById('reviewExcerpt').value = review.excerpt;
+  document.getElementById('reviewScore').value = review.score;
+  document.getElementById('reviewStatus').value = review.status;
+  document.getElementById('reviewAuthor').value = review.author;
+  document.getElementById('reviewDate').value = review.date;
+  document.getElementById('reviewFeatured').checked = review.featured;
+  
+  openModal('reviewModal');
+}
+
+// Save review
+function saveReview() {
+  const id = document.getElementById('reviewId').value;
+  const title = document.getElementById('reviewTitle').value;
+  const slug = document.getElementById('reviewSlug').value;
+  const category = document.getElementById('reviewCategory').value;
+  const excerpt = document.getElementById('reviewExcerpt').value;
+  const score = parseFloat(document.getElementById('reviewScore').value);
+  const status = document.getElementById('reviewStatus').value;
+  const author = document.getElementById('reviewAuthor').value;
+  const date = document.getElementById('reviewDate').value;
+  const featured = document.getElementById('reviewFeatured').checked;
+  
+  if (!title || !slug || !category || !excerpt || !score) {
+    showToast('Please fill in all required fields', 'error');
+    return;
+  }
+  
+  if (id) {
+    // Update existing
+    const index = currentReviews.findIndex(r => r.id === parseInt(id));
+    if (index !== -1) {
+      currentReviews[index] = { ...currentReviews[index], title, slug, category, excerpt, score, status, author, date, featured };
+    }
+  } else {
+    // Create new
+    const newReview = {
+      id: generateId(currentReviews),
+      title, slug, category, excerpt, score, status, author, date, featured
+    };
+    currentReviews.unshift(newReview);
+  }
+  
+  setStorageData('reviews', currentReviews);
+  renderReviews(currentReviews);
+  closeModal('reviewModal');
+  showToast(id ? 'Review updated successfully' : 'Review created successfully');
+}
+
+// Delete review
+function deleteReview(id) {
+  if (!confirmDelete('Are you sure you want to delete this review?')) return;
+  
+  currentReviews = currentReviews.filter(r => r.id !== id);
+  setStorageData('reviews', currentReviews);
+  renderReviews(currentReviews);
+  showToast('Review deleted successfully');
+}
+
+// Export reviews
+function exportReviews() {
+  const dataStr = JSON.stringify(currentReviews, null, 2);
+  const blob = new Blob([dataStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'stackhk-reviews.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Reviews exported successfully');
+}
+
+// Auto-generate slug from title
+document.getElementById('reviewTitle').addEventListener('input', function(e) {
+  const slug = e.target.value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  document.getElementById('reviewSlug').value = slug;
+});
+
+// Select all checkbox
+document.getElementById('selectAll').addEventListener('change', function(e) {
+  document.querySelectorAll('.review-check').forEach(cb => {
+    cb.checked = e.target.checked;
+  });
+});
+
+// Search input
+document.getElementById('searchInput').addEventListener('input', debounce(filterReviews, 300));
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  loadReviews();
+});
+</script>
+</body>
+</html>

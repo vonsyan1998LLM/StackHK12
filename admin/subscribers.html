@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscribers — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+          <span class="badge">6</span>
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Subscribers</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search subscribers..." id="searchInput">
+        </div>
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Subscribers</h1>
+          <p class="page-subtitle">Manage newsletter subscribers</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-secondary" onclick="exportSubscribers()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid" id="subscriberStats">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Subscribers Table -->
+      <div class="card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="subscribersTable">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" style="display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:.85rem;color:var(--muted)">
+            <span id="subscriberCount">0</span> subscribers found
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+let currentSubscribers = [];
+
+function loadSubscribers() {
+  currentSubscribers = getStorageData('subscribers') || [];
+  renderStats();
+  renderSubscribers(currentSubscribers);
+}
+
+function renderStats() {
+  const total = currentSubscribers.length;
+  const active = currentSubscribers.filter(s => s.status === 'active').length;
+  const unsubscribed = currentSubscribers.filter(s => s.status === 'unsubscribed').length;
+  const growthRate = total > 0 ? Math.round((active / total) * 100) : 0;
+
+  document.getElementById('subscriberStats').innerHTML = `
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <div class="stat-card-icon gold">👥</div>
+      </div>
+      <div class="stat-card-value">${total}</div>
+      <div class="stat-card-label">Total Subscribers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <div class="stat-card-icon teal">✓</div>
+      </div>
+      <div class="stat-card-value">${active}</div>
+      <div class="stat-card-label">Active</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <div class="stat-card-icon info">✗</div>
+      </div>
+      <div class="stat-card-value">${unsubscribed}</div>
+      <div class="stat-card-label">Unsubscribed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-header">
+        <div class="stat-card-icon warning">📈</div>
+      </div>
+      <div class="stat-card-value">${growthRate}%</div>
+      <div class="stat-card-label">Growth Rate</div>
+    </div>
+  `;
+}
+
+function renderSubscribers(subscribers) {
+  const tbody = document.getElementById('subscribersTable');
+  const count = document.getElementById('subscriberCount');
+
+  if (subscribers.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align:center;padding:3rem;color:var(--muted)">
+          No subscribers found
+        </td>
+      </tr>
+    `;
+  } else {
+    tbody.innerHTML = subscribers.map(sub => `
+      <tr>
+        <td><a href="mailto:${sub.email}" style="color:var(--info);text-decoration:none">${sub.email}</a></td>
+        <td style="font-weight:500">${sub.name || '-'}</td>
+        <td style="color:var(--muted)">${formatDate(sub.date)}</td>
+        <td><span class="table-status ${sub.status === 'active' ? 'published' : 'archived'}">${sub.status}</span></td>
+        <td>
+          <div class="table-actions">
+            <button class="btn btn-ghost btn-sm" onclick="toggleSubscriberStatus(${sub.id})" title="${sub.status === 'active' ? 'Unsubscribe' : 'Reactivate'}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-sm" onclick="deleteSubscriber(${sub.id})" title="Delete" style="color:var(--danger)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  count.textContent = subscribers.length;
+}
+
+function toggleSubscriberStatus(id) {
+  const index = currentSubscribers.findIndex(s => s.id === id);
+  if (index === -1) return;
+
+  const current = currentSubscribers[index].status;
+  currentSubscribers[index].status = current === 'active' ? 'unsubscribed' : 'active';
+
+  setStorageData('subscribers', currentSubscribers);
+  renderStats();
+  renderSubscribers(currentSubscribers);
+  showToast(`Subscriber ${currentSubscribers[index].status === 'active' ? 'reactivated' : 'unsubscribed'}`);
+}
+
+function deleteSubscriber(id) {
+  if (!confirmDelete('Are you sure you want to delete this subscriber?')) return;
+
+  currentSubscribers = currentSubscribers.filter(s => s.id !== id);
+  setStorageData('subscribers', currentSubscribers);
+  renderStats();
+  renderSubscribers(currentSubscribers);
+  showToast('Subscriber deleted successfully');
+}
+
+function exportSubscribers() {
+  const dataStr = JSON.stringify(currentSubscribers, null, 2);
+  const blob = new Blob([dataStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'stackhk-subscribers.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Subscribers exported successfully');
+}
+
+// Search
+document.getElementById('searchInput').addEventListener('input', debounce(function() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  if (!search) {
+    renderSubscribers(currentSubscribers);
+    return;
+  }
+  const filtered = currentSubscribers.filter(s =>
+    s.email.toLowerCase().includes(search) || (s.name && s.name.toLowerCase().includes(search))
+  );
+  renderSubscribers(filtered);
+}, 300));
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadSubscribers();
+});
+</script>
+</body>
+</html>

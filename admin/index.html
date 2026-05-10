@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+          <span class="badge">6</span>
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+      </div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+          <span class="badge">4.2K</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Dashboard</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search...">
+        </div>
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Welcome back! Here's what's happening with StackHK.</p>
+        </div>
+        <div class="page-actions">
+          <a href="reviews.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Review
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon gold">📝</div>
+            <div class="stat-card-trend up">↑ 12%</div>
+          </div>
+          <div class="stat-card-value">120</div>
+          <div class="stat-card-label">Total Reviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon teal">👁️</div>
+            <div class="stat-card-trend up">↑ 23%</div>
+          </div>
+          <div class="stat-card-value">45.2K</div>
+          <div class="stat-card-label">Page Views (30d)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon info">📬</div>
+            <div class="stat-card-trend up">↑ 8%</div>
+          </div>
+          <div class="stat-card-value">4,218</div>
+          <div class="stat-card-label">Subscribers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-header">
+            <div class="stat-card-icon warning">💰</div>
+            <div class="stat-card-trend down">↓ 3%</div>
+          </div>
+          <div class="stat-card-value">$2.8K</div>
+          <div class="stat-card-label">Affiliate Revenue (30d)</div>
+        </div>
+      </div>
+
+      <!-- Recent Reviews & Activity -->
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:1.5rem">
+        <!-- Recent Reviews -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Recent Reviews</h3>
+            <a href="reviews.html" class="btn btn-ghost btn-sm">View All →</a>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="recentReviews">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Recent Activity</h3>
+          </div>
+          <div class="card-body">
+            <div style="display:flex;flex-direction:column;gap:1rem">
+              <div style="display:flex;gap:.75rem;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--success-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0">✓</div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:500">New review published</div>
+                  <div style="font-size:.78rem;color:var(--muted)">Claude Pro review · 2 hours ago</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.75rem;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--info-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0">📬</div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:500">Newsletter sent</div>
+                  <div style="font-size:.78rem;color:var(--muted)">Issue #47 · Yesterday</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.75rem;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--gold-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0">💰</div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:500">New affiliate sale</div>
+                  <div style="font-size:.78rem;color:var(--muted)">Jasper AI · $45 commission</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.75rem;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--warning-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0">👤</div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:500">New subscribers</div>
+                  <div style="font-size:.78rem;color:var(--muted)">28 new this week</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:.75rem;align-items:flex-start">
+                <div style="width:32px;height:32px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0">🏷️</div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:500">Deal updated</div>
+                  <div style="font-size:.78rem;color:var(--muted)">Cursor Pro coupon · 2 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Reviews -->
+      <div class="card" style="margin-top:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">Top Performing Reviews</h3>
+          <span style="font-size:.85rem;color:var(--muted)">By page views (30 days)</span>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Review</th>
+                <th>Views</th>
+                <th>Avg. Time</th>
+                <th>CTR</th>
+                <th>Conversions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Claude Pro Review</strong></td>
+                <td>8,432</td>
+                <td>4:23</td>
+                <td>3.2%</td>
+                <td>124</td>
+              </tr>
+              <tr>
+                <td><strong>Cursor AI Review</strong></td>
+                <td>6,218</td>
+                <td>3:56</td>
+                <td>4.1%</td>
+                <td>98</td>
+              </tr>
+              <tr>
+                <td><strong>ChatGPT-4o Review</strong></td>
+                <td>5,891</td>
+                <td>3:12</td>
+                <td>2.8%</td>
+                <td>76</td>
+              </tr>
+              <tr>
+                <td><strong>Midjourney v7 Review</strong></td>
+                <td>4,567</td>
+                <td>5:01</td>
+                <td>2.5%</td>
+                <td>52</td>
+              </tr>
+              <tr>
+                <td><strong>Perplexity Pro Review</strong></td>
+                <td>3,892</td>
+                <td>3:45</td>
+                <td>3.6%</td>
+                <td>61</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+// Populate recent reviews table
+document.addEventListener('DOMContentLoaded', function() {
+  const reviews = getStorageData('reviews') || [];
+  const tbody = document.getElementById('recentReviews');
+  
+  if (tbody && reviews.length > 0) {
+    const recent = reviews.slice(0, 5);
+    tbody.innerHTML = recent.map(review => `
+      <tr>
+        <td><a href="reviews.html" style="color:var(--text);text-decoration:none;font-weight:500">${review.title.substring(0, 40)}...</a></td>
+        <td><span class="badge ${getCategoryBadgeClass(review.category)}">${getCategoryName(review.category)}</span></td>
+        <td><span style="font-family:var(--font-mono);font-weight:500">${review.score}</span></td>
+        <td><span class="table-status ${review.status}">${review.status}</span></td>
+        <td style="color:var(--muted)">${formatDate(review.date)}</td>
+      </tr>
+    `).join('');
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a Tool — StackHK</title>
+<meta name="description" content="Submit your AI tool for review by StackHK. We test every tool independently before publishing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Stack<span>HK</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="compare.html">Compare</a>
+      <a href="categories.html">Categories</a>
+      <a href="deals.html">Deals</a>
+      <a href="weekly.html">Weekly</a>
+    </div>
+    <div class="nav-right">
+      <button class="search-btn">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search tools...
+      </button>
+      <a href="#newsletter" class="btn-nav">Subscribe Free →</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay"></div>
+<div class="mobile-menu">
+  <button class="mobile-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="compare.html">Compare</a>
+    <a href="categories.html">Categories</a>
+    <a href="deals.html">Deals</a>
+    <a href="weekly.html">Weekly</a>
+    <a href="about.html">About</a>
+    <a href="submit.html" class="active">Submit Tool</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div style="font-size:3rem;margin-bottom:1rem">📬</div>
+  <h1>Submit Your AI Tool</h1>
+  <p>Have an AI tool you'd like us to review? We're always looking for new tools to test.</p>
+</div>
+
+<!-- SUBMIT FORM -->
+<section>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 350px;gap:3rem;align-items:start">
+      <div class="submit-form">
+        <h2 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:.5rem">Tool Submission Form</h2>
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:2rem">Fill out the form below and we'll consider your tool for review. We review tools based on editorial merit, not payment.</p>
+        
+        <form>
+          <div class="form-group">
+            <label>Tool Name *</label>
+            <input type="text" placeholder="e.g., ChatGPT, Midjourney, Cursor" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Tool Website *</label>
+            <input type="url" placeholder="https://example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Category *</label>
+            <select required>
+              <option value="">Select a category</option>
+              <option value="writing">Writing Tools</option>
+              <option value="coding">Coding Tools</option>
+              <option value="productivity">Productivity</option>
+              <option value="image-video">Image & Video</option>
+              <option value="audio">Audio & Voice</option>
+              <option value="business">Business AI</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>One-Line Description *</label>
+            <input type="text" placeholder="What does your tool do in one sentence?" required>
+            <div class="form-hint">Keep it concise. This helps us understand your tool quickly.</div>
+          </div>
+          
+          <div class="form-group">
+            <label>Pricing</label>
+            <input type="text" placeholder="e.g., Free / $20/month / Freemium">
+            <div class="form-hint">Include free tier details if available.</div>
+          </div>
+          
+          <div class="form-group">
+            <label>Key Features</label>
+            <textarea placeholder="List the 3-5 most important features of your tool."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>What makes your tool unique?</label>
+            <textarea placeholder="Why should we review your tool? What sets it apart from competitors?"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Your Email *</label>
+            <input type="email" placeholder="you@company.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Your Role</label>
+            <input type="text" placeholder="e.g., Founder, Marketing Manager, Developer">
+          </div>
+          
+          <div class="form-group">
+            <label>Free Account for Review?</label>
+            <select>
+              <option value="">Select an option</option>
+              <option value="yes">Yes, we'll provide a free Pro account</option>
+              <option value="trial">Yes, extended trial available</option>
+              <option value="no">No, review via free tier only</option>
+            </select>
+            <div class="form-hint">Providing a Pro account helps us test all features thoroughly.</div>
+          </div>
+          
+          <div class="form-group">
+            <label>Anything else?</label>
+            <textarea placeholder="Any additional information, press materials, or special instructions."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Submit for Review →</button>
+        </form>
+      </div>
+      
+      <!-- SIDEBAR -->
+      <div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">What Happens Next?</h3>
+          <div style="font-size:.9rem;color:var(--muted);line-height:1.7">
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">1. We Review Your Submission</strong><br>Our editorial team reviews every submission within 5 business days.</p>
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">2. Testing Period</strong><br>If selected, we'll test your tool for at least 2 weeks before publishing.</p>
+            <p style="margin-bottom:1rem"><strong style="color:var(--text)">3. Publication</strong><br>Reviews are published on our site and may be featured in our weekly newsletter.</p>
+            <p><strong style="color:var(--text)">4. No Guarantees</strong><br>We don't guarantee coverage. We select tools based on editorial merit and reader interest.</p>
+          </div>
+        </div>
+        
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">Review Criteria</h3>
+          <ul style="font-size:.85rem;color:var(--muted);line-height:1.8;padding-left:1.25rem">
+            <li>Is the tool genuinely useful for professionals?</li>
+            <li>Does it solve a real problem?</li>
+            <li>Is it well-designed and user-friendly?</li>
+            <li>Does it offer good value for money?</li>
+            <li>Is it actively maintained and updated?</li>
+            <li>Does it have a clear privacy policy?</li>
+          </ul>
+        </div>
+        
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem">Questions?</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Email us at <a href="mailto:hello@stackhk.com" style="color:var(--gold);text-decoration:none">hello@stackhk.com</a> with any questions about the submission process.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="nl-title">Stay ahead of the AI curve.</div>
+    <p class="nl-sub">Get our best reviews and tool recommendations delivered every Thursday.</p>
+    <form class="nl-form">
+      <input type="email" class="nl-input" placeholder="Your email address" required>
+      <button type="submit" class="nl-btn">Subscribe →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="affiliate-note">
+      Affiliate disclosure: Some links on this site are affiliate links. StackHK may earn a commission when you click through and purchase.
+    </div>
+  </div>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Stack<span>HK</span></div>
+      <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews.</div>
+      <div class="footer-addr">📍 7/F, Park Aura Building<br>58 Electric Road, Tin Hau<br>Hong Kong</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Reviews</div>
+      <ul class="footer-links">
+        <li><a href="reviews.html">All Reviews</a></li>
+        <li><a href="categories/writing.html">Writing Tools</a></li>
+        <li><a href="categories/coding.html">Coding Tools</a></li>
+        <li><a href="categories/productivity.html">Productivity</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">More</div>
+      <ul class="footer-links">
+        <li><a href="compare.html">Comparisons</a></li>
+        <li><a href="deals.html">Deals & Offers</a></li>
+        <li><a href="weekly.html">Weekly Newsletter</a></li>
+        <li><a href="about.html">About StackHK</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Affiliate Disclosure</a></li>
+        <li><a href="mailto:hello@stackhk.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-bottom">
+      <div>© 2025 StackHK Media. All rights reserved. Hong Kong.</div>
+      <div style="display:flex;gap:1.25rem">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclosure</a>
+        <a href="mailto:hello@stackhk.com">hello@stackhk.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

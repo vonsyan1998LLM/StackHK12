@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+          <span class="badge">6</span>
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Settings</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">Manage site configuration</p>
+        </div>
+      </div>
+
+      <!-- General Settings -->
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">General Settings</h3>
+        </div>
+        <div class="card-body">
+          <form id="generalForm">
+            <div class="form-group">
+              <label class="form-label">Site Name</label>
+              <input type="text" class="form-input" id="siteName" placeholder="StackHK" value="StackHK">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Site Description</label>
+              <textarea class="form-textarea" id="siteDescription" placeholder="Your site description" style="min-height:80px">Honest AI tool reviews. Tested by humans, for humans.</textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Logo URL</label>
+              <input type="text" class="form-input" id="siteLogo" placeholder="https://example.com/logo.png">
+              <div class="form-hint">Enter the URL of your site logo</div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- SEO Settings -->
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">SEO Settings</h3>
+        </div>
+        <div class="card-body">
+          <form id="seoForm">
+            <div class="form-group">
+              <label class="form-label">Meta Title</label>
+              <input type="text" class="form-input" id="metaTitle" placeholder="StackHK - AI Tool Reviews" value="StackHK — Honest AI Tool Reviews">
+              <div class="form-hint">Recommended: 50-60 characters</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meta Description</label>
+              <textarea class="form-textarea" id="metaDescription" placeholder="Brief description for search engines" style="min-height:80px">We test AI tools so you don't have to. Honest reviews, real scores, zero hype.</textarea>
+              <div class="form-hint">Recommended: 150-160 characters</div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">Social Media Links</h3>
+        </div>
+        <div class="card-body">
+          <form id="socialForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Twitter / X</label>
+                <input type="text" class="form-input" id="socialTwitter" placeholder="https://twitter.com/stackhk">
+              </div>
+              <div class="form-group">
+                <label class="form-label">GitHub</label>
+                <input type="text" class="form-input" id="socialGithub" placeholder="https://github.com/stackhk">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">LinkedIn</label>
+                <input type="text" class="form-input" id="socialLinkedin" placeholder="https://linkedin.com/company/stackhk">
+              </div>
+              <div class="form-group">
+                <label class="form-label">YouTube</label>
+                <input type="text" class="form-input" id="socialYoutube" placeholder="https://youtube.com/@stackhk">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Newsletter Settings -->
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">Newsletter Settings</h3>
+        </div>
+        <div class="card-body">
+          <form id="newsletterForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">From Name</label>
+                <input type="text" class="form-input" id="newsletterFromName" placeholder="StackHK" value="StackHK">
+              </div>
+              <div class="form-group">
+                <label class="form-label">From Email</label>
+                <input type="email" class="form-input" id="newsletterFromEmail" placeholder="newsletter@stackhk.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-checkbox">
+                <input type="checkbox" id="newsletterAutoSend" checked>
+                Automatically send weekly digest to subscribers
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- API Keys -->
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <h3 class="card-title">API Keys</h3>
+        </div>
+        <div class="card-body">
+          <form id="apiForm">
+            <div class="form-group">
+              <label class="form-label">OpenAI API Key</label>
+              <input type="password" class="form-input" id="apiKeyOpenai" placeholder="sk-...">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Google Analytics ID</label>
+              <input type="text" class="form-input" id="apiKeyAnalytics" placeholder="G-XXXXXXXXXX">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mailchimp API Key</label>
+              <input type="password" class="form-input" id="apiKeyMailchimp" placeholder="xxxxxxxx-usX">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div style="display:flex;justify-content:flex-end;gap:1rem">
+        <button class="btn btn-secondary" onclick="resetSettings()">Reset to Defaults</button>
+        <button class="btn btn-primary" onclick="saveSettings()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save Settings
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+function loadSettings() {
+  const settings = getStorageData('settings');
+  if (!settings) return;
+
+  if (settings.siteName) document.getElementById('siteName').value = settings.siteName;
+  if (settings.siteDescription) document.getElementById('siteDescription').value = settings.siteDescription;
+  if (settings.siteLogo) document.getElementById('siteLogo').value = settings.siteLogo;
+  if (settings.metaTitle) document.getElementById('metaTitle').value = settings.metaTitle;
+  if (settings.metaDescription) document.getElementById('metaDescription').value = settings.metaDescription;
+  if (settings.socialTwitter) document.getElementById('socialTwitter').value = settings.socialTwitter;
+  if (settings.socialGithub) document.getElementById('socialGithub').value = settings.socialGithub;
+  if (settings.socialLinkedin) document.getElementById('socialLinkedin').value = settings.socialLinkedin;
+  if (settings.socialYoutube) document.getElementById('socialYoutube').value = settings.socialYoutube;
+  if (settings.newsletterFromName) document.getElementById('newsletterFromName').value = settings.newsletterFromName;
+  if (settings.newsletterFromEmail) document.getElementById('newsletterFromEmail').value = settings.newsletterFromEmail;
+  if (settings.newsletterAutoSend !== undefined) document.getElementById('newsletterAutoSend').checked = settings.newsletterAutoSend;
+  if (settings.apiKeyOpenai) document.getElementById('apiKeyOpenai').value = settings.apiKeyOpenai;
+  if (settings.apiKeyAnalytics) document.getElementById('apiKeyAnalytics').value = settings.apiKeyAnalytics;
+  if (settings.apiKeyMailchimp) document.getElementById('apiKeyMailchimp').value = settings.apiKeyMailchimp;
+}
+
+function saveSettings() {
+  const settings = {
+    siteName: document.getElementById('siteName').value.trim(),
+    siteDescription: document.getElementById('siteDescription').value.trim(),
+    siteLogo: document.getElementById('siteLogo').value.trim(),
+    metaTitle: document.getElementById('metaTitle').value.trim(),
+    metaDescription: document.getElementById('metaDescription').value.trim(),
+    socialTwitter: document.getElementById('socialTwitter').value.trim(),
+    socialGithub: document.getElementById('socialGithub').value.trim(),
+    socialLinkedin: document.getElementById('socialLinkedin').value.trim(),
+    socialYoutube: document.getElementById('socialYoutube').value.trim(),
+    newsletterFromName: document.getElementById('newsletterFromName').value.trim(),
+    newsletterFromEmail: document.getElementById('newsletterFromEmail').value.trim(),
+    newsletterAutoSend: document.getElementById('newsletterAutoSend').checked,
+    apiKeyOpenai: document.getElementById('apiKeyOpenai').value.trim(),
+    apiKeyAnalytics: document.getElementById('apiKeyAnalytics').value.trim(),
+    apiKeyMailchimp: document.getElementById('apiKeyMailchimp').value.trim()
+  };
+
+  setStorageData('settings', settings);
+  showToast('Settings saved successfully');
+}
+
+function resetSettings() {
+  if (!confirmDelete('Reset all settings to defaults?')) return;
+
+  document.getElementById('siteName').value = 'StackHK';
+  document.getElementById('siteDescription').value = 'Honest AI tool reviews. Tested by humans, for humans.';
+  document.getElementById('siteLogo').value = '';
+  document.getElementById('metaTitle').value = 'StackHK — Honest AI Tool Reviews';
+  document.getElementById('metaDescription').value = 'We test AI tools so you don\'t have to. Honest reviews, real scores, zero hype.';
+  document.getElementById('socialTwitter').value = '';
+  document.getElementById('socialGithub').value = '';
+  document.getElementById('socialLinkedin').value = '';
+  document.getElementById('socialYoutube').value = '';
+  document.getElementById('newsletterFromName').value = 'StackHK';
+  document.getElementById('newsletterFromEmail').value = '';
+  document.getElementById('newsletterAutoSend').checked = true;
+  document.getElementById('apiKeyOpenai').value = '';
+  document.getElementById('apiKeyAnalytics').value = '';
+  document.getElementById('apiKeyMailchimp').value = '';
+
+  localStorage.removeItem('stackhk_settings');
+  showToast('Settings reset to defaults');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadSettings();
+});
+</script>
+</body>
+</html>
