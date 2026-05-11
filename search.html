@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Results — StackHK</title>
+<meta name="description" content="Search AI tool reviews on StackHK">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.search-hero{background:var(--black);padding:3rem 2rem;text-align:center}
+.search-form{max-width:600px;margin:0 auto;position:relative}
+.search-input-lg{width:100%;padding:1rem 1.5rem 1rem 3rem;border:2px solid rgba(255,255,255,.15);border-radius:var(--radius-lg);font-size:1.1rem;font-family:var(--font-sans);background:rgba(255,255,255,.08);color:#fff;outline:none;transition:border-color .15s}
+.search-input-lg:focus{border-color:var(--gold)}
+.search-input-lg::placeholder{color:rgba(255,255,255,.4)}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4)}
+.search-results-count{color:rgba(255,255,255,.6);font-size:.9rem;margin-top:1rem}
+.search-filters{display:flex;gap:.75rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+.search-filter{padding:.45rem 1rem;border-radius:100px;border:1px solid rgba(255,255,255,.2);background:none;color:rgba(255,255,255,.7);font-size:.85rem;font-family:var(--font-sans);cursor:pointer;transition:all .15s}
+.search-filter:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.search-filter.active{background:var(--gold);border-color:var(--gold);color:var(--black)}
+
+.no-results{text-align:center;padding:4rem 2rem}
+.no-results-icon{font-size:4rem;margin-bottom:1rem}
+.no-results h3{font-family:var(--font-display);font-size:1.5rem;margin-bottom:.5rem}
+.no-results p{color:var(--muted);margin-bottom:1.5rem}
+
+.search-result-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;transition:border-color .2s,box-shadow .2s}
+.search-result-item:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.search-result-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
+.search-result-icon{width:48px;height:48px;background:var(--bg2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.search-result-info{flex:1}
+.search-result-title{font-weight:700;font-size:1.1rem;margin-bottom:.25rem}
+.search-result-title a{color:var(--text);text-decoration:none}
+.search-result-title a:hover{color:var(--gold)}
+.search-result-meta{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.search-result-score{font-family:var(--font-mono);font-size:.85rem;font-weight:600;color:var(--gold)}
+.search-result-excerpt{font-size:.9rem;color:var(--muted);line-height:1.6}
+.search-result-highlight{background:var(--gold-light);padding:0 2px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Stack<span>HK</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="compare.html">Compare</a>
+      <a href="categories.html">Categories</a>
+      <a href="deals.html">Deals</a>
+      <a href="weekly.html">Weekly</a>
+    </div>
+    <div class="nav-right">
+      <button class="search-btn" onclick="document.getElementById('searchInput').focus()">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search tools...
+      </button>
+      <a href="index.html#newsletter" class="btn-nav">Subscribe Free →</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay"></div>
+<div class="mobile-menu">
+  <button class="mobile-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="compare.html">Compare</a>
+    <a href="categories.html">Categories</a>
+    <a href="deals.html">Deals</a>
+    <a href="weekly.html">Weekly</a>
+    <a href="about.html">About</a>
+    <a href="submit.html">Submit Tool</a>
+  </div>
+</div>
+
+<!-- SEARCH HERO -->
+<div class="search-hero">
+  <div class="search-form">
+    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" class="search-input-lg" id="searchInput" placeholder="Search AI tools, reviews, comparisons..." autofocus>
+  </div>
+  <div class="search-results-count" id="resultsCount"></div>
+  <div class="search-filters">
+    <button class="search-filter active" data-filter="all">All</button>
+    <button class="search-filter" data-filter="reviews">Reviews</button>
+    <button class="search-filter" data-filter="categories">Categories</button>
+    <button class="search-filter" data-filter="deals">Deals</button>
+  </div>
+</div>
+
+<!-- SEARCH RESULTS -->
+<section>
+  <div class="container">
+    <div id="searchResults">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="affiliate-note">
+      Affiliate disclosure: Some links on this site are affiliate links. StackHK may earn a commission when you click through and purchase.
+    </div>
+  </div>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Stack<span>HK</span></div>
+      <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews.</div>
+      <div class="footer-addr">📍 7/F, Park Aura Building<br>58 Electric Road, Tin Hau<br>Hong Kong</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Reviews</div>
+      <ul class="footer-links">
+        <li><a href="reviews.html">All Reviews</a></li>
+        <li><a href="categories/writing.html">Writing Tools</a></li>
+        <li><a href="categories/coding.html">Coding Tools</a></li>
+        <li><a href="categories/productivity.html">Productivity</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">More</div>
+      <ul class="footer-links">
+        <li><a href="compare.html">Comparisons</a></li>
+        <li><a href="deals.html">Deals & Offers</a></li>
+        <li><a href="weekly.html">Weekly Newsletter</a></li>
+        <li><a href="about.html">About StackHK</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="mailto:hello@stackhk.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-bottom">
+      <div>© 2025 StackHK Media. All rights reserved. Hong Kong.</div>
+      <div style="display:flex;gap:1.25rem">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="mailto:hello@stackhk.com">hello@stackhk.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Search data - all searchable content
+const searchData = [
+  // Reviews
+  { type: 'review', title: 'Claude Pro Review: The AI Writer That Actually Thinks', url: 'reviews/claude-pro.html', category: 'Writing', score: 9.4, emoji: '✍️', excerpt: 'After 3 weeks of daily use, we found Claude Pro consistently produces the most nuanced long-form content of any AI writing tool.' },
+  { type: 'review', title: 'Cursor AI: The Best IDE Add-On for Developers in 2025', url: 'reviews/cursor-ai.html', category: 'Coding', score: 9.1, emoji: '💻', excerpt: 'Cursor\'s tab-complete and multi-file context editing is genuinely transformative. We tested it on 5 real projects.' },
+  { type: 'review', title: 'ChatGPT-4o Review: Still the King of AI Chat?', url: 'reviews/chatgpt-4o.html', category: 'Productivity', score: 8.7, emoji: '🤖', excerpt: 'OpenAI\'s latest model brings multimodal capabilities to the masses. We tested it extensively for work and creative tasks.' },
+  { type: 'review', title: 'Perplexity Pro: AI-Powered Search Done Right', url: 'reviews/perplexity-pro.html', category: 'Productivity', score: 9.0, emoji: '🔍', excerpt: 'Perplexity combines search and AI in a way that actually works. Perfect for research-heavy professionals.' },
+  { type: 'review', title: 'Midjourney v7 vs DALL·E 3: Which AI Image Tool Wins?', url: 'reviews/midjourney-v7.html', category: 'Image & Video', score: 8.8, emoji: '🎨', excerpt: 'We ran 200 prompts across both platforms. The results might surprise you — especially on photorealism tasks.' },
+  { type: 'review', title: 'Notion AI: The Best AI for Knowledge Workers?', url: 'reviews/notion-ai.html', category: 'Productivity', score: 8.6, emoji: '⚡', excerpt: 'Notion\'s AI integration is deeply woven into the workspace. Here\'s our take after a month of team-wide usage.' },
+  { type: 'review', title: 'Suno AI: Music from Text in Minutes', url: 'reviews/suno-ai.html', category: 'Audio', score: 8.2, emoji: '🎵', excerpt: 'Suno can generate full songs from a text prompt. We tested it for podcast intros, background music, and more.' },
+  { type: 'review', title: 'Grammarly AI vs ProWritingAid: 2025 Comparison', url: 'reviews/grammarly-ai.html', category: 'Writing', score: 8.5, emoji: '📝', excerpt: 'Two of the best writing assistants go head-to-head. Which one deserves a spot in your workflow?' },
+  { type: 'review', title: 'Julius AI for Data Analysis Teams', url: 'reviews/julius-ai.html', category: 'Business', score: 8.4, emoji: '📊', excerpt: 'Julius lets you analyze data with natural language. We tested it with real business datasets and queries.' },
+  { type: 'review', title: 'Jasper AI Review: Best for Marketing Copy?', url: 'reviews/jasper-ai.html', category: 'Writing', score: 8.3, emoji: '✍️', excerpt: 'Jasper specializes in marketing content. Here\'s our take after extensive testing.' },
+  { type: 'review', title: 'Adobe Firefly 3: Closer to Midjourney?', url: 'reviews/adobe-firefly.html', category: 'Image & Video', score: 7.8, emoji: '🎨', excerpt: 'Adobe\'s AI image generator gets a major upgrade. Is it enough to compete with Midjourney?' },
+  { type: 'review', title: 'GitHub Copilot Review: AI Pair Programming', url: 'reviews/github-copilot.html', category: 'Coding', score: 8.9, emoji: '💻', excerpt: 'GitHub Copilot revolutionized how we write code. Here\'s our comprehensive review.' },
+  // Categories
+  { type: 'category', title: 'Writing Tools', url: 'categories/writing.html', emoji: '✍️', excerpt: 'AI writing assistants, content generators, and copywriting tools for professionals. 28 reviews.' },
+  { type: 'category', title: 'Coding Tools', url: 'categories/coding.html', emoji: '💻', excerpt: 'AI-powered IDEs, code assistants, and developer productivity tools. 22 reviews.' },
+  { type: 'category', title: 'Productivity Tools', url: 'categories/productivity.html', emoji: '⚡', excerpt: 'AI tools for task management, note-taking, scheduling, and workflow automation. 31 reviews.' },
+  { type: 'category', title: 'Image & Video Tools', url: 'categories/image-video.html', emoji: '🎨', excerpt: 'AI image generators, video editors, and creative visual tools. 19 reviews.' },
+  { type: 'category', title: 'Audio & Voice Tools', url: 'categories/audio.html', emoji: '🎙️', excerpt: 'AI voice generators, music creation, and audio processing tools. 11 reviews.' },
+  { type: 'category', title: 'Business AI Tools', url: 'categories/business.html', emoji: '📊', excerpt: 'AI tools for data analysis, marketing, sales, and business intelligence. 14 reviews.' },
+  // Comparisons
+  { type: 'comparison', title: 'ChatGPT vs Claude: Which AI Assistant is Better?', url: 'compare.html', emoji: '⚔️', excerpt: 'We\'ve spent months testing both AI assistants across writing, coding, analysis, and creative tasks.' },
+  { type: 'comparison', title: 'Midjourney vs DALL·E 3: AI Image Battle', url: 'compare.html', emoji: '🎨', excerpt: 'We tested 200 prompts across both platforms. See which generates better images.' },
+  { type: 'comparison', title: 'Grammarly vs ProWritingAid: Writing Assistants', url: 'compare.html', emoji: '📝', excerpt: 'The two best writing assistants go head-to-head in our comprehensive comparison.' },
+  { type: 'comparison', title: 'GitHub Copilot vs Cursor: AI Coding Tools', url: 'compare.html', emoji: '💻', excerpt: 'The two leading AI coding assistants compared. Which one should developers choose?' },
+  // Deals
+  { type: 'deal', title: 'Jasper AI - 20% OFF First 3 Months', url: 'deals.html', category: 'Writing', emoji: '🏷️', excerpt: 'AI marketing copy generator. Create ads, emails, social posts, and blog content 10x faster.' },
+  { type: 'deal', title: 'Cursor Pro - 2 Months Free Annual Plan', url: 'deals.html', category: 'Coding', emoji: '🏷️', excerpt: 'AI-powered code editor. Tab-complete, multi-file editing, and intelligent suggestions.' },
+  { type: 'deal', title: 'Notion AI - Free Trial 30 Days', url: 'deals.html', category: 'Productivity', emoji: '🏷️', excerpt: 'AI-powered workspace. Write, organize, and brainstorm with AI built into your notes.' },
+  { type: 'deal', title: 'Grammarly Premium - 25% OFF Annual Plan', url: 'deals.html', category: 'Writing', emoji: '🏷️', excerpt: 'AI writing assistant. Grammar, clarity, tone, and plagiarism checking.' }
+];
+
+let currentFilter = 'all';
+let currentQuery = '';
+
+// Get URL params
+function getUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    q: params.get('q') || '',
+    filter: params.get('filter') || 'all'
+  };
+}
+
+// Highlight matching text
+function highlightText(text, query) {
+  if (!query) return text;
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  return text.replace(regex, '<span class="search-result-highlight">$1</span>');
+}
+
+// Search function
+function performSearch(query, filter = 'all') {
+  currentQuery = query.toLowerCase().trim();
+  currentFilter = filter;
+  
+  if (!currentQuery) {
+    renderResults([]);
+    document.getElementById('resultsCount').textContent = '';
+    return;
+  }
+  
+  let results = searchData.filter(item => {
+    const matchesQuery = item.title.toLowerCase().includes(currentQuery) || 
+                         item.excerpt.toLowerCase().includes(currentQuery) ||
+                         (item.category && item.category.toLowerCase().includes(currentQuery));
+    
+    if (filter === 'all') return matchesQuery;
+    if (filter === 'reviews') return matchesQuery && item.type === 'review';
+    if (filter === 'categories') return matchesQuery && item.type === 'category';
+    if (filter === 'deals') return matchesQuery && (item.type === 'deal' || item.type === 'comparison');
+    return matchesQuery;
+  });
+  
+  renderResults(results);
+  document.getElementById('resultsCount').textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found for "${query}"`;
+}
+
+// Render results
+function renderResults(results) {
+  const container = document.getElementById('searchResults');
+  
+  if (currentQuery && results.length === 0) {
+    container.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">🔍</div>
+        <h3>No results found</h3>
+        <p>We couldn't find anything matching "${currentQuery}". Try different keywords or browse our categories.</p>
+        <a href="categories.html" class="btn btn-primary" style="background:var(--black);color:#fff;display:inline-flex">Browse Categories</a>
+      </div>
+    `;
+    return;
+  }
+  
+  if (!currentQuery) {
+    container.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">🔍</div>
+        <h3>Search StackHK</h3>
+        <p>Find AI tool reviews, comparisons, deals, and more.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = results.map(item => {
+    const typeLabel = item.type === 'review' ? 'Review' : 
+                      item.type === 'category' ? 'Category' : 
+                      item.type === 'comparison' ? 'Comparison' : 'Deal';
+    
+    const badgeClass = item.type === 'review' ? 'badge-' + (item.category?.toLowerCase().replace(/\s+/g, '') || 'writing') : '';
+    
+    return `
+      <div class="search-result-item">
+        <div class="search-result-header">
+          <div class="search-result-icon">${item.emoji}</div>
+          <div class="search-result-info">
+            <div class="search-result-title"><a href="${item.url}">${highlightText(item.title, currentQuery)}</a></div>
+            <div class="search-result-meta">
+              <span class="badge ${badgeClass}" style="font-size:.73rem;font-weight:600;padding:.2rem .55rem;border-radius:100px;background:var(--bg2);color:var(--muted)">${typeLabel}</span>
+              ${item.category ? `<span style="font-size:.8rem;color:var(--muted)">${item.category}</span>` : ''}
+              ${item.score ? `<span class="search-result-score">★ ${item.score}/10</span>` : ''}
+            </div>
+          </div>
+        </div>
+        <div class="search-result-excerpt">${highlightText(item.excerpt, currentQuery)}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  const params = getUrlParams();
+  const searchInput = document.getElementById('searchInput');
+  
+  // Set initial value from URL
+  if (params.q) {
+    searchInput.value = params.q;
+  }
+  
+  // Set active filter
+  document.querySelectorAll('.search-filter').forEach(btn => {
+    if (btn.dataset.filter === params.filter) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Perform initial search
+  performSearch(params.q, params.filter);
+  
+  // Search on input
+  let debounceTimer;
+  searchInput.addEventListener('input', function(e) {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      performSearch(e.target.value, currentFilter);
+      // Update URL without reload
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('q', e.target.value);
+      window.history.replaceState({}, '', newUrl);
+    }, 300);
+  });
+  
+  // Filter buttons
+  document.querySelectorAll('.search-filter').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.search-filter').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.dataset.filter;
+      performSearch(searchInput.value, currentFilter);
+      // Update URL
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('filter', currentFilter);
+      window.history.replaceState({}, '', newUrl);
+    });
+  });
+});
+</script>
+</body>
+</html>
