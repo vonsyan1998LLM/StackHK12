@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Newsletter — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo"><img src="../images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle"> Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="compare.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Compare
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+        <a href="pages.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          Pages
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+        </a>
+        <a href="weekly.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2"/><polyline points="22,6 12,13 2,6"/></svg>
+          Weekly
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Weekly Newsletter</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search issues..." id="searchInput">
+        </div>
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Weekly Newsletter</h1>
+          <p class="page-subtitle">Manage weekly newsletter issues</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-secondary" onclick="exportNewsletters()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn btn-primary" onclick="openNewNewsletter()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Issue
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem">
+        <div class="card" style="padding:1.25rem">
+          <div style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem">Total Issues</div>
+          <div style="font-size:1.75rem;font-weight:700;font-family:var(--font-mono)" id="statTotal">0</div>
+        </div>
+        <div class="card" style="padding:1.25rem">
+          <div style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem">Subscribers</div>
+          <div style="font-size:1.75rem;font-weight:700;font-family:var(--font-mono)" id="statSubscribers">0</div>
+        </div>
+        <div class="card" style="padding:1.25rem">
+          <div style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem">Open Rate</div>
+          <div style="font-size:1.75rem;font-weight:700;font-family:var(--font-mono);color:var(--gold)" id="statOpenRate">0%</div>
+        </div>
+        <div class="card" style="padding:1.25rem">
+          <div style="font-size:.8rem;color:var(--muted);margin-bottom:.25rem">Click Rate</div>
+          <div style="font-size:1.75rem;font-weight:700;font-family:var(--font-mono);color:var(--gold)" id="statClickRate">0%</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <select class="form-select" style="width:auto;padding:.5rem 1rem;font-size:.85rem" id="filterStatus" onchange="filterNewsletters()">
+          <option value="">All Status</option>
+          <option value="sent">Sent</option>
+          <option value="draft">Draft</option>
+          <option value="scheduled">Scheduled</option>
+        </select>
+      </div>
+
+      <!-- Newsletters Table -->
+      <div class="card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Issue #</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Subscribers</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="newslettersTable">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" style="display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:.85rem;color:var(--muted)">
+            <span id="newsletterCount">0</span> issues found
+          </div>
+          <div class="pagination">
+            <button disabled>←</button>
+            <button class="active">1</button>
+            <button>→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Newsletter Modal -->
+<div class="modal-overlay" id="newsletterModal">
+  <div class="modal" style="max-width:700px">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">New Issue</h3>
+      <button class="modal-close" onclick="closeModal('newsletterModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="newsletterForm">
+        <input type="hidden" id="newsletterId">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Issue Number *</label>
+            <input type="number" class="form-input" id="newsletterIssue" placeholder="48" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="newsletterStatus">
+              <option value="draft">Draft</option>
+              <option value="scheduled">Scheduled</option>
+              <option value="sent">Sent</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Title *</label>
+          <input type="text" class="form-input" id="newsletterTitle" placeholder="Enter issue title" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Content *</label>
+          <textarea class="form-textarea" id="newsletterContent" placeholder="Write your newsletter content here..." required style="min-height:150px"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Send Date</label>
+            <input type="date" class="form-input" id="newsletterDate">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subscribers</label>
+            <input type="number" class="form-input" id="newsletterSubscribers" placeholder="0" min="0">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('newsletterModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveNewsletter()">Save Issue</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+const DEFAULT_NEWSLETTERS = [
+  { id: 47, title: 'Claude Pro Review + ChatGPT vs Claude Comparison', date: '2025-05-08', status: 'sent', subscribers: 4218, openRate: 42.5, clickRate: 8.3 },
+  { id: 46, title: 'Cursor AI Deep Dive + Best Coding Tools Roundup', date: '2025-05-01', status: 'sent', subscribers: 4190, openRate: 45.2, clickRate: 9.1 },
+  { id: 45, title: 'Midjourney v7 First Look + AI Image Tool Comparison', date: '2025-04-24', status: 'sent', subscribers: 4156, openRate: 48.1, clickRate: 10.2 },
+  { id: 44, title: 'Perplexity Pro Review + AI Search Tools Compared', date: '2025-04-17', status: 'sent', subscribers: 4120, openRate: 44.8, clickRate: 8.9 },
+  { id: 48, title: 'Best AI Tools for Productivity in 2025', date: '2025-05-15', status: 'draft', subscribers: 0, openRate: 0, clickRate: 0 }
+];
+
+let currentNewsletters = [];
+
+function initNewsletterData() {
+  if (!getStorageData('newsletters')) {
+    setStorageData('newsletters', DEFAULT_NEWSLETTERS);
+  }
+}
+
+function loadNewsletters() {
+  currentNewsletters = getStorageData('newsletters') || [];
+  updateStats();
+  renderNewsletters(currentNewsletters);
+}
+
+function updateStats() {
+  const total = currentNewsletters.length;
+  const sent = currentNewsletters.filter(n => n.status === 'sent');
+  const lastSubscribers = sent.length > 0 ? Math.max(...sent.map(n => n.subscribers)) : 0;
+  const avgOpen = sent.length > 0 ? (sent.reduce((s, n) => s + n.openRate, 0) / sent.length) : 0;
+  const avgClick = sent.length > 0 ? (sent.reduce((s, n) => s + n.clickRate, 0) / sent.length) : 0;
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statSubscribers').textContent = lastSubscribers.toLocaleString();
+  document.getElementById('statOpenRate').textContent = avgOpen.toFixed(1) + '%';
+  document.getElementById('statClickRate').textContent = avgClick.toFixed(1) + '%';
+}
+
+function renderNewsletters(newsletters) {
+  const tbody = document.getElementById('newslettersTable');
+  const count = document.getElementById('newsletterCount');
+
+  if (newsletters.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align:center;padding:3rem;color:var(--muted)">
+          No newsletter issues found
+        </td>
+      </tr>
+    `;
+  } else {
+    const sorted = [...newsletters].sort((a, b) => b.id - a.id);
+    tbody.innerHTML = sorted.map(issue => {
+      const statusClass = issue.status === 'sent' ? 'published' : issue.status;
+      return `
+        <tr>
+          <td><span style="font-family:var(--font-mono);font-weight:600">#${issue.id}</span></td>
+          <td>
+            <div style="font-weight:500">${issue.title}</div>
+          </td>
+          <td style="color:var(--muted)">${formatDate(issue.date)}</td>
+          <td><span class="table-status ${statusClass}">${issue.status}</span></td>
+          <td style="font-family:var(--font-mono)">${issue.subscribers > 0 ? issue.subscribers.toLocaleString() : '-'}</td>
+          <td>
+            <div class="table-actions">
+              <button class="btn btn-ghost btn-sm" onclick="editNewsletter(${issue.id})" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn btn-ghost btn-sm" onclick="deleteNewsletter(${issue.id})" title="Delete" style="color:var(--danger)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  count.textContent = newsletters.length;
+}
+
+function filterNewsletters() {
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+
+  let filtered = [...currentNewsletters];
+
+  if (status) {
+    filtered = filtered.filter(n => n.status === status);
+  }
+  if (search) {
+    filtered = filtered.filter(n => n.title.toLowerCase().includes(search));
+  }
+
+  renderNewsletters(filtered);
+}
+
+function openNewNewsletter() {
+  document.getElementById('modalTitle').textContent = 'New Issue';
+  document.getElementById('newsletterForm').reset();
+  document.getElementById('newsletterId').value = '';
+  document.getElementById('newsletterDate').value = new Date().toISOString().split('T')[0];
+  const maxId = currentNewsletters.length > 0 ? Math.max(...currentNewsletters.map(n => n.id)) : 0;
+  document.getElementById('newsletterIssue').value = maxId + 1;
+  openModal('newsletterModal');
+}
+
+function editNewsletter(id) {
+  const issue = currentNewsletters.find(n => n.id === id);
+  if (!issue) return;
+
+  document.getElementById('modalTitle').textContent = 'Edit Issue #' + issue.id;
+  document.getElementById('newsletterId').value = issue.id;
+  document.getElementById('newsletterIssue').value = issue.id;
+  document.getElementById('newsletterTitle').value = issue.title;
+  document.getElementById('newsletterContent').value = issue.content || '';
+  document.getElementById('newsletterStatus').value = issue.status;
+  document.getElementById('newsletterDate').value = issue.date;
+  document.getElementById('newsletterSubscribers').value = issue.subscribers || 0;
+
+  openModal('newsletterModal');
+}
+
+function saveNewsletter() {
+  const id = document.getElementById('newsletterId').value;
+  const issueNum = parseInt(document.getElementById('newsletterIssue').value);
+  const title = document.getElementById('newsletterTitle').value;
+  const content = document.getElementById('newsletterContent').value;
+  const status = document.getElementById('newsletterStatus').value;
+  const date = document.getElementById('newsletterDate').value;
+  const subscribers = parseInt(document.getElementById('newsletterSubscribers').value) || 0;
+
+  if (!issueNum || !title || !content) {
+    showToast('Please fill in all required fields', 'error');
+    return;
+  }
+
+  if (id) {
+    const index = currentNewsletters.findIndex(n => n.id === parseInt(id));
+    if (index !== -1) {
+      currentNewsletters[index] = {
+        ...currentNewsletters[index],
+        id: issueNum, title, content, status, date, subscribers
+      };
+    }
+  } else {
+    const newIssue = {
+      id: issueNum,
+      title,
+      content,
+      status,
+      date,
+      subscribers,
+      openRate: 0,
+      clickRate: 0
+    };
+    currentNewsletters.unshift(newIssue);
+  }
+
+  setStorageData('newsletters', currentNewsletters);
+  updateStats();
+  renderNewsletters(currentNewsletters);
+  closeModal('newsletterModal');
+  showToast(id ? 'Issue updated successfully' : 'Issue created successfully');
+}
+
+function deleteNewsletter(id) {
+  if (!confirmDelete('Are you sure you want to delete this newsletter issue?')) return;
+
+  currentNewsletters = currentNewsletters.filter(n => n.id !== id);
+  setStorageData('newsletters', currentNewsletters);
+  updateStats();
+  renderNewsletters(currentNewsletters);
+  showToast('Issue deleted successfully');
+}
+
+function exportNewsletters() {
+  const dataStr = JSON.stringify(currentNewsletters, null, 2);
+  const blob = new Blob([dataStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'stackhk-newsletters.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Newsletters exported successfully');
+}
+
+document.getElementById('searchInput').addEventListener('input', debounce(filterNewsletters, 300));
+
+document.addEventListener('DOMContentLoaded', function() {
+  initNewsletterData();
+  loadNewsletters();
+});
+</script>
+</body>
+</html>
+

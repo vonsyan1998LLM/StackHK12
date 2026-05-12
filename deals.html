@@ -14,7 +14,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Stack<span>HK</span></a>
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle">
+              Stack<span>HK</span></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="reviews.html">Reviews</a>
@@ -121,112 +122,17 @@
 
     <!-- Filter -->
     <div class="filter-bar single-select" style="margin-bottom:2rem">
-      <button class="filter-pill active">All Deals</button>
-      <button class="filter-pill">Writing</button>
-      <button class="filter-pill">Coding</button>
-      <button class="filter-pill">Productivity</button>
-      <button class="filter-pill">Image & Video</button>
-      <button class="filter-pill">Business</button>
+      <button class="filter-pill active" data-filter="all">All Deals</button>
+      <button class="filter-pill" data-filter="writing">Writing</button>
+      <button class="filter-pill" data-filter="coding">Coding</button>
+      <button class="filter-pill" data-filter="productivity">Productivity</button>
+      <button class="filter-pill" data-filter="image">Image & Video</button>
+      <button class="filter-pill" data-filter="business">Business</button>
     </div>
 
     <!-- Deals Grid -->
-    <div class="deals-grid">
-      <!-- Deal 1 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#F0F4FF">✍️</div>
-          <div>
-            <div class="deal-item-name">Jasper AI</div>
-            <div class="deal-item-cat">Writing Tools</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">20% OFF — First 3 Months</div>
-        <div class="deal-item-desc">AI marketing copy generator. Create ads, emails, social posts, and blog content 10x faster.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Expires May 31</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
-      <!-- Deal 2 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#EDFAF6">💻</div>
-          <div>
-            <div class="deal-item-name">Cursor Pro</div>
-            <div class="deal-item-cat">Coding Tools</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">2 Months Free — Annual Plan</div>
-        <div class="deal-item-desc">AI-powered code editor. Tab-complete, multi-file editing, and intelligent suggestions.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Expires Jun 15</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
-      <!-- Deal 3 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#FFF7EC">⚡</div>
-          <div>
-            <div class="deal-item-name">Notion AI</div>
-            <div class="deal-item-cat">Productivity</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">Free Trial — 30 Days</div>
-        <div class="deal-item-desc">AI-powered workspace. Write, organize, and brainstorm with AI built into your notes.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Ongoing</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
-      <!-- Deal 4 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#F0F4FF">📝</div>
-          <div>
-            <div class="deal-item-name">Grammarly Premium</div>
-            <div class="deal-item-cat">Writing Tools</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">25% OFF — Annual Plan</div>
-        <div class="deal-item-desc">AI writing assistant. Grammar, clarity, tone, and plagiarism checking.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Expires May 20</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
-      <!-- Deal 5 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#F9EEFF">🎨</div>
-          <div>
-            <div class="deal-item-name">Midjourney</div>
-            <div class="deal-item-cat">Image & Video</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">20% OFF — Annual Standard</div>
-        <div class="deal-item-desc">AI image generation. Create stunning visuals from text descriptions.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Expires Jun 1</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
-      <!-- Deal 6 -->
-      <div class="deal-item">
-        <div class="deal-item-header">
-          <div class="deal-item-logo" style="background:#F0F4FF">📊</div>
-          <div>
-            <div class="deal-item-name">Julius AI</div>
-            <div class="deal-item-cat">Business AI</div>
-          </div>
-        </div>
-        <div class="deal-item-discount">30% OFF — First 3 Months</div>
-        <div class="deal-item-desc">AI data analysis. Upload spreadsheets and get insights with natural language queries.</div>
-        <div class="deal-item-footer">
-          <span class="deal-item-expires">Expires May 25</span>
-          <a href="#" class="btn-sm">Get Deal →</a>
-        </div>
-      </div>
+    <div class="deals-grid" id="dealsGrid">
+      <!-- Rendered by JS -->
     </div>
   </div>
 </section>
@@ -249,7 +155,7 @@
       
       <div style="margin-bottom:1.5rem">
         <h3 style="font-weight:700;margin-bottom:.5rem">Are these deals verified?</h3>
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.6">Yes. We verify all deals before publishing and update them weekly. If a deal has expired, please let us know at hello@stackhk.com and we'll remove it promptly.</p>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.6">Yes. We verify all deals before publishing and update them weekly. If a deal has expired, please let us know at admin@airecmark.com and we'll remove it promptly.</p>
       </div>
       
       <div style="margin-bottom:1.5rem">
@@ -281,7 +187,7 @@
   </div>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo">Stack<span>HK</span></div>
+      <div class="footer-logo"><img src="images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle"> Stack<span>HK</span></div>
       <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews.</div>
       <div class="footer-addr">📍 7/F, Park Aura Building<br>58 Electric Road, Tin Hau<br>Hong Kong</div>
     </div>
@@ -306,10 +212,10 @@
     <div>
       <div class="footer-col-title">Legal</div>
       <ul class="footer-links">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Affiliate Disclosure</a></li>
-        <li><a href="mailto:hello@stackhk.com">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="disclosure.html">Affiliate Disclosure</a></li>
+        <li><a href="mailto:admin@airecmark.com">Contact Us</a></li>
       </ul>
     </div>
   </div>
@@ -317,15 +223,125 @@
     <div class="footer-bottom">
       <div>© 2025 StackHK Media. All rights reserved. Hong Kong.</div>
       <div style="display:flex;gap:1.25rem">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Disclosure</a>
-        <a href="mailto:hello@stackhk.com">hello@stackhk.com</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclosure.html">Disclosure</a>
+        <a href="mailto:admin@airecmark.com">admin@airecmark.com</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+// Deals data from localStorage
+function getDeals() {
+  const data = localStorage.getItem('stackhk_deals');
+  return data ? JSON.parse(data) : [
+    { id: 1, tool: 'Jasper AI', category: 'writing', discount: '20% OFF — First 3 Months', code: 'STACKHK20', expires: '2025-05-31', status: 'active' },
+    { id: 2, tool: 'Cursor Pro', category: 'coding', discount: '2 Months Free — Annual Plan', code: 'CURSOR2FREE', expires: '2025-06-15', status: 'active' },
+    { id: 3, tool: 'Notion AI', category: 'productivity', discount: 'Free Trial — 30 Days', code: 'NOTION30', expires: '2025-12-31', status: 'active' },
+    { id: 4, tool: 'Grammarly Premium', category: 'writing', discount: '25% OFF — Annual Plan', code: 'GRAMMAR25', expires: '2025-05-20', status: 'active' }
+  ];
+}
+
+const categoryEmojis = {
+  writing: '✍️',
+  coding: '💻',
+  productivity: '⚡',
+  image: '🎨',
+  audio: '🎙️',
+  business: '📊'
+};
+
+const categoryColors = {
+  writing: '#F0F4FF',
+  coding: '#EDFAF6',
+  productivity: '#FFF7EC',
+  image: '#F9EEFF',
+  audio: '#FFF0F0',
+  business: '#F0F4FF'
+};
+
+const categoryNames = {
+  writing: 'Writing Tools',
+  coding: 'Coding Tools',
+  productivity: 'Productivity',
+  image: 'Image & Video',
+  audio: 'Audio & Voice',
+  business: 'Business AI'
+};
+
+function renderDeals(filter = 'all') {
+  const deals = getDeals().filter(d => d.status === 'active');
+  const filtered = filter === 'all' ? deals : deals.filter(d => d.category === filter);
+  const grid = document.getElementById('dealsGrid');
+  
+  if (!grid) return;
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--muted)">No deals found for this category.</div>';
+    return;
+  }
+  
+  grid.innerHTML = filtered.map(deal => {
+    const emoji = categoryEmojis[deal.category] || '🏷️';
+    const bgColor = categoryColors[deal.category] || '#F0F4FF';
+    const catName = categoryNames[deal.category] || deal.category;
+    const expiryText = deal.expires === '2025-12-31' ? 'Ongoing' : 'Expires ' + new Date(deal.expires).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    
+    return `
+      <div class="deal-item">
+        <div class="deal-item-header">
+          <div class="deal-item-logo" style="background:${bgColor}">${emoji}</div>
+          <div>
+            <div class="deal-item-name">${deal.tool}</div>
+            <div class="deal-item-cat">${catName}</div>
+          </div>
+        </div>
+        <div class="deal-item-discount">${deal.discount}</div>
+        <div class="code-box" style="background:var(--bg2);border:1px dashed var(--border);border-radius:7px;padding:.6rem 1rem;font-family:var(--font-mono);font-size:.85rem;margin-bottom:.75rem;display:flex;align-items:center;justify-content:space-between">
+          <span class="code-text">${deal.code}</span>
+          <button class="copy-btn" onclick="copyCode(this, '${deal.code}')" style="background:var(--bg);border:1px solid var(--border);color:var(--muted);font-size:.72rem;padding:.25rem .5rem;border-radius:4px;cursor:pointer">Copy</button>
+        </div>
+        <div class="deal-item-footer">
+          <span class="deal-item-expires">${expiryText}</span>
+          <a href="#" class="btn-sm">Get Deal →</a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function copyCode(btn, code) {
+  navigator.clipboard?.writeText(code);
+  btn.textContent = 'Copied!';
+  btn.style.background = 'var(--teal)';
+  btn.style.color = '#fff';
+  btn.style.borderColor = 'var(--teal)';
+  setTimeout(() => {
+    btn.textContent = 'Copy';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.borderColor = '';
+  }, 2000);
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter || 'all';
+    renderDeals(filter);
+  });
+});
+
+// Initial render
+document.addEventListener('DOMContentLoaded', function() {
+  renderDeals();
+});
+</script>
 </body>
 </html>
+

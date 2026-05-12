@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparisons — StackHK Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo"><img src="../images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle"> Stack<span>HK</span></a>
+      <button class="sidebar-close">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="index.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="reviews.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Reviews
+        </a>
+        <a href="categories.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Categories
+        </a>
+        <a href="compare.html" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Compare
+        </a>
+        <a href="deals.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          Deals
+        </a>
+        <a href="pages.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          Pages
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Audience</div>
+        <a href="subscribers.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Subscribers
+        </a>
+        <a href="weekly.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2"/><polyline points="22,6 12,13 2,6"/></svg>
+          Weekly
+        </a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">System</div>
+        <a href="settings.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </a>
+      </div>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">👤</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">Admin User</div>
+        <div class="sidebar-user-role">Administrator</div>
+      </div>
+      <button class="sidebar-logout" onclick="logout()" title="Logout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="header-left">
+        <button class="header-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="header-breadcrumb">
+          <a href="index.html">Admin</a>
+          <span>›</span>
+          <strong>Comparisons</strong>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search comparisons..." id="searchInput">
+        </div>
+        <button class="header-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="header-user">
+          <div class="header-user-avatar">👤</div>
+          <span class="header-user-name">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Comparisons</h1>
+          <p class="page-subtitle">Manage AI tool comparison articles</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-primary" onclick="openNewComparison()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Comparison
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <select class="form-select" style="width:auto;padding:.5rem 1rem;font-size:.85rem" id="filterStatus" onchange="filterComparisons()">
+          <option value="">All Status</option>
+          <option value="published">Published</option>
+          <option value="draft">Draft</option>
+        </select>
+      </div>
+
+      <!-- Comparisons Table -->
+      <div class="card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Tool A</th>
+                <th>Tool B</th>
+                <th>Status</th>
+                <th>Views</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="comparisonsTable">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" style="display:flex;align-items:center;justify-content:space-between">
+          <div style="font-size:.85rem;color:var(--muted)">
+            <span id="comparisonCount">0</span> comparisons found
+          </div>
+          <div class="pagination" id="pagination">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Comparison Modal -->
+<div class="modal-overlay" id="comparisonModal">
+  <div class="modal" style="max-width:700px">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">New Comparison</h3>
+      <button class="modal-close" onclick="closeModal('comparisonModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="comparisonForm">
+        <input type="hidden" id="comparisonId">
+        <div class="form-group">
+          <label class="form-label">Title *</label>
+          <input type="text" class="form-input" id="comparisonTitle" placeholder="e.g. ChatGPT vs Claude: Which is Better?" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Slug *</label>
+          <input type="text" class="form-input" id="comparisonSlug" placeholder="chatgpt-vs-claude" required>
+          <div class="form-hint">URL-friendly version of the title</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Tool A Name *</label>
+            <input type="text" class="form-input" id="comparisonToolA" placeholder="ChatGPT" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tool B Name *</label>
+            <input type="text" class="form-input" id="comparisonToolB" placeholder="Claude" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea class="form-textarea" id="comparisonDescription" placeholder="Brief description of this comparison" style="min-height:80px"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="comparisonStatus">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="comparisonDate">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-checkbox">
+            <input type="checkbox" id="comparisonFeatured">
+            Featured comparison (show on homepage)
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('comparisonModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveComparison()">Save Comparison</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+const STORAGE_KEY = 'comparisons';
+const ITEMS_PER_PAGE = 10;
+let currentComparisons = [];
+let currentPage = 1;
+let currentFilter = '';
+
+function initComparisonsData() {
+  if (!getStorageData(STORAGE_KEY)) {
+    const sampleData = [
+      { id: 1, title: 'ChatGPT vs Claude: Which AI Assistant is Better?', slug: 'chatgpt-vs-claude', toolA: 'ChatGPT', toolB: 'Claude', description: '', status: 'published', views: 5200, featured: true, date: '2025-05-01' },
+      { id: 2, title: 'Midjourney vs DALL·E 3: AI Image Battle', slug: 'midjourney-vs-dalle', toolA: 'Midjourney', toolB: 'DALL·E 3', description: '', status: 'published', views: 3800, featured: false, date: '2025-04-20' },
+      { id: 3, title: 'Grammarly vs ProWritingAid', slug: 'grammarly-vs-prowritingaid', toolA: 'Grammarly', toolB: 'ProWritingAid', description: '', status: 'published', views: 2900, featured: false, date: '2025-04-15' },
+      { id: 4, title: 'GitHub Copilot vs Cursor', slug: 'github-copilot-vs-cursor', toolA: 'GitHub Copilot', toolB: 'Cursor', description: '', status: 'draft', views: 0, featured: false, date: '2025-05-10' },
+      { id: 5, title: 'Jasper vs Copy.ai', slug: 'jasper-vs-copyai', toolA: 'Jasper', toolB: 'Copy.ai', description: '', status: 'published', views: 2100, featured: false, date: '2025-03-28' },
+      { id: 6, title: 'Notion AI vs Obsidian', slug: 'notion-ai-vs-obsidian', toolA: 'Notion AI', toolB: 'Obsidian', description: '', status: 'published', views: 1800, featured: false, date: '2025-03-15' }
+    ];
+    setStorageData(STORAGE_KEY, sampleData);
+  }
+}
+
+function loadComparisons() {
+  currentComparisons = getStorageData(STORAGE_KEY) || [];
+  currentPage = 1;
+  renderComparisons();
+}
+
+function getFilteredComparisons() {
+  const status = document.getElementById('filterStatus').value;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+
+  let filtered = [...currentComparisons];
+
+  if (status) {
+    filtered = filtered.filter(c => c.status === status);
+  }
+  if (search) {
+    filtered = filtered.filter(c =>
+      c.title.toLowerCase().includes(search) ||
+      c.toolA.toLowerCase().includes(search) ||
+      c.toolB.toLowerCase().includes(search)
+    );
+  }
+
+  return filtered;
+}
+
+function renderComparisons() {
+  const filtered = getFilteredComparisons();
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+  const tbody = document.getElementById('comparisonsTable');
+  const count = document.getElementById('comparisonCount');
+
+  if (pageItems.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align:center;padding:3rem;color:var(--muted)">
+          No comparisons found
+        </td>
+      </tr>
+    `;
+  } else {
+    tbody.innerHTML = pageItems.map(item => `
+      <tr>
+        <td>
+          <div style="font-weight:500">${item.title}</div>
+          <div style="font-size:.78rem;color:var(--muted)">/${item.slug}</div>
+        </td>
+        <td><span class="badge badge-coding">${item.toolA}</span></td>
+        <td><span class="badge badge-productivity">${item.toolB}</span></td>
+        <td><span class="table-status ${item.status}">${item.status}</span></td>
+        <td style="font-family:var(--font-mono);font-size:.85rem">${item.views.toLocaleString()}</td>
+        <td>
+          <div class="table-actions">
+            <button class="btn btn-ghost btn-sm" onclick="editComparison(${item.id})" title="Edit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-sm" onclick="deleteComparison(${item.id})" title="Delete" style="color:var(--danger)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  count.textContent = filtered.length;
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const container = document.getElementById('pagination');
+  let html = '';
+
+  html += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goToPage(${currentPage - 1})">←</button>`;
+
+  for (let i = 1; i <= totalPages; i++) {
+    html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+  }
+
+  html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="goToPage(${currentPage + 1})">→</button>`;
+
+  container.innerHTML = html;
+}
+
+function goToPage(page) {
+  currentPage = page;
+  renderComparisons();
+}
+
+function filterComparisons() {
+  currentPage = 1;
+  renderComparisons();
+}
+
+function openNewComparison() {
+  document.getElementById('modalTitle').textContent = 'New Comparison';
+  document.getElementById('comparisonForm').reset();
+  document.getElementById('comparisonId').value = '';
+  document.getElementById('comparisonDate').value = new Date().toISOString().split('T')[0];
+  openModal('comparisonModal');
+}
+
+function editComparison(id) {
+  const item = currentComparisons.find(c => c.id === id);
+  if (!item) return;
+
+  document.getElementById('modalTitle').textContent = 'Edit Comparison';
+  document.getElementById('comparisonId').value = item.id;
+  document.getElementById('comparisonTitle').value = item.title;
+  document.getElementById('comparisonSlug').value = item.slug;
+  document.getElementById('comparisonToolA').value = item.toolA;
+  document.getElementById('comparisonToolB').value = item.toolB;
+  document.getElementById('comparisonDescription').value = item.description || '';
+  document.getElementById('comparisonStatus').value = item.status;
+  document.getElementById('comparisonDate').value = item.date;
+  document.getElementById('comparisonFeatured').checked = item.featured;
+
+  openModal('comparisonModal');
+}
+
+function saveComparison() {
+  const id = document.getElementById('comparisonId').value;
+  const title = document.getElementById('comparisonTitle').value.trim();
+  const slug = document.getElementById('comparisonSlug').value.trim();
+  const toolA = document.getElementById('comparisonToolA').value.trim();
+  const toolB = document.getElementById('comparisonToolB').value.trim();
+  const description = document.getElementById('comparisonDescription').value.trim();
+  const status = document.getElementById('comparisonStatus').value;
+  const date = document.getElementById('comparisonDate').value;
+  const featured = document.getElementById('comparisonFeatured').checked;
+
+  if (!title || !slug || !toolA || !toolB) {
+    showToast('Please fill in all required fields', 'error');
+    return;
+  }
+
+  if (id) {
+    const index = currentComparisons.findIndex(c => c.id === parseInt(id));
+    if (index !== -1) {
+      currentComparisons[index] = { ...currentComparisons[index], title, slug, toolA, toolB, description, status, date, featured };
+    }
+    showToast('Comparison updated successfully');
+  } else {
+    const newItem = {
+      id: generateId(currentComparisons),
+      title, slug, toolA, toolB, description, status, views: 0, featured, date
+    };
+    currentComparisons.unshift(newItem);
+    showToast('Comparison created successfully');
+  }
+
+  setStorageData(STORAGE_KEY, currentComparisons);
+  renderComparisons();
+  closeModal('comparisonModal');
+}
+
+function deleteComparison(id) {
+  if (!confirmDelete('Are you sure you want to delete this comparison?')) return;
+
+  currentComparisons = currentComparisons.filter(c => c.id !== id);
+  setStorageData(STORAGE_KEY, currentComparisons);
+  renderComparisons();
+  showToast('Comparison deleted successfully');
+}
+
+document.getElementById('comparisonTitle').addEventListener('input', function(e) {
+  const slug = e.target.value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  document.getElementById('comparisonSlug').value = slug;
+});
+
+document.getElementById('searchInput').addEventListener('input', debounce(filterComparisons, 300));
+
+document.addEventListener('DOMContentLoaded', function() {
+  initComparisonsData();
+  loadComparisons();
+});
+</script>
+</body>
+</html>
+

@@ -191,11 +191,143 @@ function initSampleData() {
         title: 'Suno AI: Music from Text in Minutes',
         slug: 'suno-ai',
         category: 'audio',
-        status: 'draft',
+        status: 'published',
         score: 8.2,
         excerpt: 'Suno can generate full songs from a text prompt.',
         author: 'StackHK Team',
         date: '2025-05-06',
+        featured: false
+      },
+      {
+        id: 7,
+        title: 'GitHub Copilot Review: AI Pair Programming',
+        slug: 'github-copilot',
+        category: 'coding',
+        status: 'published',
+        score: 8.9,
+        excerpt: 'GitHub Copilot revolutionized how we write code.',
+        author: 'StackHK Team',
+        date: '2025-05-10',
+        featured: false
+      },
+      {
+        id: 8,
+        title: 'Runway ML: AI Video Generation',
+        slug: 'runway-ml',
+        category: 'image',
+        status: 'published',
+        score: 8.5,
+        excerpt: 'Runway ML brings AI video generation to creators.',
+        author: 'StackHK Team',
+        date: '2025-05-10',
+        featured: false
+      },
+      {
+        id: 9,
+        title: 'Grammarly Review: The Best AI Writing Assistant?',
+        slug: 'grammarly-ai',
+        category: 'writing',
+        status: 'published',
+        score: 8.5,
+        excerpt: 'Grammarly catches errors and improves clarity.',
+        author: 'StackHK Team',
+        date: '2025-05-03',
+        featured: false
+      },
+      {
+        id: 10,
+        title: 'Notion AI: The Best AI for Knowledge Workers?',
+        slug: 'notion-ai',
+        category: 'productivity',
+        status: 'published',
+        score: 8.6,
+        excerpt: 'Notion AI is deeply woven into the workspace.',
+        author: 'StackHK Team',
+        date: '2025-03-15',
+        featured: false
+      },
+      {
+        id: 11,
+        title: 'Adobe Firefly 3: Closer to Midjourney?',
+        slug: 'adobe-firefly',
+        category: 'image',
+        status: 'published',
+        score: 7.8,
+        excerpt: 'Adobe Firefly gets a major upgrade.',
+        author: 'StackHK Team',
+        date: '2025-04-22',
+        featured: false
+      },
+      {
+        id: 12,
+        title: 'Julius AI: Data Analysis for Non-Technical Teams',
+        slug: 'julius-ai',
+        category: 'business',
+        status: 'published',
+        score: 8.4,
+        excerpt: 'Julius lets you analyze data with natural language.',
+        author: 'StackHK Team',
+        date: '2025-04-26',
+        featured: false
+      },
+      {
+        id: 13,
+        title: 'Claude 3.5 Haiku Review: The Fastest AI That Still Thinks',
+        slug: 'claude-3-5-haiku',
+        category: 'writing',
+        status: 'published',
+        score: 8.9,
+        excerpt: 'Anthropic\'s Haiku model delivers near-instant responses without sacrificing reasoning quality.',
+        author: 'StackHK Team',
+        date: '2025-05-12',
+        featured: false
+      },
+      {
+        id: 14,
+        title: 'Gemini 2.0 Pro Review: Google\'s Multimodal Powerhouse',
+        slug: 'gemini-2-0-pro',
+        category: 'productivity',
+        status: 'published',
+        score: 8.7,
+        excerpt: 'Google\'s Gemini 2.0 Pro excels at understanding and generating across text, images, audio, and video.',
+        author: 'StackHK Team',
+        date: '2025-05-11',
+        featured: false
+      },
+      {
+        id: 15,
+        title: 'Llama 3.3 70B Review: The Best Open-Source AI Model',
+        slug: 'llama-3-3',
+        category: 'coding',
+        status: 'published',
+        score: 8.5,
+        excerpt: 'Meta\'s Llama 3.3 70B delivers GPT-4-class performance as a free, open-weight model.',
+        author: 'StackHK Team',
+        date: '2025-05-10',
+        featured: false
+      },
+      {
+        id: 16,
+        title: 'Copilot Vision Review: Microsoft\'s AI Sees What You See',
+        slug: 'copilot-vision',
+        category: 'productivity',
+        status: 'published',
+        score: 8.3,
+        excerpt: 'Copilot Vision lets you share your screen with AI for real-time assistance.',
+        author: 'StackHK Team',
+        date: '2025-05-09',
+        featured: false
+      },
+      {
+        id: 17,
+        title: 'ElevenLabs v2 Review: The Gold Standard of AI Voice',
+        slug: 'elevenlabs-v2',
+        category: 'audio',
+        status: 'published',
+        score: 9.0,
+        excerpt: 'ElevenLabs v2 produces the most realistic AI voices available.',
+        author: 'StackHK Team',
+        date: '2025-05-08',
         featured: false
       }
     ];
@@ -258,6 +390,30 @@ function initSampleData() {
     setStorageData('deals', deals);
   }
   
+  // Newsletters
+  if (!getStorageData('newsletters')) {
+    const newsletters = [
+      { id: 47, title: 'Claude Pro Review + ChatGPT vs Claude Comparison', date: '2025-05-08', status: 'sent', subscribers: 4218, openRate: 42.5, clickRate: 8.3 },
+      { id: 46, title: 'Cursor AI Deep Dive + Best Coding Tools Roundup', date: '2025-05-01', status: 'sent', subscribers: 4190, openRate: 45.2, clickRate: 9.1 },
+      { id: 45, title: 'Midjourney v7 First Look + AI Image Tool Comparison', date: '2025-04-24', status: 'sent', subscribers: 4156, openRate: 48.1, clickRate: 10.2 },
+      { id: 44, title: 'Perplexity Pro Review + AI Search Tools Compared', date: '2025-04-17', status: 'sent', subscribers: 4120, openRate: 44.8, clickRate: 8.9 },
+      { id: 48, title: 'Best AI Tools for Productivity in 2025', date: '2025-05-15', status: 'draft', subscribers: 0, openRate: 0, clickRate: 0 }
+    ];
+    setStorageData('newsletters', newsletters);
+  }
+
+  // Pages
+  if (!getStorageData('pages')) {
+    const pages = [
+      { id: 'home', name: 'Homepage', url: 'index.html', lastUpdated: '2025-05-11', status: 'published', heroTitle: 'The AI tool reviews you can actually trust.', heroSubtitle: 'We test, compare, and recommend the best AI products.' },
+      { id: 'about', name: 'About Us', url: 'about.html', lastUpdated: '2025-05-10', status: 'published', heroTitle: 'About StackHK', heroSubtitle: "Hong Kong's premier AI tool review media." },
+      { id: 'deals', name: 'Deals', url: 'deals.html', lastUpdated: '2025-05-09', status: 'published', heroTitle: 'AI Tool Deals & Discounts', heroSubtitle: 'Exclusive coupons and special offers.' },
+      { id: 'submit', name: 'Submit Tool', url: 'submit.html', lastUpdated: '2025-05-08', status: 'published', heroTitle: 'Submit Your AI Tool', heroSubtitle: 'Have an AI tool you would like us to review?' },
+      { id: 'search', name: 'Search', url: 'search.html', lastUpdated: '2025-05-11', status: 'published', heroTitle: 'Search StackHK', heroSubtitle: 'Find AI tool reviews, comparisons, deals, and more.' }
+    ];
+    setStorageData('pages', pages);
+  }
+
   // Subscribers
   if (!getStorageData('subscribers')) {
     const subscribers = [
