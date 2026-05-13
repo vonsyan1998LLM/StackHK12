@@ -3,7 +3,7 @@
 // Utility: Get base path for links
 function getBasePath() {
   const path = window.location.pathname;
-  if (path.includes('/admin/') || path.includes('/reviews/') || path.includes('/categories/') || path.includes('/compare/')) {
+  if (path.includes('/notepage/') || path.includes('/reviews/') || path.includes('/categories/') || path.includes('/compare/')) {
     return '../';
   }
   return '';

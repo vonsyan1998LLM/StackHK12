@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/auth-check.js"></script>
-<title>Pages — StackHK Admin</title>
+<title>Deals — StackHK Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/admin.css">
@@ -37,11 +37,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           Compare
         </a>
-        <a href="deals.html" class="sidebar-link">
+        <a href="deals.html" class="sidebar-link active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
           Deals
         </a>
-        <a href="pages.html" class="sidebar-link active">
+        <a href="pages.html" class="sidebar-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
           Pages
         </a>
@@ -87,13 +87,13 @@
         <div class="header-breadcrumb">
           <a href="index.html">Admin</a>
           <span>›</span>
-          <strong>Pages</strong>
+          <strong>Deals</strong>
         </div>
       </div>
       <div class="header-right">
         <div class="header-search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" placeholder="Search pages..." id="searchInput">
+          <input type="text" placeholder="Search deals..." id="searchInput">
         </div>
         <button class="header-notification">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -109,41 +109,40 @@
     <div class="admin-content">
       <div class="page-header">
         <div>
-          <h1 class="page-title">Pages</h1>
-          <p class="page-subtitle">Manage static page content</p>
+          <h1 class="page-title">Deals</h1>
+          <p class="page-subtitle">Manage AI tool deals and coupons</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-primary" onclick="openNewDeal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Deal
+          </button>
         </div>
       </div>
 
-      <!-- Filters -->
-      <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap">
-        <select class="form-select" style="width:auto;padding:.5rem 1rem;font-size:.85rem" id="filterStatus" onchange="filterPages()">
-          <option value="">All Status</option>
-          <option value="published">Published</option>
-          <option value="draft">Draft</option>
-        </select>
-      </div>
-
-      <!-- Pages Table -->
+      <!-- Deals Table -->
       <div class="card">
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Page Name</th>
-                <th>URL</th>
-                <th>Last Updated</th>
+                <th>Tool Name</th>
+                <th>Category</th>
+                <th>Discount</th>
+                <th>Code</th>
+                <th>Expires</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody id="pagesTable">
+            <tbody id="dealsTable">
               <!-- Populated by JS -->
             </tbody>
           </table>
         </div>
         <div class="card-footer" style="display:flex;align-items:center;justify-content:space-between">
           <div style="font-size:.85rem;color:var(--muted)">
-            <span id="pageCount">0</span> pages found
+            <span id="dealCount">0</span> deals found
           </div>
         </div>
       </div>
@@ -151,113 +150,102 @@
   </main>
 </div>
 
-<!-- Page Edit Modal -->
-<div class="modal-overlay" id="pageModal">
-  <div class="modal" style="max-width:700px">
+<!-- Deal Modal -->
+<div class="modal-overlay" id="dealModal">
+  <div class="modal" style="max-width:600px">
     <div class="modal-header">
-      <h3 class="modal-title" id="modalTitle">Edit Page</h3>
-      <button class="modal-close" onclick="closeModal('pageModal')">✕</button>
+      <h3 class="modal-title" id="modalTitle">New Deal</h3>
+      <button class="modal-close" onclick="closeModal('dealModal')">✕</button>
     </div>
     <div class="modal-body">
-      <form id="pageForm">
-        <input type="hidden" id="pageId">
+      <form id="dealForm">
+        <input type="hidden" id="dealId">
+        <div class="form-group">
+          <label class="form-label">Tool Name *</label>
+          <input type="text" class="form-input" id="dealTool" placeholder="e.g. Jasper AI" required>
+        </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Page Title *</label>
-            <input type="text" class="form-input" id="pageTitle" placeholder="Page title" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Status</label>
-            <select class="form-select" id="pageStatus">
-              <option value="published">Published</option>
-              <option value="draft">Draft</option>
+            <label class="form-label">Category *</label>
+            <select class="form-select" id="dealCategory" required>
+              <option value="">Select category</option>
+              <option value="writing">Writing</option>
+              <option value="coding">Coding</option>
+              <option value="productivity">Productivity</option>
+              <option value="image">Image & Video</option>
+              <option value="audio">Audio</option>
+              <option value="business">Business</option>
             </select>
           </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Meta Description</label>
-          <textarea class="form-textarea" id="pageMetaDesc" placeholder="SEO meta description" style="min-height:60px"></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Hero Title *</label>
-          <input type="text" class="form-input" id="pageHeroTitle" placeholder="Main headline" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Hero Subtitle</label>
-          <input type="text" class="form-input" id="pageHeroSubtitle" placeholder="Supporting text">
+          <div class="form-group">
+            <label class="form-label">Discount *</label>
+            <input type="text" class="form-input" id="dealDiscount" placeholder="e.g. 20% OFF" required>
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">CTA Text</label>
-            <input type="text" class="form-input" id="pageCtaText" placeholder="e.g. Get Started">
+            <label class="form-label">Coupon Code</label>
+            <input type="text" class="form-input" id="dealCode" placeholder="e.g. STACKHK20">
           </div>
           <div class="form-group">
-            <label class="form-label">CTA Link</label>
-            <input type="text" class="form-input" id="pageCtaLink" placeholder="e.g. /reviews">
+            <label class="form-label">Expiry Date</label>
+            <input type="date" class="form-input" id="dealExpires">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Custom Content (HTML)</label>
-          <textarea class="form-textarea" id="pageContent" placeholder="Additional HTML content for the page" style="min-height:120px;font-family:var(--font-mono);font-size:.85rem"></textarea>
+          <label class="form-label">Status</label>
+          <select class="form-select" id="dealStatus">
+            <option value="active">Active</option>
+            <option value="expired">Expired</option>
+            <option value="draft">Draft</option>
+          </select>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeModal('pageModal')">Cancel</button>
-      <button class="btn btn-primary" onclick="savePage()">Save Page</button>
+      <button class="btn btn-secondary" onclick="closeModal('dealModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveDeal()">Save Deal</button>
     </div>
   </div>
 </div>
 
-<script src="js/admin.js"></script>
+<script src="js/notepage.js"></script>
 <script>
-const DEFAULT_PAGES = [
-  { id: 'home', name: 'Homepage', url: 'index.html', lastUpdated: '2025-05-11', status: 'published', heroTitle: 'The AI tool reviews you can actually trust.', heroSubtitle: 'We test, compare, and recommend the best AI products.' },
-  { id: 'about', name: 'About Us', url: 'about.html', lastUpdated: '2025-05-10', status: 'published', heroTitle: 'About StackHK', heroSubtitle: "Hong Kong's premier AI tool review media." },
-  { id: 'deals', name: 'Deals', url: 'deals.html', lastUpdated: '2025-05-09', status: 'published', heroTitle: 'AI Tool Deals & Discounts', heroSubtitle: 'Exclusive coupons and special offers.' },
-  { id: 'submit', name: 'Submit Tool', url: 'submit.html', lastUpdated: '2025-05-08', status: 'published', heroTitle: 'Submit Your AI Tool', heroSubtitle: 'Have an AI tool you would like us to review?' },
-  { id: 'search', name: 'Search', url: 'search.html', lastUpdated: '2025-05-11', status: 'published', heroTitle: 'Search StackHK', heroSubtitle: 'Find AI tool reviews, comparisons, deals, and more.' }
-];
+let currentDeals = [];
 
-let currentPages = [];
-
-function initPageData() {
-  if (!getStorageData('pages')) {
-    setStorageData('pages', DEFAULT_PAGES);
-  }
+function loadDeals() {
+  currentDeals = getStorageData('deals') || [];
+  renderDeals(currentDeals);
 }
 
-function loadPages() {
-  currentPages = getStorageData('pages') || [];
-  renderPages(currentPages);
-}
+function renderDeals(deals) {
+  const tbody = document.getElementById('dealsTable');
+  const count = document.getElementById('dealCount');
 
-function renderPages(pages) {
-  const tbody = document.getElementById('pagesTable');
-  const count = document.getElementById('pageCount');
-
-  if (pages.length === 0) {
+  if (deals.length === 0) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="5" style="text-align:center;padding:3rem;color:var(--muted)">
-          No pages found
+        <td colspan="7" style="text-align:center;padding:3rem;color:var(--muted)">
+          No deals found
         </td>
       </tr>
     `;
   } else {
-    tbody.innerHTML = pages.map(page => `
+    tbody.innerHTML = deals.map(deal => `
       <tr>
-        <td>
-          <div style="font-weight:500">${page.name}</div>
-          <div style="font-size:.78rem;color:var(--muted)">${page.id}</div>
-        </td>
-        <td><code style="font-family:var(--font-mono);font-size:.82rem;background:var(--bg-secondary);padding:.15rem .4rem;border-radius:4px">${page.url}</code></td>
-        <td style="color:var(--muted)">${formatDate(page.lastUpdated)}</td>
-        <td><span class="table-status ${page.status}">${page.status}</span></td>
+        <td><div style="font-weight:500">${deal.tool}</div></td>
+        <td><span class="badge ${getCategoryBadgeClass(deal.category)}">${getCategoryName(deal.category)}</span></td>
+        <td>${deal.discount}</td>
+        <td><code style="font-family:var(--font-mono);font-size:.82rem;background:var(--bg);padding:.2rem .5rem;border-radius:4px">${deal.code || '-'}</code></td>
+        <td style="color:var(--muted)">${deal.expires ? formatDate(deal.expires) : '-'}</td>
+        <td><span class="table-status ${deal.status}">${deal.status}</span></td>
         <td>
           <div class="table-actions">
-            <button class="btn btn-ghost btn-sm" onclick="editPage('${page.id}')" title="Edit">
+            <button class="btn btn-ghost btn-sm" onclick="editDeal(${deal.id})" title="Edit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-sm" onclick="deleteDeal(${deal.id})" title="Delete" style="color:var(--danger)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
             </button>
           </div>
         </td>
@@ -265,90 +253,89 @@ function renderPages(pages) {
     `).join('');
   }
 
-  count.textContent = pages.length;
+  count.textContent = deals.length;
 }
 
-function filterPages() {
-  const status = document.getElementById('filterStatus').value;
-  const search = document.getElementById('searchInput').value.toLowerCase();
-
-  let filtered = [...currentPages];
-
-  if (status) {
-    filtered = filtered.filter(p => p.status === status);
-  }
-  if (search) {
-    filtered = filtered.filter(p =>
-      p.name.toLowerCase().includes(search) ||
-      p.url.toLowerCase().includes(search) ||
-      p.id.toLowerCase().includes(search)
-    );
-  }
-
-  renderPages(filtered);
+function openNewDeal() {
+  document.getElementById('modalTitle').textContent = 'New Deal';
+  document.getElementById('dealForm').reset();
+  document.getElementById('dealId').value = '';
+  openModal('dealModal');
 }
 
-function editPage(id) {
-  const page = currentPages.find(p => p.id === id);
-  if (!page) return;
+function editDeal(id) {
+  const deal = currentDeals.find(d => d.id === id);
+  if (!deal) return;
 
-  document.getElementById('modalTitle').textContent = 'Edit: ' + page.name;
-  document.getElementById('pageId').value = page.id;
-  document.getElementById('pageTitle').value = page.name;
-  document.getElementById('pageStatus').value = page.status;
-  document.getElementById('pageMetaDesc').value = page.metaDesc || '';
-  document.getElementById('pageHeroTitle').value = page.heroTitle || '';
-  document.getElementById('pageHeroSubtitle').value = page.heroSubtitle || '';
-  document.getElementById('pageCtaText').value = page.ctaText || '';
-  document.getElementById('pageCtaLink').value = page.ctaLink || '';
-  document.getElementById('pageContent').value = page.content || '';
+  document.getElementById('modalTitle').textContent = 'Edit Deal';
+  document.getElementById('dealId').value = deal.id;
+  document.getElementById('dealTool').value = deal.tool;
+  document.getElementById('dealCategory').value = deal.category;
+  document.getElementById('dealDiscount').value = deal.discount;
+  document.getElementById('dealCode').value = deal.code || '';
+  document.getElementById('dealExpires').value = deal.expires || '';
+  document.getElementById('dealStatus').value = deal.status;
 
-  openModal('pageModal');
+  openModal('dealModal');
 }
 
-function savePage() {
-  const id = document.getElementById('pageId').value;
-  const name = document.getElementById('pageTitle').value;
-  const status = document.getElementById('pageStatus').value;
-  const metaDesc = document.getElementById('pageMetaDesc').value;
-  const heroTitle = document.getElementById('pageHeroTitle').value;
-  const heroSubtitle = document.getElementById('pageHeroSubtitle').value;
-  const ctaText = document.getElementById('pageCtaText').value;
-  const ctaLink = document.getElementById('pageCtaLink').value;
-  const content = document.getElementById('pageContent').value;
+function saveDeal() {
+  const id = document.getElementById('dealId').value;
+  const tool = document.getElementById('dealTool').value.trim();
+  const category = document.getElementById('dealCategory').value;
+  const discount = document.getElementById('dealDiscount').value.trim();
+  const code = document.getElementById('dealCode').value.trim();
+  const expires = document.getElementById('dealExpires').value;
+  const status = document.getElementById('dealStatus').value;
 
-  if (!name || !heroTitle) {
-    showToast('Please fill in all required fields', 'error');
+  if (!tool || !category || !discount) {
+    showToast('Please fill in Tool Name, Category, and Discount', 'error');
     return;
   }
 
-  const index = currentPages.findIndex(p => p.id === id);
-  if (index !== -1) {
-    currentPages[index] = {
-      ...currentPages[index],
-      name,
-      status,
-      metaDesc,
-      heroTitle,
-      heroSubtitle,
-      ctaText,
-      ctaLink,
-      content,
-      lastUpdated: new Date().toISOString().split('T')[0]
+  if (id) {
+    const index = currentDeals.findIndex(d => d.id === parseInt(id));
+    if (index !== -1) {
+      currentDeals[index] = { ...currentDeals[index], tool, category, discount, code, expires, status };
+    }
+  } else {
+    const newDeal = {
+      id: generateId(currentDeals),
+      tool, category, discount, code, expires, status
     };
+    currentDeals.unshift(newDeal);
   }
 
-  setStorageData('pages', currentPages);
-  renderPages(currentPages);
-  closeModal('pageModal');
-  showToast('Page updated successfully');
+  setStorageData('deals', currentDeals);
+  renderDeals(currentDeals);
+  closeModal('dealModal');
+  showToast(id ? 'Deal updated successfully' : 'Deal created successfully');
 }
 
-document.getElementById('searchInput').addEventListener('input', debounce(filterPages, 300));
+function deleteDeal(id) {
+  if (!confirmDelete('Are you sure you want to delete this deal?')) return;
+
+  currentDeals = currentDeals.filter(d => d.id !== id);
+  setStorageData('deals', currentDeals);
+  renderDeals(currentDeals);
+  showToast('Deal deleted successfully');
+}
+
+// Search
+document.getElementById('searchInput').addEventListener('input', debounce(function() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  if (!search) {
+    renderDeals(currentDeals);
+    return;
+  }
+  const filtered = currentDeals.filter(d =>
+    d.tool.toLowerCase().includes(search) || d.discount.toLowerCase().includes(search) || (d.code && d.code.toLowerCase().includes(search))
+  );
+  renderDeals(filtered);
+}, 300));
 
 document.addEventListener('DOMContentLoaded', function() {
-  initPageData();
-  loadPages();
+  loadDeals();
 });
 </script>
 </body>
