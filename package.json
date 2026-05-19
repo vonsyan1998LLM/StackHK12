@@ -1,0 +1,15 @@
+{
+  "name": "stackhk-worker",
+  "version": "1.0.0",
+  "description": "StackHK Cloudflare Worker for template injection",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "kv:create": "wrangler kv:namespace create STACKHK",
+    "kv:populate": "node scripts/populate-kv.js"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
