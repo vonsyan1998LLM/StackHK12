@@ -14,6 +14,11 @@ export default {
       return env.ASSETS.fetch(request);
     }
     
+    // 后台管理页面直接返回静态文件
+    if (url.pathname.startsWith('/notepage/')) {
+      return env.ASSETS.fetch(request);
+    }
+    
     // 页面请求 → 注入模板
     const pageKey = getPageKey(url.pathname);
     const pageHtml = await env.STACKHK.get(pageKey, 'text');
