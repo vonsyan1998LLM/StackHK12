@@ -12,6 +12,18 @@ export default {
     const pageHtml = await env.STACKHK.get(pageKey, 'text');
     
     if (!pageHtml) {
+      // 页面不存在 → 返回首页（带正确模板）
+      const indexHtml = await env.STACKHK.get('page:index', 'text');
+      if (indexHtml) {
+        const [header, footer] = await Promise.all([
+          env.STACKHK.get('template:header', 'text'),
+          env.STACKHK.get('template:footer', 'text')
+        ]);
+        const fullHtml = assemblePage(indexHtml, header, footer, '/');
+        return new Response(fullHtml, {
+          headers: { 'Content-Type': 'text/html;charset=utf-8' }
+        });
+      }
       return env.ASSETS.fetch(request);
     }
     
