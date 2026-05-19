@@ -7,6 +7,13 @@ export default {
       return handleAPI(request, env);
     }
     
+    // 静态资源直接返回（CSS/JS/图片/字体等）
+    const ext = url.pathname.split('.').pop().toLowerCase();
+    const staticExts = ['css', 'js', 'svg', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'ico', 'woff', 'woff2', 'ttf', 'eot', 'json', 'xml', 'txt'];
+    if (staticExts.includes(ext)) {
+      return env.ASSETS.fetch(request);
+    }
+    
     // 页面请求 → 注入模板
     const pageKey = getPageKey(url.pathname);
     const pageHtml = await env.STACKHK.get(pageKey, 'text');
