@@ -378,3 +378,34 @@ footer{background:var(--black);color:rgba(255,255,255,.7);padding:3rem 2rem 1.5r
   .nl-title{font-size:1.5rem}
   .section-title{font-size:1.35rem}
 }
+
+/* Legal Pages (Privacy, Terms, Disclosure) */
+.legal-page{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.legal-layout{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:start}
+.legal-sidebar{position:sticky;top:2rem;background:var(--dark);border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+.legal-sidebar-title{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:.75rem}
+.legal-toc{list-style:none;padding:0;margin:0}
+.legal-toc li{margin-bottom:.4rem}
+.legal-toc a{font-size:.82rem;color:var(--muted);text-decoration:none;display:block;padding:.3rem .5rem;border-radius:4px;transition:all .15s}
+.legal-toc a:hover{color:var(--white);background:rgba(245,166,35,.08)}
+.legal-body{line-height:1.75}
+.legal-body h2{font-size:1.15rem;font-weight:700;color:var(--white);margin:2rem 0 .75rem;padding-top:1rem;border-top:1px solid var(--border)}
+.legal-body h2:first-child{border-top:none;margin-top:0;padding-top:0}
+.legal-body p{color:var(--muted);margin-bottom:1rem}
+.legal-body ul{margin:0 0 1rem 1.25rem;color:var(--muted)}
+.legal-body li{margin-bottom:.4rem}
+.legal-body strong{color:var(--white)}
+.legal-meta{font-size:.8rem;color:var(--gold);margin-bottom:1.5rem;font-weight:500}
+.highlight-box{background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.2);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0}
+.highlight-box p{margin:0}
+@media(max-width:768px){
+  .legal-layout{grid-template-columns:1fr}
+  .legal-sidebar{position:static}
+}
+
+/* Review Methodology */
+.methodology-section{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+.methodology-section h2{font-size:1.25rem;font-weight:700;color:var(--white);margin:2rem 0 .75rem}
+.methodology-section p{color:var(--muted);margin-bottom:1rem;line-height:1.75}
+.methodology-section ul{margin:0 0 1rem 1.25rem;color:var(--muted)}
+.methodology-section li{margin-bottom:.5rem}
