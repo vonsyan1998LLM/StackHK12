@@ -100,6 +100,7 @@ async function handleAPI(request, env) {
   
   if (path === '/api/templates') return handleTemplatesAPI(request, env);
   if (path === '/api/pages') return handlePagesAPI(request, env);
+  if (path === '/api/search-index') return handleSearchIndexAPI(request, env);
   
   return new Response('Not Found', { status: 404 });
 }
@@ -146,4 +147,10 @@ async function handlePagesAPI(request, env) {
     });
   }
   return new Response('Method not allowed', { status: 405 });
+}
+
+async function handleSearchIndexAPI(request, env) {
+  const index = await env.STACKHK.get('search:index', 'text');
+  if (!index) return new Response('[]', { headers: { 'Content-Type': 'application/json' } });
+  return new Response(index, { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
 }
