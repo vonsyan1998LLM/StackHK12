@@ -409,3 +409,13 @@ footer{background:var(--black);color:rgba(255,255,255,.7);padding:3rem 2rem 1.5r
 .methodology-section p{color:var(--muted);margin-bottom:1rem;line-height:1.75}
 .methodology-section ul{margin:0 0 1rem 1.25rem;color:var(--muted)}
 .methodology-section li{margin-bottom:.5rem}
+
+/* Search Results */
+.search-result{display:block;padding:1.25rem;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.75rem;text-decoration:none;transition:all .15s;background:var(--card)}
+.search-result:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.search-result h3{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.35rem}
+.search-result p{font-size:.85rem;color:var(--muted);margin:0;line-height:1.5}
+.search-result .search-cat{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);background:rgba(245,166,35,.1);padding:.2rem .6rem;border-radius:4px;margin-bottom:.5rem}
+.search-highlight{background:rgba(245,166,35,.2);color:var(--gold);padding:0 2px;border-radius:2px}
+.search-tag{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:.4rem 1rem;color:var(--muted);font-size:.85rem;cursor:pointer;transition:all .15s;font-family:var(--font-sans)}
+.search-tag:hover{border-color:var(--gold);color:var(--gold)}
