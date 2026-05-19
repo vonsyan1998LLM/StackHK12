@@ -9,7 +9,7 @@ bucket = "./"
 # KV namespace binding
 [[kv_namespaces]]
 binding = "STACKHK"
-id = "YOUR_KV_NAMESPACE_ID"  # 需要替换为实际的 KV namespace ID
+id = "ed9ee39834274da286d7f06aaaa7e5f9"
 
 # 环境变量
 [vars]
