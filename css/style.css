@@ -1,5 +1,7 @@
 /* StackHK - Global Styles */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+html{overflow-x:hidden}
 :root{
   --black:#0F1117;
   --gold:#F5A623;
