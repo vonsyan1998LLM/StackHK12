@@ -251,6 +251,51 @@
             Featured review (show on homepage)
           </label>
         </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+
+        <!-- GEO: Quick Facts -->
+        <details style="margin-bottom:1rem">
+          <summary style="font-weight:600;cursor:pointer;font-size:.9rem;color:var(--gold)">GEO: Quick Facts</summary>
+          <div style="padding-top:.75rem">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Price</label><input type="text" class="form-input" id="geoPrice" placeholder="$20/month"></div>
+              <div class="form-group"><label class="form-label">Free Plan</label><input type="text" class="form-input" id="geoFreePlan" placeholder="Yes (limited)"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Platform</label><input type="text" class="form-input" id="geoPlatform" placeholder="Web, iOS, Android"></div>
+              <div class="form-group"><label class="form-label">Best For</label><input type="text" class="form-input" id="geoBestFor" placeholder="Writers, developers"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Context Window / Model</label><input type="text" class="form-input" id="geoContext" placeholder="200K tokens"></div>
+          </div>
+        </details>
+
+        <!-- GEO: FAQ -->
+        <details style="margin-bottom:1rem">
+          <summary style="font-weight:600;cursor:pointer;font-size:.9rem;color:var(--gold)">GEO: FAQ (3-5 questions)</summary>
+          <div style="padding-top:.75rem" id="geoFaqContainer">
+            <div class="geo-faq-item" style="margin-bottom:.75rem;padding:.75rem;background:var(--bg2);border-radius:var(--radius)">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                <span style="font-size:.8rem;font-weight:600">Question 1</span>
+                <button class="btn btn-ghost btn-sm" onclick="removeGeoFaq(this)" style="color:var(--danger);font-size:.75rem">Remove</button>
+              </div>
+              <input type="text" class="form-input geo-faq-q" placeholder="e.g. Is this tool worth the price?" style="margin-bottom:.5rem">
+              <textarea class="form-textarea geo-faq-a" placeholder="Answer..." style="min-height:60px;font-size:.85rem"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="addGeoFaq()" style="margin-top:.5rem">+ Add FAQ</button>
+        </details>
+
+        <!-- GEO: Comparison -->
+        <details style="margin-bottom:1rem">
+          <summary style="font-weight:600;cursor:pointer;font-size:.9rem;color:var(--gold)">GEO: Competitor Comparison</summary>
+          <div style="padding-top:.75rem">
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Competitor Name</label><input type="text" class="form-input" id="geoCompName" placeholder="e.g. ChatGPT Plus"></div>
+              <div class="form-group"><label class="form-label">Competitor Score</label><input type="text" class="form-input" id="geoCompScore" placeholder="8.7/10"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Competitor Price</label><input type="text" class="form-input" id="geoCompPrice" placeholder="$20/month"></div>
+          </div>
+        </details>
       </form>
     </div>
     <div class="modal-footer">
@@ -340,6 +385,10 @@ function openNewReview() {
   document.getElementById('reviewForm').reset();
   document.getElementById('reviewId').value = '';
   document.getElementById('reviewDate').value = new Date().toISOString().split('T')[0];
+  // Clear GEO fields
+  ['geoPrice','geoFreePlan','geoPlatform','geoBestFor','geoContext','geoCompName','geoCompScore','geoCompPrice'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('geoFaqContainer').innerHTML = '';
+  addGeoFaq();
   openModal('reviewModal');
 }
 
@@ -359,7 +408,30 @@ function editReview(id) {
   document.getElementById('reviewAuthor').value = review.author;
   document.getElementById('reviewDate').value = review.date;
   document.getElementById('reviewFeatured').checked = review.featured;
-  
+
+  // GEO fields
+  const geo = review.geo || {};
+  document.getElementById('geoPrice').value = geo.price || '';
+  document.getElementById('geoFreePlan').value = geo.freePlan || '';
+  document.getElementById('geoPlatform').value = geo.platform || '';
+  document.getElementById('geoBestFor').value = geo.bestFor || '';
+  document.getElementById('geoContext').value = geo.context || '';
+  document.getElementById('geoCompName').value = geo.compName || '';
+  document.getElementById('geoCompScore').value = geo.compScore || '';
+  document.getElementById('geoCompPrice').value = geo.compPrice || '';
+
+  // GEO FAQ
+  const faqContainer = document.getElementById('geoFaqContainer');
+  faqContainer.innerHTML = '';
+  const faqs = geo.faqs || [{ q: '', a: '' }];
+  faqs.forEach((faq, i) => {
+    const item = document.createElement('div');
+    item.className = 'geo-faq-item';
+    item.style.cssText = 'margin-bottom:.75rem;padding:.75rem;background:var(--bg2);border-radius:var(--radius)';
+    item.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem"><span style="font-size:.8rem;font-weight:600">Question ' + (i + 1) + '</span><button class="btn btn-ghost btn-sm" onclick="removeGeoFaq(this)" style="color:var(--danger);font-size:.75rem">Remove</button></div><input type="text" class="form-input geo-faq-q" value="' + (faq.q || '').replace(/"/g, '&quot;') + '" placeholder="e.g. Is this tool worth the price?" style="margin-bottom:.5rem"><textarea class="form-textarea geo-faq-a" placeholder="Answer..." style="min-height:60px;font-size:.85rem">' + (faq.a || '').replace(/</g, '&lt;') + '</textarea>';
+    faqContainer.appendChild(item);
+  });
+
   openModal('reviewModal');
 }
 
@@ -375,31 +447,64 @@ function saveReview() {
   const author = document.getElementById('reviewAuthor').value;
   const date = document.getElementById('reviewDate').value;
   const featured = document.getElementById('reviewFeatured').checked;
-  
+
   if (!title || !slug || !category || !excerpt || !score) {
     showToast('Please fill in all required fields', 'error');
     return;
   }
-  
+
+  // GEO data
+  const faqEls = document.querySelectorAll('.geo-faq-item');
+  const faqs = [];
+  faqEls.forEach(el => {
+    const q = el.querySelector('.geo-faq-q')?.value || '';
+    const a = el.querySelector('.geo-faq-a')?.value || '';
+    if (q || a) faqs.push({ q, a });
+  });
+  const geo = {
+    price: document.getElementById('geoPrice').value,
+    freePlan: document.getElementById('geoFreePlan').value,
+    platform: document.getElementById('geoPlatform').value,
+    bestFor: document.getElementById('geoBestFor').value,
+    context: document.getElementById('geoContext').value,
+    compName: document.getElementById('geoCompName').value,
+    compScore: document.getElementById('geoCompScore').value,
+    compPrice: document.getElementById('geoCompPrice').value,
+    faqs: faqs
+  };
+
   if (id) {
-    // Update existing
     const index = currentReviews.findIndex(r => r.id === parseInt(id));
     if (index !== -1) {
-      currentReviews[index] = { ...currentReviews[index], title, slug, category, excerpt, score, status, author, date, featured };
+      currentReviews[index] = { ...currentReviews[index], title, slug, category, excerpt, score, status, author, date, featured, geo };
     }
   } else {
-    // Create new
-    const newReview = {
-      id: generateId(currentReviews),
-      title, slug, category, excerpt, score, status, author, date, featured
-    };
-    currentReviews.unshift(newReview);
+    currentReviews.unshift({
+      id: generateId(currentReviews), title, slug, category, excerpt, score, status, author, date, featured, geo
+    });
   }
   
   setStorageData('reviews', currentReviews);
+  syncToKV('reviews', currentReviews);
   renderReviews(currentReviews);
   closeModal('reviewModal');
   showToast(id ? 'Review updated successfully' : 'Review created successfully');
+}
+
+// GEO FAQ helpers
+function addGeoFaq() {
+  const container = document.getElementById('geoFaqContainer');
+  const idx = container.querySelectorAll('.geo-faq-item').length + 1;
+  const item = document.createElement('div');
+  item.className = 'geo-faq-item';
+  item.style.cssText = 'margin-bottom:.75rem;padding:.75rem;background:var(--bg2);border-radius:var(--radius)';
+  item.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem"><span style="font-size:.8rem;font-weight:600">Question ' + idx + '</span><button class="btn btn-ghost btn-sm" onclick="removeGeoFaq(this)" style="color:var(--danger);font-size:.75rem">Remove</button></div><input type="text" class="form-input geo-faq-q" placeholder="e.g. Is this tool worth the price?" style="margin-bottom:.5rem"><textarea class="form-textarea geo-faq-a" placeholder="Answer..." style="min-height:60px;font-size:.85rem"></textarea>';
+  container.appendChild(item);
+}
+
+function removeGeoFaq(btn) {
+  const item = btn.closest('.geo-faq-item');
+  if (item) item.remove();
 }
 
 // Delete review

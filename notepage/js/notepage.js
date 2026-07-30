@@ -168,6 +168,35 @@ function debounce(func, wait) {
   };
 }
 
+// KV API sync helper
+async function syncToKV(collection, data) {
+  try {
+    const response = await fetch('/api/data/' + collection, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    return response.ok;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Load data from KV, fallback to localStorage
+async function loadFromKV(collection) {
+  try {
+    const response = await fetch('/api/data/' + collection);
+    if (response.ok) {
+      const data = await response.json();
+      if (data && (Array.isArray(data) ? data.length > 0 : Object.keys(data).length > 0)) {
+        setStorageData(collection, data);
+        return data;
+      }
+    }
+  } catch (e) {}
+  return getStorageData(collection);
+}
+
 // Initialize sample data if not exists
 function initSampleData() {
   // Reviews
