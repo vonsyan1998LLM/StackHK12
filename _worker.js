@@ -9,7 +9,7 @@ export default {
     
     // 静态资源直接返回（CSS/JS/图片/字体等）
     const ext = url.pathname.split('.').pop().toLowerCase();
-    const staticExts = ['css', 'js', 'svg', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'ico', 'woff', 'woff2', 'ttf', 'eot', 'json', 'xml', 'txt'];
+    const staticExts = ['css', 'js', 'svg', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'ico', 'woff', 'woff2', 'ttf', 'eot', 'json', 'xml', 'txt', 'html', 'md'];
     if (staticExts.includes(ext)) {
       return env.ASSETS.fetch(request);
     }
