@@ -145,26 +145,43 @@ loginForm.addEventListener('submit', function(e) {
   loginBtn.disabled = true;
   errorMsg.classList.remove('show');
   
-  // Simulate API call
-  setTimeout(function() {
-    if (username === 'Stackhk007' && password === 'Hk19982026LLM') {
-      // Success
+  // API auth call
+  fetch('/api/auth', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) {
       localStorage.setItem('stackhk_admin_auth', 'true');
       localStorage.setItem('stackhk_admin_user', JSON.stringify({
-        username: 'Stackhk007',
-        name: 'StackHK Admin',
-        role: 'Administrator',
+        username: data.user ? data.user.username : username,
+        name: data.user ? data.user.name : 'StackHK Admin',
+        role: data.user ? data.user.role : 'Administrator',
         avatar: '👤',
         loginTime: new Date().toISOString()
       }));
-      
-      if (remember) {
-        localStorage.setItem('stackhk_admin_remember', 'true');
-      }
-      
+      if (remember) localStorage.setItem('stackhk_admin_remember', 'true');
       window.location.href = 'index.html';
     } else {
-      // Error
+      errorText.textContent = data.error || 'Invalid username or password';
+      errorMsg.classList.add('show');
+      btnText.style.display = 'inline';
+      loading.classList.remove('show');
+      loginBtn.disabled = false;
+      document.getElementById('password').value = '';
+      document.getElementById('password').focus();
+    }
+  })
+  .catch(err => {
+    // Fallback to local auth if API unavailable
+    if (username === 'Stackhk007' && password === 'Hk19982026LLM') {
+      localStorage.setItem('stackhk_admin_auth', 'true');
+      localStorage.setItem('stackhk_admin_user', JSON.stringify({ username: 'Stackhk007', name: 'StackHK Admin', role: 'Administrator', avatar: '👤', loginTime: new Date().toISOString() }));
+      if (remember) localStorage.setItem('stackhk_admin_remember', 'true');
+      window.location.href = 'index.html';
+    } else {
       errorText.textContent = 'Invalid username or password';
       errorMsg.classList.add('show');
       btnText.style.display = 'inline';
@@ -173,7 +190,7 @@ loginForm.addEventListener('submit', function(e) {
       document.getElementById('password').value = '';
       document.getElementById('password').focus();
     }
-  }, 1000);
+  });
 });
 
 // Clear error on input

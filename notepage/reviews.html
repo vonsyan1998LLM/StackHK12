@@ -117,7 +117,7 @@
           <p class="page-subtitle">Manage all AI tool reviews</p>
         </div>
         <div class="page-actions">
-          <button class="btn btn-secondary" onclick="exportReviews()">
+          <button class="btn btn-danger btn-sm" onclick="bulkDeleteReviews()" style="background:var(--danger);color:#fff;margin-right:.5rem">Delete Selected</button>`r`n          <button class="btn btn-secondary" onclick="exportReviews()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Export
           </button>
@@ -172,12 +172,7 @@
           <div style="font-size:.85rem;color:var(--muted)">
             <span id="reviewCount">0</span> reviews found
           </div>
-          <div class="pagination">
-            <button disabled>←</button>
-            <button class="active">1</button>
-            <button>2</button>
-            <button>→</button>
-          </div>
+          <div class="pagination" id="reviewPagination"></div>
         </div>
       </div>
     </div>
@@ -308,76 +303,76 @@
 <script src="js/notepage.js"></script>
 <script>
 let currentReviews = [];
+let currentPage = 1;
+const pageSize = 10;
 
 // Load reviews
 function loadReviews() {
   currentReviews = getStorageData('reviews') || [];
-  renderReviews(currentReviews);
+  currentPage = 1;
+  renderReviews();
 }
 
-// Render reviews table
-function renderReviews(reviews) {
+// Render reviews table with pagination
+function renderReviews() {
+  const filtered = getFilteredReviews();
   const tbody = document.getElementById('reviewsTable');
   const count = document.getElementById('reviewCount');
-  
-  if (reviews.length === 0) {
-    tbody.innerHTML = `
-      <tr>
-        <td colspan="8" style="text-align:center;padding:3rem;color:var(--muted)">
-          No reviews found
-        </td>
-      </tr>
-    `;
+  const totalPages = Math.ceil(filtered.length / pageSize);
+  const start = (currentPage - 1) * pageSize;
+  const pageData = filtered.slice(start, start + pageSize);
+
+  if (pageData.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:3rem;color:var(--muted)">No reviews found</td></tr>';
   } else {
-    tbody.innerHTML = reviews.map(review => `
+    tbody.innerHTML = pageData.map(review => `
       <tr>
         <td><input type="checkbox" class="review-check" data-id="${review.id}"></td>
-        <td>
-          <div style="font-weight:500">${review.title}</div>
-          <div style="font-size:.78rem;color:var(--muted)">/${review.slug}</div>
-        </td>
+        <td><div style="font-weight:500">${review.title}</div><div style="font-size:.78rem;color:var(--muted)">/${review.slug}</div></td>
         <td><span class="badge ${getCategoryBadgeClass(review.category)}">${getCategoryName(review.category)}</span></td>
         <td><span style="font-family:var(--font-mono);font-weight:600;color:var(--gold)">${review.score}</span></td>
         <td><span class="table-status ${review.status}">${review.status}</span></td>
-        <td>${review.featured ? '<span style="color:var(--gold)">★</span>' : '-'}</td>
+        <td>${review.featured ? '<span style="color:var(--gold)">\u2605</span>' : '-'}</td>
         <td style="color:var(--muted)">${formatDate(review.date)}</td>
-        <td>
-          <div class="table-actions">
-            <button class="btn btn-ghost btn-sm" onclick="editReview(${review.id})" title="Edit">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </button>
-            <button class="btn btn-ghost btn-sm" onclick="deleteReview(${review.id})" title="Delete" style="color:var(--danger)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-            </button>
-          </div>
-        </td>
+        <td><div class="table-actions"><button class="btn btn-ghost btn-sm" onclick="editReview(${review.id})" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button><button class="btn btn-ghost btn-sm" onclick="deleteReview(${review.id})" title="Delete" style="color:var(--danger)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td>
       </tr>
     `).join('');
   }
-  
-  count.textContent = reviews.length;
+
+  count.textContent = filtered.length;
+
+  // Render pagination
+  const pager = document.getElementById('reviewPagination');
+  if (pager) {
+    let phtml = '';
+    if (currentPage > 1) phtml += '<button onclick="goToPage(' + (currentPage - 1) + ')">\u2190</button>';
+    for (let i = 1; i <= totalPages; i++) {
+      if (totalPages <= 7 || i === 1 || i === totalPages || Math.abs(i - currentPage) <= 1) {
+        phtml += '<button class="' + (i === currentPage ? 'active' : '') + '" onclick="goToPage(' + i + ')">' + i + '</button>';
+      } else if (i === 2 || i === totalPages - 1) {
+        phtml += '<button disabled>\u2026</button>';
+      }
+    }
+    if (currentPage < totalPages) phtml += '<button onclick="goToPage(' + (currentPage + 1) + ')">\u2192</button>';
+    pager.innerHTML = phtml;
+  }
 }
 
-// Filter reviews
-function filterReviews() {
+function goToPage(page) { currentPage = page; renderReviews(); window.scrollTo(0, 200); }
+
+function getFilteredReviews() {
   const category = document.getElementById('filterCategory').value;
   const status = document.getElementById('filterStatus').value;
   const search = document.getElementById('searchInput').value.toLowerCase();
-  
   let filtered = [...currentReviews];
-  
-  if (category) {
-    filtered = filtered.filter(r => r.category === category);
-  }
-  if (status) {
-    filtered = filtered.filter(r => r.status === status);
-  }
-  if (search) {
-    filtered = filtered.filter(r => r.title.toLowerCase().includes(search));
-  }
-  
-  renderReviews(filtered);
+  if (category) filtered = filtered.filter(r => r.category === category);
+  if (status) filtered = filtered.filter(r => r.status === status);
+  if (search) filtered = filtered.filter(r => r.title.toLowerCase().includes(search));
+  return filtered;
 }
+
+// Filter reviews
+function filterReviews() { currentPage = 1; renderReviews(); }
 
 // Open new review modal
 function openNewReview() {
@@ -486,7 +481,7 @@ function saveReview() {
   
   setStorageData('reviews', currentReviews);
   syncToKV('reviews', currentReviews);
-  renderReviews(currentReviews);
+  renderReviews();
   closeModal('reviewModal');
   showToast(id ? 'Review updated successfully' : 'Review created successfully');
 }
@@ -513,7 +508,7 @@ function deleteReview(id) {
   
   currentReviews = currentReviews.filter(r => r.id !== id);
   setStorageData('reviews', currentReviews);
-  renderReviews(currentReviews);
+  renderReviews();
   showToast('Review deleted successfully');
 }
 
