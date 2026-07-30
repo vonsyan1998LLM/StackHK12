@@ -2,26 +2,26 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     
-    // API 路由 → 走 API 处理
+    // API routes → handle separately
     if (url.pathname.startsWith('/api/')) {
       return handleAPI(request, env);
     }
     
-    // 页面请求 → 注入模板
+    // Page requests → inject templates
     const pageKey = getPageKey(url.pathname);
     const pageHtml = await env.STACKHK.get(pageKey, 'text');
     
     if (!pageHtml) {
-      return env.ASSETS.fetch(request); // 回退到静态文件
+      return env.ASSETS.fetch(request); // Fallback to static files
     }
     
-    // 从 KV 读取头部和底部
+    // Read header and footer from KV
     const [header, footer] = await Promise.all([
       env.STACKHK.get('template:header', 'text'),
       env.STACKHK.get('template:footer', 'text')
     ]);
     
-    // 拼装
+    // Assemble
     const fullHtml = assemblePage(pageHtml, header, footer, url.pathname);
     
     return new Response(fullHtml, {
@@ -31,15 +31,15 @@ export default {
 };
 
 function getPageKey(pathname) {
-  // 处理根路径
+  // Handle root path
   if (pathname === '/' || pathname === '/index.html') {
     return 'page:index';
   }
   
-  // 移除开头的斜杠和 .html 后缀
+  // Remove leading slash and .html suffix
   let key = pathname.slice(1).replace(/\.html$/, '');
   
-  // 处理子目录
+  // Handle subdirectories
   if (key.startsWith('reviews/')) {
     return `review:${key.slice(8)}`;
   }
@@ -48,10 +48,10 @@ function getPageKey(pathname) {
 }
 
 function assemblePage(body, header, footer, pathname) {
-  // 根据页面类型设置 active 状态
+  // Set active state based on page type
   const activeLink = getActiveLink(pathname);
   
-  // 替换 header 中的 active 类
+  // Replace active class in header
   let processedHeader = header || '';
   if (activeLink) {
     processedHeader = processedHeader.replace(/class="active"/g, '');
@@ -69,7 +69,7 @@ function assemblePage(body, header, footer, pathname) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <!-- SEO meta 从 KV 读取 -->
+  <!-- SEO meta read from KV -->
 </head>
 <body>
   ${processedHeader}
@@ -94,12 +94,12 @@ async function handleAPI(request, env) {
   const url = new URL(request.url);
   const path = url.pathname;
   
-  // 处理模板 API
+  // Handle templates API
   if (path === '/api/templates') {
     return handleTemplatesAPI(request, env);
   }
   
-  // 处理页面 API
+  // Handle pages API
   if (path === '/api/pages') {
     return handlePagesAPI(request, env);
   }
@@ -109,7 +109,7 @@ async function handleAPI(request, env) {
 
 async function handleTemplatesAPI(request, env) {
   if (request.method === 'GET') {
-    // 获取所有模板
+    // Get all templates
     const [header, footer, nav] = await Promise.all([
       env.STACKHK.get('template:header', 'text'),
       env.STACKHK.get('template:footer', 'text'),
@@ -134,7 +134,7 @@ async function handleTemplatesAPI(request, env) {
 
 async function handlePagesAPI(request, env) {
   if (request.method === 'GET') {
-    // 获取页面列表
+    // Get page list
     const list = await env.STACKHK.list({ prefix: 'page:' });
     const pages = await Promise.all(
       list.keys.map(async (key) => {
