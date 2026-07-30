@@ -150,8 +150,13 @@
             <span id="pageCount">0</span> pages found
           </div>
         </div>
+        <div class="page-actions">
+          <button class="btn btn-primary" onclick="openNewPage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            New Page
+          </button>
+        </div>
       </div>
-    </div>
   </main>
 </div>
 
@@ -330,16 +335,16 @@ function savePage() {
   if (index !== -1) {
     currentPages[index] = {
       ...currentPages[index],
-      name,
-      status,
-      metaDesc,
-      heroTitle,
-      heroSubtitle,
-      ctaText,
-      ctaLink,
-      content,
+      name, status, metaDesc, heroTitle, heroSubtitle, ctaText, ctaLink, content,
       lastUpdated: new Date().toISOString().split('T')[0]
     };
+  } else {
+    var newId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    currentPages.unshift({
+      id: newId, name, url: newId + '.html', status: status || 'published',
+      metaDesc, heroTitle, heroSubtitle, ctaText, ctaLink, content,
+      lastUpdated: new Date().toISOString().split('T')[0]
+    });
   }
 
   setStorageData('pages', currentPages);
@@ -349,6 +354,23 @@ function savePage() {
 }
 
 document.getElementById('searchInput').addEventListener('input', debounce(filterPages, 300));
+
+function openNewPage() {
+  document.getElementById('modalTitle').textContent = 'New Page';
+  document.getElementById('pageId').value = '';
+  ['pageTitle','pageMetaDesc','pageHeroTitle','pageHeroSubtitle','pageCtaText','pageCtaLink','pageContent'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('pageStatus').value = 'published';
+  openModal('pageModal');
+}
+
+function deletePage(id) {
+  if (!confirmDelete('Delete this page?')) return;
+  var pages = getStorageData('pages') || [];
+  pages = pages.filter(function(p) { return p.id !== id; });
+  setStorageData('pages', pages);
+  loadPages();
+  showToast('Page deleted');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   initPageData();
