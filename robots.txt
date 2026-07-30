@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+Sitemap: https://stackhk.com/sitemap.xml
