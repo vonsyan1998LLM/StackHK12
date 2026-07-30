@@ -5,4 +5,4 @@ Disallow: /templates/
 Disallow: /pages/
 Disallow: /scripts/
 
-Sitemap: https://stackhk.com/sitemap.xml
+Sitemap: https://www.airecmark.com/sitemap.xml
