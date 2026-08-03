@@ -4,10 +4,10 @@
 <meta name="robots" content="index, follow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us — StackHK | Airecmark Media</title>
-<meta name="description" content="Contact StackHK / Airecmark Media. Get in touch for partnerships, tool submissions, advertising inquiries, or general feedback. Hong Kong based.">
+<title>Contact Us — Airecmark | Airecmark Media</title>
+<meta name="description" content="Contact Airecmark Media. Get in touch for partnerships, tool submissions, advertising inquiries, or general feedback. Hong Kong based.">
 <link rel="canonical" href="https://www.airecmark.com/contact.html">
-<meta property="og:title" content="Contact StackHK / Airecmark Media">
+<meta property="og:title" content="Contact Airecmark Media">
 <meta property="og:description" content="Get in touch for partnerships, tool submissions, advertising, or feedback.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></a>
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="reviews.html">Reviews</a>
@@ -151,12 +151,12 @@
 <footer>
   <div style="max-width:1200px;margin:0 auto">
     <div class="affiliate-note">
-      Affiliate disclosure: Some links on this site are affiliate links. StackHK may earn a commission when you click through and purchase. This never affects our ratings or editorial independence.
+      Affiliate disclosure: Some links on this site are affiliate links. Airecmark may earn a commission when you click through and purchase. This never affects our ratings or editorial independence.
     </div>
   </div>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo"><img src="images/logo-white.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></div>
+      <div class="footer-logo"><img src="images/logo-white.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></div>
       <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews.</div>
       <div class="footer-addr">📍 7/F, Park Aura Building<br>58 Electric Road, Tin Hau<br>Hong Kong</div>
     </div>
@@ -191,7 +191,7 @@
   </div>
   <div style="max-width:1200px;margin:0 auto">
     <div class="footer-bottom">
-      <div>© 2026 StackHK Media. All rights reserved. Hong Kong.</div>
+      <div>© 2026 Airecmark Media. All rights reserved. Hong Kong.</div>
     </div>
   </div>
 </footer>
@@ -210,9 +210,9 @@ function handleContactSubmit(e) {
     message: document.getElementById('contactMessage').value,
     timestamp: new Date().toISOString()
   };
-  var existing = JSON.parse(localStorage.getItem('stackhk_contact_messages') || '[]');
+  var existing = JSON.parse(localStorage.getItem('Airecmark_contact_messages') || '[]');
   existing.push(data);
-  localStorage.setItem('stackhk_contact_messages', JSON.stringify(existing));
+  localStorage.setItem('Airecmark_contact_messages', JSON.stringify(existing));
   setTimeout(function() {
     btn.textContent = 'Message Sent! ✓';
     btn.style.background = '#0B8E72';

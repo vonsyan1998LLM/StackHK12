@@ -8,7 +8,7 @@
 <meta name="description" content="Airecmark is Hong Kong's most trusted AI tool review platform. We independently test, score, and compare 120+ AI tools across 6 categories. No sponsored reviews, ever.">
 <link rel="canonical" href="https://www.airecmark.com/">
 <meta property="og:title" content="Airecmark — Honest AI Tool Reviews, Tested by Humans">
-<meta property="og:description" content="120+ AI tools independently tested. Real scores, honest comparisons, zero hype.">
+<meta property="og:description" content="30+ AI tools independently tested. Real scores, honest comparisons, zero hype.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.airecmark.com">
 <meta property="og:image" content="https://www.airecmark.com/images/best-writing-tools-hero.png">
@@ -112,10 +112,10 @@
     <a href="reviews.html" class="btn btn-ghost-light">Browse All Reviews</a>
   </div>
   <div class="stats-row">
-    <div class="stat-block"><div class="stat-num">120+</div><div class="stat-label">Tools Tested</div></div>
+    <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label">Tools Tested</div></div>
     <div class="stat-block"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
     <div class="stat-block"><div class="stat-num">19</div><div class="stat-label">In-Depth Reviews</div></div>
-    <div class="stat-block"><div class="stat-num">4,200+</div><div class="stat-label">Newsletter Readers</div></div>
+    <div class="stat-block"><div class="stat-num">Growing</div><div class="stat-label">Newsletter Community</div></div>
   </div>
 </section>
 
@@ -245,7 +245,7 @@
 <div class="cta-banner">
   <div class="cta-banner-inner">
     <h2>Stay ahead of the AI curve</h2>
-    <p>Get our best reviews and tool recommendations delivered every Thursday. 4,200+ readers and counting.</p>
+    <p>Get our best reviews and tool recommendations delivered every Thursday. A growing community of readers.</p>
     <form id="nlForm" style="display:flex;gap:.75rem;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center">
       <input type="email" placeholder="Your email address" required style="flex:1;min-width:200px;padding:.75rem 1.25rem;border-radius:100px;border:none;font-size:.9rem;font-family:var(--font-sans);outline:none">
       <button type="submit" class="btn btn-gold" style="white-space:nowrap">Subscribe →</button>
@@ -295,7 +295,7 @@
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="disclosure.html">Affiliate Disclosure</a></li>
         <li><a href="mailto:admin@airecmark.com">admin@airecmark.com</a></li>
-        <li><a href="https://www.linkedin.com/in/stackhk" target="_blank" rel="me">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/Airecmark" target="_blank" rel="me">LinkedIn</a></li>
       </ul>
     </div>
   </div>
@@ -308,9 +308,9 @@
 document.getElementById('nlForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var email = this.querySelector('input').value;
-  var subs = JSON.parse(localStorage.getItem('stackhk_subscribers') || '[]');
+  var subs = JSON.parse(localStorage.getItem('Airecmark_subscribers') || '[]');
   subs.push({ id: Date.now(), email: email, name: email.split('@')[0], date: new Date().toISOString().split('T')[0], status: 'active' });
-  localStorage.setItem('stackhk_subscribers', JSON.stringify(subs));
+  localStorage.setItem('Airecmark_subscribers', JSON.stringify(subs));
   this.innerHTML = '<p style="color:var(--gold);font-weight:600">Thanks for subscribing! Check your inbox.</p>';
 });
 </script>
