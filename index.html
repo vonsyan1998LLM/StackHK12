@@ -4,466 +4,314 @@
 <meta name="robots" content="index, follow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StackHK — Hong Kong's Premier AI Tool Reviews</title>
-<meta name="description" content="Hong Kong's most trusted AI tool reviews. We test, compare, and recommend the best AI products — so you don't have to.">
+<title>Airecmark — Honest AI Tool Reviews, Tested by Humans</title>
+<meta name="description" content="Airecmark is Hong Kong's most trusted AI tool review platform. We independently test, score, and compare 120+ AI tools across 6 categories. No sponsored reviews, ever.">
 <link rel="canonical" href="https://www.airecmark.com/">
-<meta property="og:title" content="StackHK — Hong Kong's Premier AI Tool Reviews">
-<meta property="og:description" content="We test, compare, and recommend the best AI products — so you don't have to.">
+<meta property="og:title" content="Airecmark — Honest AI Tool Reviews, Tested by Humans">
+<meta property="og:description" content="120+ AI tools independently tested. Real scores, honest comparisons, zero hype.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.airecmark.com">
+<meta property="og:image" content="https://www.airecmark.com/images/best-writing-tools-hero.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "StackHK",
-  "url": "https://www.airecmark.com",
-  "description": "Hong Kong's premier AI tool review platform. We test, compare, and recommend the best AI products.",
-  "areaServed": ["HK", "SG", "US", "UK"],
-  "sameAs": []
+<style>
+/* Enhanced Homepage Styles */
+.home-hero{background:linear-gradient(180deg,#0F1117 0%,#1a1d28 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.08) 0%,transparent 60%)}
+.home-hero>*{position:relative;z-index:1}
+.home-hero .hero-badge{display:inline-block;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);color:var(--gold);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:1.5rem}
+.home-hero h1{font-family:var(--font-display);font-size:3.2rem;font-weight:900;color:#fff;line-height:1.15;max-width:700px;margin:0 auto 1.25rem}
+.home-hero h1 em{color:var(--gold);font-style:normal}
+.home-hero .hero-desc{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:600px;margin:0 auto 2rem}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.hero-actions .btn{font-size:.95rem;font-weight:600;padding:.8rem 1.75rem;border-radius:100px;text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-gold{background:linear-gradient(135deg,#F5A623,#E8951A);color:#0F1117}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,166,35,.25)}
+.btn-ghost-light{border:1.5px solid rgba(255,255,255,.2);color:#fff}
+.btn-ghost-light:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+.stats-row{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
+.stat-block{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1}
+.stat-label{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.35rem}
+
+/* Navigation Pills */
+.section-pills{max-width:1100px;margin:0 auto;padding:3rem 2rem 1rem;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.pill{background:var(--card);border:1px solid var(--border);padding:.6rem 1.25rem;border-radius:100px;font-size:.85rem;font-weight:500;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:all .15s}
+.pill:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+
+/* Article Cards Grid */
+.articles-section{padding:3rem 2rem 4rem}
+.section-label{text-align:center;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:.75rem}
+.section-title-lg{text-align:center;font-family:var(--font-display);font-size:2rem;font-weight:900;margin-bottom:.75rem}
+.section-desc{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2.5rem;max-width:550px;margin-left:auto;margin-right:auto}
+.articles-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.article-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-decoration:none;transition:all .2s;display:flex;flex-direction:column}
+.article-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.08);border-color:var(--gold)}
+.article-card-img{height:100px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
+.article-card-body{padding:1.25rem}
+.article-card-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem}
+.article-card h3{font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:.5rem;color:var(--text)}
+.article-card p{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:0}
+
+/* Review Cards Row */
+.reviews-section{padding:0 2rem 4rem}
+.reviews-scroll{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+
+/* Methodology Strip */
+.method-strip{max-width:1100px;margin:0 auto 4rem;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.method-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center}
+.method-card .method-icon{font-size:1.8rem;margin-bottom:.75rem}
+.method-card h4{font-size:.9rem;font-weight:700;margin-bottom:.35rem}
+.method-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+/* CTA Banner */
+.cta-banner{max-width:1100px;margin:0 auto 4rem;padding:0 2rem}
+.cta-banner-inner{background:linear-gradient(135deg,#0F1117,#1a1d28);border:1px solid rgba(245,166,35,.2);border-radius:var(--radius-lg);padding:3rem 2rem;text-align:center}
+.cta-banner-inner h2{font-family:var(--font-display);color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:.75rem}
+.cta-banner-inner p{color:rgba(255,255,255,.5);font-size:1rem;margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+@media(max-width:768px){
+  .home-hero h1{font-size:2rem}
+  .articles-grid{grid-template-columns:1fr}
+  .reviews-scroll{grid-template-columns:repeat(2,1fr)}
+  .method-strip{grid-template-columns:1fr}
+  .stats-row{gap:1.5rem}
 }
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "StackHK",
-  "url": "https://www.airecmark.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.airecmark.com/search.html?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+</style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy">
-              Stack<span>HK</span></a>
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="reviews.html">Reviews</a>
       <a href="compare.html">Compare</a>
       <a href="categories.html">Categories</a>
       <a href="deals.html">Deals</a>
-      <a href="weekly.html">Weekly</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="nav-right">
-      <button class="search-btn">
-        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        Search tools...
-        <span class="search-shortcut">⌘K</span>
-      </button>
-      <a href="#newsletter" class="btn-nav">Subscribe Free →</a>
+      <a href="weekly.html" class="btn-nav">Newsletter →</a>
     </div>
-    <button class="hamburger" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    </button>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-overlay"></div>
-<div class="mobile-menu">
-  <button class="mobile-close" aria-label="Close menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <div class="mobile-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="compare.html">Compare</a>
-    <a href="categories.html">Categories</a>
-    <a href="deals.html">Deals</a>
-    <a href="weekly.html">Weekly</a>
-    <a href="about.html">About</a>
-    <a href="submit.html">Submit Tool</a>
-  </div>
-</div>
-
 <!-- HERO -->
-<div class="hero">
-  <div>
-    <div class="hero-eyebrow">🇭🇰 Hong Kong · AI Media</div>
-    <h1>The AI tool reviews you can actually <em>trust.</em></h1>
-    <p class="hero-sub">We test, compare, and recommend the best AI products — so you don't have to. <strong>New reviews every week.</strong> Tested by humans, not marketing teams.</p>
-    <div class="hero-cta">
-      <a href="reviews.html" class="btn-primary">Browse All Reviews <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href="#newsletter" class="btn-outline">Get Weekly Picks <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item"><span class="stat-num">120+</span><span class="stat-label">Tools Reviewed</span></div>
-      <div class="stat-item"><span class="stat-num">52</span><span class="stat-label">Weeks/Year</span></div>
-      <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Categories</span></div>
-      <div class="stat-item"><span class="stat-num">HK</span><span class="stat-label">Based Team</span></div>
-    </div>
+<section class="home-hero">
+  <div class="hero-badge">Independent AI Tool Reviews Since 2025</div>
+  <h1>Find the <em>right AI tool</em> for your work.</h1>
+  <p class="hero-desc">We test, score, and compare AI tools so you don't have to waste time and money on the wrong ones. Every review is based on 2-4 weeks of real-world use.</p>
+  <div class="hero-actions">
+    <a href="articles/best-ai-writing-tools-2026.html" class="btn btn-gold">Best AI Tools of 2026 →</a>
+    <a href="reviews.html" class="btn btn-ghost-light">Browse All Reviews</a>
   </div>
-  <div class="hero-visual">
-    <div class="mini-card mc1">
-      <div class="mc-top">
-        <div class="mc-logo" style="background:#F0F4FF;color:#2C5EE8">✍️</div>
-        <div>
-          <div class="mc-name">Claude Pro</div>
-          <span class="mc-tag writing">Writing</span>
-        </div>
-      </div>
-      <div class="mc-verdict">"The most thoughtful AI writing assistant we've tested — especially for long-form content."</div>
-      <div class="mc-score"><span class="stars">★★★★★</span><span class="score-num">9.4/10</span></div>
-    </div>
-    <div class="mini-card mc2">
-      <div class="mc-top">
-        <div class="mc-logo" style="background:#EDFAF6;color:#0B8E72">💻</div>
-        <div>
-          <div class="mc-name">Cursor AI</div>
-          <span class="mc-tag coding">Coding</span>
-        </div>
-      </div>
-      <div class="mc-verdict">"Redefined what pair programming with AI looks like. A must-try for developers."</div>
-      <div class="mc-score"><span class="stars">★★★★★</span><span class="score-num">9.1/10</span></div>
-    </div>
-    <div class="mini-card mc3">
-      <div class="mc-top">
-        <div class="mc-logo" style="background:#FFF7EC;color:#CC6B0B">⚡</div>
-        <div>
-          <div class="mc-name">Notion AI</div>
-          <span class="mc-tag productivity">Productivity</span>
-        </div>
-      </div>
-      <div class="mc-verdict">"Deep workspace integration makes it the best AI for knowledge workers already on Notion."</div>
-      <div class="mc-score"><span class="stars">★★★★☆</span><span class="score-num">8.6/10</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="t-icon">📊</span> 120+ Tools Reviewed</div>
-    <div class="trust-item"><span class="t-icon">🔍</span> Independently Tested</div>
-    <div class="trust-item"><span class="t-icon">🗓️</span> Updated Every Week</div>
-    <div class="trust-item"><span class="t-icon">🌏</span> Trusted Across Asia</div>
-    <div class="trust-item"><span class="t-icon">🚫</span> Never Paid for Reviews</div>
-  </div>
-</div>
-
-<!-- FEATURED REVIEWS -->
-<section id="reviews">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-title">Featured Reviews</div>
-        <div class="section-subtitle">Our editors' top picks, updated weekly</div>
-      </div>
-      <a href="reviews.html" class="see-all">View all reviews →</a>
-    </div>
-    <div class="cards-grid">
-      <!-- Card 1 -->
-      <a href="reviews/claude-pro.html" class="review-card">
-        <div class="rc-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)">
-          <span style="font-size:3rem">✍️</span>
-          <div class="rc-badge">EDITOR'S PICK</div>
-        </div>
-        <div class="rc-body">
-          <div class="rc-meta">
-            <span class="rc-cat" style="background:#EEF4FF;color:#2C5EE8">Writing</span>
-            <span class="rc-date">July 2026</span>
-          </div>
-          <div class="rc-title">Claude Pro Review: The AI Writer That Actually Thinks</div>
-          <div class="rc-excerpt">After 3 weeks of daily use, we found Claude Pro consistently produces the most nuanced long-form content of any AI writing tool.</div>
-          <div class="rc-footer">
-            <div class="rc-rating">
-              <span style="color:var(--gold);font-size:.85rem">★★★★★</span>
-              <span style="font-family:var(--font-mono);font-size:.82rem;font-weight:500">9.4/10</span>
-            </div>
-            <div class="rc-author">StackHK Team</div>
-          </div>
-        </div>
-      </a>
-      <!-- Card 2 -->
-      <a href="reviews/cursor-ai.html" class="review-card">
-        <div class="rc-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)">
-          <span style="font-size:3rem">💻</span>
-        </div>
-        <div class="rc-body">
-          <div class="rc-meta">
-            <span class="rc-cat" style="background:#EDFAF6;color:#0B8E72">Coding</span>
-            <span class="rc-date">June 2026</span>
-          </div>
-          <div class="rc-title">Cursor AI: The Best IDE Add-On for Developers in 2026./div>
-          <div class="rc-excerpt">Cursor's tab-complete and multi-file context editing is genuinely transformative. We tested it on 5 real projects.</div>
-          <div class="rc-footer">
-            <div class="rc-rating">
-              <span style="color:var(--gold);font-size:.85rem">★★★★★</span>
-              <span style="font-family:var(--font-mono);font-size:.82rem;font-weight:500">9.1/10</span>
-            </div>
-            <div class="rc-author">StackHK Team</div>
-          </div>
-        </div>
-      </a>
-      <!-- Card 3 -->
-      <a href="reviews/midjourney-v7.html" class="review-card">
-        <div class="rc-img" style="background:linear-gradient(135deg,#f9eeff,#edd4ff)">
-          <span style="font-size:3rem">🎨</span>
-        </div>
-        <div class="rc-body">
-          <div class="rc-meta">
-            <span class="rc-cat" style="background:#F9EEFF;color:#7A21C4">Image & Video</span>
-            <span class="rc-date">June 2026</span>
-          </div>
-          <div class="rc-title">Midjourney v7 vs DALL·E 3: Which AI Image Tool Wins?</div>
-          <div class="rc-excerpt">We ran 200 prompts across both platforms. The results might surprise you — especially on photorealism tasks.</div>
-          <div class="rc-footer">
-            <div class="rc-rating">
-              <span style="color:var(--gold);font-size:.85rem">★★★★☆</span>
-              <span style="font-family:var(--font-mono);font-size:.82rem;font-weight:500">8.8/10</span>
-            </div>
-            <div class="rc-author">StackHK Team</div>
-          </div>
-        </div>
-      </a>
-    </div>
+  <div class="stats-row">
+    <div class="stat-block"><div class="stat-num">120+</div><div class="stat-label">Tools Tested</div></div>
+    <div class="stat-block"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
+    <div class="stat-block"><div class="stat-num">19</div><div class="stat-label">In-Depth Reviews</div></div>
+    <div class="stat-block"><div class="stat-num">4,200+</div><div class="stat-label">Newsletter Readers</div></div>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="cat-bg">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-title">Browse by Category</div>
-        <div class="section-subtitle">Find the right AI tool for your needs</div>
-      </div>
-      <a href="categories.html" class="see-all">All categories →</a>
-    </div>
-    <div class="cats-grid">
-      <a href="categories/writing.html" class="cat-card"><span class="cat-emoji">✍️</span><div class="cat-name">Writing Tools</div><div class="cat-count">28 reviews</div></a>
-      <a href="categories/coding.html" class="cat-card"><span class="cat-emoji">💻</span><div class="cat-name">Coding Tools</div><div class="cat-count">22 reviews</div></a>
-      <a href="categories/productivity.html" class="cat-card"><span class="cat-emoji">⚡</span><div class="cat-name">Productivity</div><div class="cat-count">31 reviews</div></a>
-      <a href="categories/image-video.html" class="cat-card"><span class="cat-emoji">🎨</span><div class="cat-name">Image & Video</div><div class="cat-count">19 reviews</div></a>
-      <a href="categories/audio.html" class="cat-card"><span class="cat-emoji">🎙️</span><div class="cat-name">Audio & Voice</div><div class="cat-count">11 reviews</div></a>
-      <a href="categories/business.html" class="cat-card"><span class="cat-emoji">📊</span><div class="cat-name">Business AI</div><div class="cat-count">14 reviews</div></a>
-    </div>
-  </div>
-</section>
-
-<!-- EDITOR'S PICKS -->
+<!-- BROWSER BY CATEGORY -->
 <section>
-  <div class="container">
-    <div class="home-picks-latest" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
-      <div>
-        <div class="section-header">
-          <div>
-            <div class="section-title">This Week's Top Picks</div>
-            <div class="section-subtitle">Handpicked by our editors</div>
-          </div>
-        </div>
-        <div class="picks-list">
-          <div class="pick-card">
-            <div class="pick-num">01</div>
-            <div class="pick-logo" style="background:#F0F4FF">✍️</div>
-            <div class="pick-info">
-              <div class="pick-name">Claude Pro <span class="pick-badge">Best for Writing</span></div>
-              <div class="pick-desc">Unmatched reasoning and long-form writing quality. Perfect for professionals.</div>
-            </div>
-            <div class="pick-cta"><a href="../deals.html" class="btn-sm">View Deals →</a></div>
-          </div>
-          <div class="pick-card">
-            <div class="pick-num">02</div>
-            <div class="pick-logo" style="background:#EDFAF6">💻</div>
-            <div class="pick-info">
-              <div class="pick-name">Cursor <span class="pick-badge">Best for Dev</span></div>
-              <div class="pick-desc">The AI coding tool that's actually worth paying for. Tab completion is magic.</div>
-            </div>
-            <div class="pick-cta"><a href="../deals.html" class="btn-sm">View Deals →</a></div>
-          </div>
-          <div class="pick-card">
-            <div class="pick-num">03</div>
-            <div class="pick-logo" style="background:#FFF7EC">⚡</div>
-            <div class="pick-info">
-              <div class="pick-name">Notion AI <span class="pick-badge">Best for Teams</span></div>
-              <div class="pick-desc">If you're already a Notion user, the AI add-on is a no-brainer investment.</div>
-            </div>
-            <div class="pick-cta"><a href="../deals.html" class="btn-sm">View Deals →</a></div>
-          </div>
-        </div>
-      </div>
+  <div class="section-label">Browse by Category</div>
+  <h2 class="section-title-lg">Find tools for <span style="color:var(--gold)">your workflow</span></h2>
+  <p class="section-desc">Every category has in-depth individual reviews and best-of roundups.</p>
+  <div class="section-pills">
+    <a href="categories/writing.html" class="pill">✍️ Writing Tools</a>
+    <a href="categories/coding.html" class="pill">💻 Coding Tools</a>
+    <a href="categories/productivity.html" class="pill">⚡ Productivity</a>
+    <a href="categories/image-video.html" class="pill">🎨 Image & Video</a>
+    <a href="categories/audio.html" class="pill">🎙️ Audio & Voice</a>
+    <a href="categories/business.html" class="pill">📊 Business AI</a>
+    <a href="compare.html" class="pill" style="border-color:var(--gold)">⚔️ Compare Tools</a>
+    <a href="deals.html" class="pill" style="border-color:#0B8E72">🏷️ Deals & Discounts</a>
+  </div>
+</section>
 
-      <!-- Latest Reviews right col -->
-      <div>
-        <div class="section-header">
-          <div class="section-title">Latest Reviews</div>
-          <a href="reviews.html" class="see-all">See all →</a>
-        </div>
-        <div class="latest-list">
-          <a href="reviews/chatgpt-4o.html" class="latest-item">
-            <div class="li-emoji">🤖</div>
-            <div>
-              <div class="li-title">ChatGPT-4o Review: Still King?</div>
-              <div class="li-meta"><span class="li-score">★★★★☆</span> 8.7 · Productivity · May 8</div>
-            </div>
-          </a>
-          <a href="reviews/suno-ai.html" class="latest-item">
-            <div class="li-emoji">🎵</div>
-            <div>
-              <div class="li-title">Suno AI: Music from Text in Minutes</div>
-              <div class="li-meta"><span class="li-score">★★★★☆</span> 8.2 · Audio · May 6</div>
-            </div>
-          </a>
-          <a href="reviews/grammarly-vs-prowritingaid.html" class="latest-item">
-            <div class="li-emoji">📝</div>
-            <div>
-              <div class="li-title">Grammarly AI vs ProWritingAid 2025</div>
-              <div class="li-meta"><span class="li-score">★★★★☆</span> 8.5 · Writing · May 3</div>
-            </div>
-          </a>
-          <a href="reviews/perplexity-pro.html" class="latest-item">
-            <div class="li-emoji">🔍</div>
-            <div>
-              <div class="li-title">Perplexity Pro: AI Search Done Right</div>
-              <div class="li-meta"><span class="li-score">★★★★★</span> 9.0 · Research · Apr 29</div>
-            </div>
-          </a>
-          <a href="reviews/julius-ai.html" class="latest-item">
-            <div class="li-emoji">📊</div>
-            <div>
-              <div class="li-title">Julius AI for Data Analysis Teams</div>
-              <div class="li-meta"><span class="li-score">★★★★☆</span> 8.4 · Business · Apr 26</div>
-            </div>
-          </a>
-          <a href="reviews/adobe-firefly.html" class="latest-item">
-            <div class="li-emoji">🎨</div>
-            <div>
-              <div class="li-title">Adobe Firefly 3: Closer to Midjourney?</div>
-              <div class="li-meta"><span class="li-score">★★★☆☆</span> 7.8 · Image · Apr 22</div>
-            </div>
-          </a>
-          <a href="reviews/github-copilot.html" class="latest-item">
-            <div class="li-emoji">💻</div>
-            <div>
-              <div class="li-title">GitHub Copilot: AI Pair Programming</div>
-              <div class="li-meta"><span class="li-score">★★★★★</span> 9.2 · Coding · May 10</div>
-            </div>
-          </a>
-          <a href="reviews/runway-ml.html" class="latest-item">
-            <div class="li-emoji">🎬</div>
-            <div>
-              <div class="li-title">Runway ML: AI Video Generation</div>
-              <div class="li-meta"><span class="li-score">★★★★☆</span> 8.5 · Image & Video · May 10</div>
-            </div>
-          </a>
-        </div>
+<!-- BEST OF 2026 ARTICLES -->
+<section class="articles-section">
+  <div class="section-label">2026 Roundup Guides</div>
+  <h2 class="section-title-lg">The best AI tools of <span style="color:var(--gold)">2026</span>, ranked</h2>
+  <p class="section-desc">Comprehensive buying guides based on months of hands-on testing.</p>
+  <div class="articles-grid">
+    <a href="articles/best-ai-writing-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)">✍️</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span>
+        <h3>10 Best AI Writing Tools</h3>
+        <p>Claude Pro (9.4), ChatGPT-4o (8.7), Jasper, Grammarly & more</p>
       </div>
+    </a>
+    <a href="articles/best-ai-coding-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)">💻</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span>
+        <h3>8 Best AI Coding Tools</h3>
+        <p>Cursor (9.1), GitHub Copilot (8.9), Llama 3.3 & more</p>
+      </div>
+    </a>
+    <a href="articles/best-ai-productivity-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#fff7ec,#ffe4c4)">⚡</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span>
+        <h3>7 Best AI Productivity Tools</h3>
+        <p>Notion AI (8.6), ChatGPT-4o (8.7), Perplexity Pro & more</p>
+      </div>
+    </a>
+    <a href="articles/best-ai-image-generators-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f9eeff,#edd4ff)">🎨</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#F9EEFF;color:#7A21C4">Image & Video</span>
+        <h3>7 Best AI Image Generators</h3>
+        <p>Midjourney v7 (8.8), DALL-E 3, Runway ML & more</p>
+      </div>
+    </a>
+    <a href="articles/best-ai-audio-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#fef2f2,#fecaca)">🎙️</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#FEF2F2;color:#E83B3B">Audio & Voice</span>
+        <h3>8 Best AI Audio & Voice Tools</h3>
+        <p>ElevenLabs (9.0), Suno AI, Murf, Lovo & more</p>
+      </div>
+    </a>
+    <a href="articles/best-ai-business-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">📊</div>
+      <div class="article-card-body">
+        <span class="article-card-tag" style="background:#F0FDF4;color:#166534">Business</span>
+        <h3>8 Best AI Business Tools</h3>
+        <p>Julius AI, ChatGPT Enterprise, Claude Teams & more</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- TOP REVIEWS -->
+<section class="reviews-section">
+  <div class="section-label">Editor's Picks</div>
+  <h2 class="section-title-lg">Highest-rated <span style="color:var(--gold)">reviews</span></h2>
+  <p class="section-desc">Our most popular in-depth reviews, updated regularly.</p>
+  <div class="reviews-scroll">
+    <a href="reviews/claude-pro.html" class="review-card">
+      <div class="rc-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)"><span style="font-size:2.5rem">✍️</span><div class="rc-badge">9.4</div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#EEF4FF;color:#2C5EE8">Writing</span></div><div class="rc-title">Claude Pro Review</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.4</span></div></div></div>
+    </a>
+    <a href="reviews/cursor-ai.html" class="review-card">
+      <div class="rc-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)"><span style="font-size:2.5rem">💻</span><div class="rc-badge">9.1</div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#EDFAF6;color:#0B8E72">Coding</span></div><div class="rc-title">Cursor AI Review</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.1</span></div></div></div>
+    </a>
+    <a href="reviews/perplexity-pro.html" class="review-card">
+      <div class="rc-img" style="background:linear-gradient(135deg,#fff7ec,#ffe4c4)"><span style="font-size:2.5rem">🔍</span><div class="rc-badge">9.0</div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#FFF7EC;color:#CC6B0B">Productivity</span></div><div class="rc-title">Perplexity Pro</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.0</span></div></div></div>
+    </a>
+    <a href="reviews/github-copilot.html" class="review-card">
+      <div class="rc-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)"><span style="font-size:2.5rem">🐙</span><div class="rc-badge">8.9</div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#EDFAF6;color:#0B8E72">Coding</span></div><div class="rc-title">GitHub Copilot</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★☆</span><span style="font-family:var(--font-mono);font-size:.8rem">8.9</span></div></div></div>
+    </a>
+  </div>
+</section>
+
+<!-- HOW WE REVIEW -->
+<section>
+  <h2 class="section-title-lg">How we <span style="color:var(--gold)">review</span></h2>
+  <p class="section-desc">Every tool on Airecmark goes through the same rigorous process.</p>
+  <div class="method-strip">
+    <div class="method-card">
+      <div class="method-icon">⏱️</div>
+      <h4>2-4 Weeks of Testing</h4>
+      <p>We use each tool for real work before publishing — no first impressions, only sustained experience.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">📊</div>
+      <h4>5-Dimension Scoring</h4>
+      <p>Features, Ease of Use, Output Quality, Value for Money, and Support — scored independently.</p>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🔍</div>
+      <h4>100% Independent</h4>
+      <p>We pay for every subscription ourselves. No tool gets preferential treatment for sponsorship.</p>
     </div>
   </div>
 </section>
 
-<!-- DEAL OF THE WEEK -->
-<div class="deal-section">
-  <div class="deal-inner">
-    <div>
-      <div class="deal-label">⚡ Deal of the Week</div>
-      <div class="deal-title">Save on the tools we actually recommend</div>
-      <div class="deal-desc">Every deal on StackHK is from a tool we've personally tested and reviewed. Affiliate commissions help us keep content free — never influence our scores.</div>
-      <a href="deals.html" class="btn-primary" style="background:var(--gold);color:var(--black)">Browse All Deals →</a>
-    </div>
-    <div class="deal-card">
-      <div class="deal-logo-row">
-        <div class="deal-logo-box">✍️</div>
-        <div>
-          <div class="deal-tool-name">Jasper AI</div>
-          <div class="deal-tool-cat">Writing Tools</div>
-        </div>
-      </div>
-      <div class="discount-badge">🏷️ 20% OFF — First 3 Months</div>
-      <div class="code-box">
-        <span class="code-text">STACKHK20</span>
-        <button class="copy-btn">Copy</button>
-      </div>
-      <div class="deal-expires">⏱ Offer expires July 31, 2026</div>
-      <button class="btn-deal">Get Jasper at 20% Off →</button>
-    </div>
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Stay ahead of the AI curve</h2>
+    <p>Get our best reviews and tool recommendations delivered every Thursday. 4,200+ readers and counting.</p>
+    <form id="nlForm" style="display:flex;gap:.75rem;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center">
+      <input type="email" placeholder="Your email address" required style="flex:1;min-width:200px;padding:.75rem 1.25rem;border-radius:100px;border:none;font-size:.9rem;font-family:var(--font-sans);outline:none">
+      <button type="submit" class="btn btn-gold" style="white-space:nowrap">Subscribe →</button>
+    </form>
+    <p style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:1rem">No spam. Unsubscribe anytime.</p>
   </div>
 </div>
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section" id="newsletter">
-  <div class="newsletter-inner">
-    <div class="nl-title">Stay ahead of the AI curve.</div>
-    <p class="nl-sub">Get our best reviews, comparisons, and tool recommendations delivered every Thursday. No fluff, no filler — just the tools worth your time.</p>
-    <form class="nl-form">
-      <input type="email" class="nl-input" placeholder="Your email address" required>
-      <button type="submit" class="nl-btn">Subscribe →</button>
-    </form>
-    <div class="nl-fine">Every Thursday · No spam · Unsubscribe anytime · 4,200+ readers</div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
   <div style="max-width:1200px;margin:0 auto">
-    <div class="affiliate-note">
-      Affiliate disclosure: Some links on this site are affiliate links. StackHK may earn a commission when you click through and purchase. This never affects our ratings or editorial independence. All tools are independently tested and reviewed.
-    </div>
+    <div class="affiliate-note">Affiliate disclosure: Some links on this site are affiliate links. We may earn a commission at no extra cost to you. This never affects our ratings.</div>
   </div>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo"><img src="images/logo-white.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></div>
+      <div class="footer-logo"><img src="images/logo-white.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></div>
       <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews. We test so you don't have to.</div>
-      <div class="footer-addr">📍 7/F, Park Aura Building<br>58 Electric Road, Tin Hau<br>Hong Kong</div>
+      <div class="footer-addr">7/F, Park Aura Building, 58 Electric Road, Tin Hau, Hong Kong</div>
     </div>
     <div>
-      <div class="footer-col-title">Reviews</div>
+      <div class="footer-col-title">Categories</div>
       <ul class="footer-links">
-        <li><a href="reviews.html">All Reviews</a></li>
         <li><a href="categories/writing.html">Writing Tools</a></li>
         <li><a href="categories/coding.html">Coding Tools</a></li>
         <li><a href="categories/productivity.html">Productivity</a></li>
         <li><a href="categories/image-video.html">Image & Video</a></li>
+        <li><a href="categories/audio.html">Audio & Voice</a></li>
         <li><a href="categories/business.html">Business AI</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">More</div>
+      <div class="footer-col-title">Resources</div>
       <ul class="footer-links">
-        <li><a href="compare.html">Comparisons</a></li>
-        <li><a href="deals.html">Deals & Offers</a></li>
+        <li><a href="articles/best-ai-writing-tools-2026.html">Best AI Writing Tools 2026</a></li>
+        <li><a href="articles/best-ai-coding-tools-2026.html">Best AI Coding Tools 2026</a></li>
+        <li><a href="compare.html">Tool Comparisons</a></li>
+        <li><a href="deals.html">Deals & Discounts</a></li>
         <li><a href="weekly.html">Weekly Newsletter</a></li>
-        <li><a href="submit.html">Submit a Tool</a></li>
-        <li><a href="about.html">About StackHK</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Legal</div>
+      <div class="footer-col-title">Company</div>
       <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="disclosure.html">Affiliate Disclosure</a></li>
-        <li><a href="#">Review Methodology</a></li>
-        <li><a href="mailto:admin@airecmark.com">Contact Us</a></li>
+        <li><a href="mailto:admin@airecmark.com">admin@airecmark.com</a></li>
       </ul>
     </div>
   </div>
   <div style="max-width:1200px;margin:0 auto">
-    <div class="footer-bottom">
-      <div>© 2026 StackHK / Airecmark Media. All rights reserved. Hong Kong.</div>
-      <div style="display:flex;gap:1.25rem">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="disclosure.html">Disclosure</a>
-        <a href="mailto:admin@airecmark.com">admin@airecmark.com</a>
-      </div>
-    </div>
+    <div class="footer-bottom"><div>© 2026 Airecmark Media. All rights reserved. Hong Kong.</div></div>
   </div>
 </footer>
-
 <script src="js/main.js"></script>
+<script>
+document.getElementById('nlForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var email = this.querySelector('input').value;
+  var subs = JSON.parse(localStorage.getItem('stackhk_subscribers') || '[]');
+  subs.push({ id: Date.now(), email: email, name: email.split('@')[0], date: new Date().toISOString().split('T')[0], status: 'active' });
+  localStorage.setItem('stackhk_subscribers', JSON.stringify(subs));
+  this.innerHTML = '<p style="color:var(--gold);font-weight:600">Thanks for subscribing! Check your inbox.</p>';
+});
+</script>
 </body>
 </html>
-
-
