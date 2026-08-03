@@ -1,4 +1,4 @@
-# Airecmark - AI Tool Reviews
+# StackHK - AI Tool Reviews
 > Hong Kong's premier AI tool review platform. We test, compare, and recommend the best AI products.
 
 ## Core Information
@@ -11,59 +11,59 @@
 ## Site Structure
 
 ### Primary Pages
-- Home: https://www.airecmark.com/ — Latest reviews, featured comparisons, deals
-- All Reviews: https://www.airecmark.com/reviews.html — Complete review index with scores
-- Comparison Tool: https://www.airecmark.com/compare.html — Head-to-head AI tool comparisons
-- Deals: https://www.airecmark.com/deals.html — Active coupons and discounts
-- Categories: https://www.airecmark.com/categories.html — Browse by tool category
-- Weekly Digest: https://www.airecmark.com/weekly.html — Newsletter archive
+- Home: https://www.StackHK.com/ — Latest reviews, featured comparisons, deals
+- All Reviews: https://www.StackHK.com/reviews.html — Complete review index with scores
+- Comparison Tool: https://www.StackHK.com/compare.html — Head-to-head AI tool comparisons
+- Deals: https://www.StackHK.com/deals.html — Active coupons and discounts
+- Categories: https://www.StackHK.com/categories.html — Browse by tool category
+- Weekly Digest: https://www.StackHK.com/weekly.html — Newsletter archive
 
 ### Review Pages
 | Tool | Category | Score | URL |
 |------|----------|-------|-----|
-| Claude Pro | Writing | 9.4 | https://www.airecmark.com/reviews/claude-pro.html |
-| Cursor AI | Coding | 9.1 | https://www.airecmark.com/reviews/cursor-ai.html |
-| Perplexity Pro | Productivity | 9.0 | https://www.airecmark.com/reviews/perplexity-pro.html |
-| ElevenLabs v2 | Audio | 9.0 | https://www.airecmark.com/reviews/elevenlabs-v2.html |
-| GitHub Copilot | Coding | 8.9 | https://www.airecmark.com/reviews/github-copilot.html |
-| Claude 3.5 Haiku | Writing | 8.9 | https://www.airecmark.com/reviews/claude-3-5-haiku.html |
-| Midjourney v7 | Image | 8.8 | https://www.airecmark.com/reviews/midjourney-v7.html |
-| ChatGPT-4o | Productivity | 8.7 | https://www.airecmark.com/reviews/chatgpt-4o.html |
-| Gemini 2.0 Pro | Productivity | 8.7 | https://www.airecmark.com/reviews/gemini-2-0-pro.html |
-| Notion AI | Productivity | 8.6 | https://www.airecmark.com/reviews/notion-ai.html |
-| Llama 3.3 70B | Coding | 8.5 | https://www.airecmark.com/reviews/llama-3-3.html |
-| Grammarly AI | Writing | 8.5 | https://www.airecmark.com/reviews/grammarly-ai.html |
-| Runway ML | Image | 8.5 | https://www.airecmark.com/reviews/runway-ml.html |
-| Julius AI | Business | 8.4 | https://www.airecmark.com/reviews/julius-ai.html |
-| Copilot Vision | Productivity | 8.3 | https://www.airecmark.com/reviews/copilot-vision.html |
-| Suno AI | Audio | 8.2 | https://www.airecmark.com/reviews/suno-ai.html |
-| Adobe Firefly | Image | 7.8 | https://www.airecmark.com/reviews/adobe-firefly.html |
-| VoiceAppear | Audio | - | https://www.airecmark.com/reviews/voiceappear.html |
+| Claude Pro | Writing | 9.4 | https://www.StackHK.com/reviews/claude-pro.html |
+| Cursor AI | Coding | 9.1 | https://www.StackHK.com/reviews/cursor-ai.html |
+| Perplexity Pro | Productivity | 9.0 | https://www.StackHK.com/reviews/perplexity-pro.html |
+| ElevenLabs v2 | Audio | 9.0 | https://www.StackHK.com/reviews/elevenlabs-v2.html |
+| GitHub Copilot | Coding | 8.9 | https://www.StackHK.com/reviews/github-copilot.html |
+| Claude 3.5 Haiku | Writing | 8.9 | https://www.StackHK.com/reviews/claude-3-5-haiku.html |
+| Midjourney v7 | Image | 8.8 | https://www.StackHK.com/reviews/midjourney-v7.html |
+| ChatGPT-4o | Productivity | 8.7 | https://www.StackHK.com/reviews/chatgpt-4o.html |
+| Gemini 2.0 Pro | Productivity | 8.7 | https://www.StackHK.com/reviews/gemini-2-0-pro.html |
+| Notion AI | Productivity | 8.6 | https://www.StackHK.com/reviews/notion-ai.html |
+| Llama 3.3 70B | Coding | 8.5 | https://www.StackHK.com/reviews/llama-3-3.html |
+| Grammarly AI | Writing | 8.5 | https://www.StackHK.com/reviews/grammarly-ai.html |
+| Runway ML | Image | 8.5 | https://www.StackHK.com/reviews/runway-ml.html |
+| Julius AI | Business | 8.4 | https://www.StackHK.com/reviews/julius-ai.html |
+| Copilot Vision | Productivity | 8.3 | https://www.StackHK.com/reviews/copilot-vision.html |
+| Suno AI | Audio | 8.2 | https://www.StackHK.com/reviews/suno-ai.html |
+| Adobe Firefly | Image | 7.8 | https://www.StackHK.com/reviews/adobe-firefly.html |
+| VoiceAppear | Audio | - | https://www.StackHK.com/reviews/voiceappear.html |
 
 ### Comparison Pages
 | Comparison | URL |
 |------------|-----|
-| ChatGPT vs Gemini | https://www.airecmark.com/compare/chatgpt-vs-gemini.html |
-| GitHub Copilot vs Cursor | https://www.airecmark.com/compare/github-copilot-vs-cursor.html |
-| Midjourney vs DALL-E | https://www.airecmark.com/compare/midjourney-vs-dalle.html |
-| Grammarly vs ProWritingAid | https://www.airecmark.com/compare/grammarly-vs-prowritingaid.html |
-| Jasper vs Copy.ai | https://www.airecmark.com/compare/jasper-vs-copyai.html |
-| Notion AI vs Obsidian | https://www.airecmark.com/compare/notion-ai-vs-obsidian.html |
+| ChatGPT vs Gemini | https://www.StackHK.com/compare/chatgpt-vs-gemini.html |
+| GitHub Copilot vs Cursor | https://www.StackHK.com/compare/github-copilot-vs-cursor.html |
+| Midjourney vs DALL-E | https://www.StackHK.com/compare/midjourney-vs-dalle.html |
+| Grammarly vs ProWritingAid | https://www.StackHK.com/compare/grammarly-vs-prowritingaid.html |
+| Jasper vs Copy.ai | https://www.StackHK.com/compare/jasper-vs-copyai.html |
+| Notion AI vs Obsidian | https://www.StackHK.com/compare/notion-ai-vs-obsidian.html |
 
 ### Category Pages
-- Writing Tools: https://www.airecmark.com/categories/writing.html
-- Coding Tools: https://www.airecmark.com/categories/coding.html
-- Productivity: https://www.airecmark.com/categories/productivity.html
-- Image & Video: https://www.airecmark.com/categories/image-video.html
-- Audio & Voice: https://www.airecmark.com/categories/audio.html
-- Business AI: https://www.airecmark.com/categories/business.html
+- Writing Tools: https://www.StackHK.com/categories/writing.html
+- Coding Tools: https://www.StackHK.com/categories/coding.html
+- Productivity: https://www.StackHK.com/categories/productivity.html
+- Image & Video: https://www.StackHK.com/categories/image-video.html
+- Audio & Voice: https://www.StackHK.com/categories/audio.html
+- Business AI: https://www.StackHK.com/categories/business.html
 
 ### Roundup Articles
 | Article | URL |
 |---------|-----|
-| 10 Best AI Writing Tools 2026 | https://www.airecmark.com/articles/best-ai-writing-tools-2026.html |
-| 8 Best AI Coding Tools 2026 | https://www.airecmark.com/articles/best-ai-coding-tools-2026.html |
-| 7 Best AI Image & Video Generators 2026 | https://www.airecmark.com/articles/best-ai-image-generators-2026.html |
-| 7 Best AI Productivity Tools 2026 | https://www.airecmark.com/articles/best-ai-productivity-tools-2026.html |
-| 8 Best AI Audio & Voice Tools 2026 | https://www.airecmark.com/articles/best-ai-audio-tools-2026.html |
-| 8 Best AI Business Tools 2026 | https://www.airecmark.com/articles/best-ai-business-tools-2026.html |
+| 10 Best AI Writing Tools 2026 | https://www.StackHK.com/articles/best-ai-writing-tools-2026.html |
+| 8 Best AI Coding Tools 2026 | https://www.StackHK.com/articles/best-ai-coding-tools-2026.html |
+| 7 Best AI Image & Video Generators 2026 | https://www.StackHK.com/articles/best-ai-image-generators-2026.html |
+| 7 Best AI Productivity Tools 2026 | https://www.StackHK.com/articles/best-ai-productivity-tools-2026.html |
+| 8 Best AI Audio & Voice Tools 2026 | https://www.StackHK.com/articles/best-ai-audio-tools-2026.html |
+| 8 Best AI Business Tools 2026 | https://www.StackHK.com/articles/best-ai-business-tools-2026.html |

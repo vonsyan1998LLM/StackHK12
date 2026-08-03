@@ -4,10 +4,10 @@
 <meta name="robots" content="index, follow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airecmark — Honest AI Tool Reviews, Tested by Humans</title>
-<meta name="description" content="Airecmark is Hong Kong's most trusted AI tool review platform. We independently test, score, and compare 120+ AI tools across 6 categories. No sponsored reviews, ever.">
+<title>StackHK — Honest AI Tool Reviews, Tested by Humans</title>
+<meta name="description" content="StackHK is Hong Kong's most trusted AI tool review platform. We independently test, score, and compare 120+ AI tools across 6 categories. No sponsored reviews, ever.">
 <link rel="canonical" href="https://www.airecmark.com/">
-<meta property="og:title" content="Airecmark — Honest AI Tool Reviews, Tested by Humans">
+<meta property="og:title" content="StackHK — Honest AI Tool Reviews, Tested by Humans">
 <meta property="og:description" content="30+ AI tools independently tested. Real scores, honest comparisons, zero hype.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.airecmark.com">
@@ -86,7 +86,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="images/logo.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></a>
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="reviews.html">AI Reviews</a>
@@ -248,7 +248,7 @@
 <!-- HOW WE REVIEW -->
 <section>
   <h2 class="section-title-lg">How we <span style="color:var(--gold)">review</span></h2>
-  <p class="section-desc">Every tool on Airecmark goes through the same rigorous process.</p>
+  <p class="section-desc">Every tool on StackHK goes through the same rigorous process.</p>
   <div class="method-strip">
     <div class="method-card">
       <div class="method-icon">⏱️</div>
@@ -288,7 +288,7 @@
   </div>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo"><img src="images/logo-white.svg" alt="Airecmark" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Airec<span>mark</span></div>
+      <div class="footer-logo"><img src="images/logo-white.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></div>
       <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews. We test so you don't have to.</div>
       <div class="footer-addr">7/F, Park Aura Building, 58 Electric Road, Tin Hau, Hong Kong</div>
     </div>
@@ -323,12 +323,12 @@
         <li><a href="terms.html">Terms of Use</a></li>
         <li><a href="disclosure.html">Affiliate Disclosure</a></li>
         <li><a href="mailto:admin@airecmark.com">admin@airecmark.com</a></li>
-        <li><a href="https://www.linkedin.com/in/Airecmark" target="_blank" rel="me">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/StackHK" target="_blank" rel="me">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div style="max-width:1200px;margin:0 auto">
-    <div class="footer-bottom"><div>© 2026 Airecmark Media. All rights reserved. Hong Kong.</div></div>
+    <div class="footer-bottom"><div>© 2026 StackHK Media. All rights reserved. Hong Kong.</div></div>
   </div>
 </footer>
 <script src="js/main.js"></script>
@@ -336,9 +336,9 @@
 document.getElementById('nlForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var email = this.querySelector('input').value;
-  var subs = JSON.parse(localStorage.getItem('Airecmark_subscribers') || '[]');
+  var subs = JSON.parse(localStorage.getItem('StackHK_subscribers') || '[]');
   subs.push({ id: Date.now(), email: email, name: email.split('@')[0], date: new Date().toISOString().split('T')[0], status: 'active' });
-  localStorage.setItem('Airecmark_subscribers', JSON.stringify(subs));
+  localStorage.setItem('StackHK_subscribers', JSON.stringify(subs));
   this.innerHTML = '<p style="color:var(--gold);font-weight:600">Thanks for subscribing! Check your inbox.</p>';
 });
 </script>
