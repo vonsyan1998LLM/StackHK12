@@ -73,6 +73,25 @@
 .cta-banner-inner h2{font-family:var(--font-display);color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:.75rem}
 .cta-banner-inner p{color:rgba(255,255,255,.5);font-size:1rem;margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
 
+/* Newsletter Form */
+.nl-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;align-items:stretch}
+.nl-field{flex:1;position:relative;display:flex;align-items:center;min-width:0}
+.nl-field-icon{position:absolute;left:1.25rem;width:18px;height:18px;color:rgba(255,255,255,.35);pointer-events:none;transition:color .2s}
+.nl-field input{width:100%;padding:1rem 1.25rem 1rem 3rem;border-radius:100px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:.95rem;font-family:var(--font-sans);outline:none;transition:all .2s}
+.nl-field input::placeholder{color:rgba(255,255,255,.35)}
+.nl-field input:hover{border-color:rgba(255,255,255,.22)}
+.nl-field input:focus{border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.nl-field:focus-within .nl-field-icon{color:var(--gold)}
+.nl-submit{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:0 1.75rem;border-radius:100px;border:none;background:linear-gradient(135deg,#F5A623,#E8951A);color:#0F1117;font-weight:700;font-size:.95rem;font-family:var(--font-sans);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nl-submit:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,166,35,.35)}
+.nl-submit:active{transform:translateY(0)}
+.nl-submit-arrow{width:18px;height:18px;transition:transform .2s}
+.nl-submit:hover .nl-submit-arrow{transform:translateX(4px)}
+.nl-form.success .nl-field{display:none}
+.nl-form.success .nl-submit{background:linear-gradient(135deg,#0B8E72,#087560);color:#fff;cursor:default;pointer-events:none}
+.nl-form.success .nl-submit-arrow{display:none}
+.nl-form.success .nl-submit-text::after{content:' \2713';font-size:1.1rem}
+
 @media(max-width:768px){
   .home-hero h1{font-size:2rem}
   .articles-grid{grid-template-columns:1fr}
@@ -273,9 +292,15 @@
   <div class="cta-banner-inner">
     <h2>Stay ahead of the AI curve</h2>
     <p>Get our best reviews and tool recommendations delivered every Thursday. A growing community of readers.</p>
-    <form id="nlForm" style="display:flex;gap:.75rem;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center">
-      <input type="email" placeholder="Your email address" required style="flex:1;min-width:200px;padding:.75rem 1.25rem;border-radius:100px;border:none;font-size:.9rem;font-family:var(--font-sans);outline:none">
-      <button type="submit" class="btn btn-gold" style="white-space:nowrap">Subscribe →</button>
+    <form id="nlForm" class="nl-form">
+      <div class="nl-field">
+        <svg class="nl-field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <input type="email" id="nlEmail" placeholder="Enter your email address" required>
+      </div>
+      <button type="submit" class="nl-submit" id="nlSubmitBtn">
+        <span class="nl-submit-text">Subscribe</span>
+        <svg class="nl-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </form>
     <p style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:1rem">No spam. Unsubscribe anytime.</p>
   </div>
@@ -335,11 +360,12 @@
 <script>
 document.getElementById('nlForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  var email = this.querySelector('input').value;
+  var email = document.getElementById('nlEmail').value;
   var subs = JSON.parse(localStorage.getItem('StackHK_subscribers') || '[]');
   subs.push({ id: Date.now(), email: email, name: email.split('@')[0], date: new Date().toISOString().split('T')[0], status: 'active' });
   localStorage.setItem('StackHK_subscribers', JSON.stringify(subs));
-  this.innerHTML = '<p style="color:var(--gold);font-weight:600">Thanks for subscribing! Check your inbox.</p>';
+  this.classList.add('success');
+  document.getElementById('nlSubmitBtn').querySelector('.nl-submit-text').textContent = 'Subscribed!';
 });
 </script>
 </body>
