@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.airecmark.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.airecmark.com/reviews.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.airecmark.com/saas.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.airecmark.com/categories.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.airecmark.com/compare.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.airecmark.com/deals.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -9,6 +10,7 @@
   <url><loc>https://www.airecmark.com/search.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.airecmark.com/submit.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.airecmark.com/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.airecmark.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.airecmark.com/disclosure.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.airecmark.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.airecmark.com/terms.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
@@ -18,6 +20,25 @@
   <url><loc>https://www.airecmark.com/categories/image-video.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/categories/audio.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/categories/business.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-writing-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-coding-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-image-generators-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-productivity-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-audio-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-ai-business-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/best-free-ai-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/articles/chatgpt-vs-claude-vs-gemini-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.airecmark.com/saas/lovable-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/clay-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/attio-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/hubspot-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/monday-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/mixpanel-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/postman-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/slack-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/loom-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/activecampaign-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/saas/deel-review.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/reviews/claude-pro.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.airecmark.com/reviews/cursor-ai.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.airecmark.com/reviews/chatgpt-4o.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -35,7 +56,8 @@
   <url><loc>https://www.airecmark.com/reviews/llama-3-3.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/reviews/copilot-vision.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/reviews/elevenlabs-v2.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.airecmark.com/reviews/voiceappear.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/reviews/grammarly-vs-prowritingaid.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.airecmark.com/reviews/voiceappear.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.airecmark.com/compare/chatgpt-vs-gemini.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/compare/github-copilot-vs-cursor.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.airecmark.com/compare/grammarly-vs-prowritingaid.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
