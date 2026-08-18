@@ -4,11 +4,11 @@
 <meta name="robots" content="index, follow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StackHK — Honest AI Tool Reviews, Tested by Humans</title>
-<meta name="description" content="StackHK is Hong Kong's most trusted AI tool review platform. We independently test, score, and compare 30+ AI tools across 6 categories. No sponsored reviews, ever.">
+<title>StackHK — Independent AI Tool & B2B SaaS Reviews, Tested by Real Teams</title>
+<meta name="description" content="StackHK is an independent review publication testing and scoring 43+ AI tools and B2B SaaS products across 6 categories. 2-4 weeks of hands-on testing per tool. No sponsored reviews, ever.">
 <link rel="canonical" href="https://www.airecmark.com/">
-<meta property="og:title" content="StackHK — Honest AI Tool Reviews, Tested by Humans">
-<meta property="og:description" content="30+ AI tools independently tested. Real scores, honest comparisons, zero hype.">
+<meta property="og:title" content="StackHK — Independent AI Tool & B2B SaaS Reviews">
+<meta property="og:description" content="43+ AI tools and B2B SaaS products independently tested and scored. Real teams, real workflows, zero hype.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.airecmark.com">
 <meta property="og:image" content="https://www.airecmark.com/images/best-writing-tools-hero.png">
@@ -18,86 +18,127 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* Enhanced Homepage Styles */
-.home-hero{background:linear-gradient(180deg,#0F1117 0%,#1a1d28 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
-.home-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,166,35,.08) 0%,transparent 60%)}
-.home-hero>*{position:relative;z-index:1}
-.home-hero .hero-badge{display:inline-block;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);color:var(--gold);padding:.4rem 1rem;border-radius:100px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:1.5rem}
-.home-hero h1{font-family:var(--font-display);font-size:3.2rem;font-weight:900;color:#fff;line-height:1.15;max-width:700px;margin:0 auto 1.25rem}
+/* ===== StackHK Homepage v2 ===== */
+.home-hero{background:linear-gradient(180deg,#0F1117 0%,#171a24 100%);padding:5.5rem 2rem 4.5rem;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse at center,rgba(245,166,35,.12) 0%,transparent 60%);pointer-events:none}
+.home-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);color:var(--gold);padding:.4rem 1rem;border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.5px;margin-bottom:1.5rem}
+.hero-badge .dot{width:6px;height:6px;background:#00C2A0;border-radius:50%;display:inline-block}
+.home-hero h1{font-family:var(--font-display);font-size:3.3rem;font-weight:900;color:#fff;line-height:1.12;letter-spacing:-.5px;margin-bottom:1.25rem}
 .home-hero h1 em{color:var(--gold);font-style:normal}
-.home-hero .hero-desc{font-size:1.1rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:600px;margin:0 auto 2rem}
-.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
-.hero-actions .btn{font-size:.95rem;font-weight:600;padding:.8rem 1.75rem;border-radius:100px;text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:all .2s}
-.btn-gold{background:linear-gradient(135deg,#F5A623,#E8951A);color:#0F1117}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,166,35,.25)}
-.btn-ghost-light{border:1.5px solid rgba(255,255,255,.2);color:#fff}
-.btn-ghost-light:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
-.stats-row{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
-.stat-block{text-align:center}
-.stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1}
-.stat-label{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:.35rem}
+.hero-desc{font-size:1.08rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:540px;margin-bottom:2rem}
+.hero-desc strong{color:rgba(255,255,255,.85);font-weight:600}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.75rem}
+.btn-gold{background:linear-gradient(135deg,#F5A623,#E8951A);color:#0F1117;font-weight:700;font-size:.95rem;padding:.85rem 1.75rem;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,166,35,.3)}
+.btn-ghost-light{border:1.5px solid rgba(255,255,255,.2);color:#fff;font-weight:600;font-size:.95rem;padding:.85rem 1.75rem;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-ghost-light:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.05)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.1)}
+.hero-stat .num{font-family:var(--font-mono);font-size:1.6rem;font-weight:500;color:var(--gold);line-height:1}
+.hero-stat .lbl{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:.4rem}
+.hero-visual{position:relative;min-height:380px}
+.mini-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px);border-radius:14px;padding:1.1rem 1.25rem;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.mc-top{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+.mc-logo{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.mc-name{font-weight:700;font-size:.95rem;color:#fff}
+.mc-tag{font-size:.7rem;font-weight:600;padding:.18rem .55rem;border-radius:100px;letter-spacing:.2px;margin-left:auto}
+.mc-verdict{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.45;margin-bottom:.65rem}
+.mc-score{display:flex;align-items:center;gap:.4rem}
+.stars{color:var(--gold);font-size:.78rem;letter-spacing:-.5px}
+.score-num{font-family:var(--font-mono);font-size:.85rem;font-weight:500;color:#fff}
+.mc1{position:absolute;top:0;right:0;width:260px;z-index:3}
+.mc2{position:absolute;top:120px;left:0;width:260px;z-index:2}
+.mc3{position:absolute;top:240px;right:30px;width:260px;z-index:1}
 
-/* Navigation Pills */
-.section-pills{max-width:1100px;margin:0 auto;padding:3rem 2rem 1rem;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-.pill{background:var(--card);border:1px solid var(--border);padding:.6rem 1.25rem;border-radius:100px;font-size:.85rem;font-weight:500;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:all .15s}
-.pill:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+/* Trust strip */
+.trust-strip{background:#0F1117;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:1.1rem 2rem}
+.trust-strip-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.55rem;font-size:.85rem;font-weight:500;color:rgba(255,255,255,.55);white-space:nowrap}
+.trust-item .t-ico{font-size:1rem;color:var(--gold)}
 
-/* Article Cards Grid */
-.articles-section{padding:3rem 2rem 4rem}
+/* Category cards */
+.cat-section{padding:4.5rem 2rem 2.5rem}
+.cats-row{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:.875rem}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem 1rem;text-align:center;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s;display:block}
+.cat-card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:var(--shadow)}
+.cat-emoji{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.cat-name{font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:.25rem}
+.cat-count{font-size:.72rem;color:var(--muted)}
+
+/* Generic section */
 .section-label{text-align:center;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:.75rem}
-.section-title-lg{text-align:center;font-family:var(--font-display);font-size:2rem;font-weight:900;margin-bottom:.75rem}
-.section-desc{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2.5rem;max-width:550px;margin-left:auto;margin-right:auto}
-.articles-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.section-title-lg{text-align:center;font-family:var(--font-display);font-size:2.1rem;font-weight:900;margin-bottom:.75rem;letter-spacing:-.3px}
+.section-desc{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2.75rem;max-width:580px;margin-left:auto;margin-right:auto}
+
+/* Reviews grid (4-col) */
+.reviews-section{padding:2.5rem 2rem 4rem}
+.reviews-scroll{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+
+/* Latest content */
+.latest-section{padding:3rem 2rem 4rem;background:var(--bg2)}
+.latest-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+
+/* Roundup article cards */
+.articles-section{padding:3rem 2rem 4rem}
+.articles-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .article-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-decoration:none;transition:all .2s;display:flex;flex-direction:column}
-.article-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.08);border-color:var(--gold)}
-.article-card-img{height:100px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
+.article-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--gold)}
+.article-card-img{height:110px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
 .article-card-body{padding:1.25rem}
 .article-card-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem}
 .article-card h3{font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:.5rem;color:var(--text)}
 .article-card p{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:0}
 
-/* Review Cards Row */
-.reviews-section{padding:0 2rem 4rem}
-.reviews-scroll{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+/* Methodology */
+.method-section{padding:4rem 2rem;background:var(--bg2)}
+.method-strip{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.method-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem 1.5rem;text-align:left}
+.method-card .method-icon{font-size:1.6rem;margin-bottom:.75rem;display:block}
+.method-card h4{font-size:.95rem;font-weight:700;margin-bottom:.5rem}
+.method-card p{font-size:.82rem;color:var(--muted);line-height:1.55}
 
-/* Methodology Strip */
-.method-strip{max-width:1100px;margin:0 auto 4rem;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.method-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center}
-.method-card .method-icon{font-size:1.8rem;margin-bottom:.75rem}
-.method-card h4{font-size:.9rem;font-weight:700;margin-bottom:.35rem}
-.method-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+/* Disclosure banner (compliance) */
+.disclosure-banner{max-width:1200px;margin:0 auto 0;padding:2rem}
+.disclosure-inner{background:#FFF9EF;border:1px solid #F5E0C0;border-radius:var(--radius-lg);padding:1.5rem 1.75rem;display:flex;gap:1rem;align-items:flex-start}
+.disclosure-inner .d-ico{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.disclosure-inner p{font-size:.85rem;color:#6B5B3A;line-height:1.6;margin:0}
+.disclosure-inner a{color:#B87400;font-weight:600}
 
-/* CTA Banner */
-.cta-banner{max-width:1100px;margin:0 auto 4rem;padding:0 2rem}
+/* CTA banner */
+.cta-banner{max-width:1200px;margin:0 auto 4rem;padding:0 2rem}
 .cta-banner-inner{background:linear-gradient(135deg,#0F1117,#1a1d28);border:1px solid rgba(245,166,35,.2);border-radius:var(--radius-lg);padding:3rem 2rem;text-align:center}
-.cta-banner-inner h2{font-family:var(--font-display);color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:.75rem}
-.cta-banner-inner p{color:rgba(255,255,255,.5);font-size:1rem;margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-banner-inner h2{font-family:var(--font-display);color:#fff;font-size:1.9rem;font-weight:900;margin-bottom:.75rem}
+.cta-banner-inner p{color:rgba(255,255,255,.5);font-size:1rem;margin-bottom:1.75rem;max-width:520px;margin-left:auto;margin-right:auto}
 
-/* Newsletter Form */
+/* Newsletter form */
 .nl-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;align-items:stretch}
 .nl-field{flex:1;position:relative;display:flex;align-items:center;min-width:0}
-.nl-field-icon{position:absolute;left:1.25rem;width:18px;height:18px;color:rgba(255,255,255,.35);pointer-events:none;transition:color .2s}
+.nl-field-icon{position:absolute;left:1.25rem;width:18px;height:18px;color:rgba(255,255,255,.35);pointer-events:none}
 .nl-field input{width:100%;padding:1rem 1.25rem 1rem 3rem;border-radius:100px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:.95rem;font-family:var(--font-sans);outline:none;transition:all .2s}
 .nl-field input::placeholder{color:rgba(255,255,255,.35)}
-.nl-field input:hover{border-color:rgba(255,255,255,.22)}
 .nl-field input:focus{border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
-.nl-field:focus-within .nl-field-icon{color:var(--gold)}
 .nl-submit{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:0 1.75rem;border-radius:100px;border:none;background:linear-gradient(135deg,#F5A623,#E8951A);color:#0F1117;font-weight:700;font-size:.95rem;font-family:var(--font-sans);cursor:pointer;transition:all .2s;white-space:nowrap}
 .nl-submit:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,166,35,.35)}
-.nl-submit:active{transform:translateY(0)}
-.nl-submit-arrow{width:18px;height:18px;transition:transform .2s}
-.nl-submit:hover .nl-submit-arrow{transform:translateX(4px)}
 .nl-form.success .nl-field{display:none}
-.nl-form.success .nl-submit{background:linear-gradient(135deg,#0B8E72,#087560);color:#fff;cursor:default;pointer-events:none}
-.nl-form.success .nl-submit-arrow{display:none}
-.nl-form.success .nl-submit-text::after{content:' \2713';font-size:1.1rem}
+.nl-form.success .nl-submit{background:linear-gradient(135deg,#0B8E72,#087560);color:#fff;pointer-events:none}
+.nl-form.success .nl-submit-text::after{content:' ✓';font-size:1.1rem}
 
+@media(max-width:1024px){
+  .home-hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .cats-row{grid-template-columns:repeat(3,1fr)}
+  .method-strip{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:768px){
-  .home-hero h1{font-size:2rem}
-  .articles-grid{grid-template-columns:1fr}
+  .home-hero h1{font-size:2.15rem}
+  .home-hero{padding:4rem 1.25rem 3rem}
   .reviews-scroll{grid-template-columns:repeat(2,1fr)}
+  .articles-grid{grid-template-columns:1fr}
+  .latest-grid{grid-template-columns:1fr}
+  .cats-row{grid-template-columns:repeat(2,1fr)}
   .method-strip{grid-template-columns:1fr}
-  .stats-row{gap:1.5rem}
+  .hero-stats{gap:1.5rem}
+  .trust-strip-inner{gap:1.5rem}
 }
 </style>
 </head>
@@ -115,7 +156,6 @@
       <a href="categories.html">Categories</a>
       <a href="deals.html">Deals</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
     </div>
     <div class="nav-right">
       <a href="weekly.html" class="btn-nav">Newsletter →</a>
@@ -125,92 +165,64 @@
 
 <!-- HERO -->
 <section class="home-hero">
-  <div class="hero-badge">Independent AI Tool Reviews Since 2025</div>
-  <h1>Find the <em>right AI tool</em> for your work.</h1>
-  <p class="hero-desc">We test, score, and compare AI tools so you don't have to waste time and money on the wrong ones. Every review is based on 2-4 weeks of real-world use.</p>
-  <div class="hero-actions">
-    <a href="articles/best-ai-writing-tools-2026.html" class="btn btn-gold">Best AI Tools of 2026 →</a>
-    <a href="reviews.html" class="btn btn-ghost-light">Browse All Reviews</a>
-  </div>
-  <div class="stats-row">
-    <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label">Tools Tested</div></div>
-    <div class="stat-block"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
-    <div class="stat-block"><div class="stat-num">19</div><div class="stat-label">In-Depth Reviews</div></div>
-    <div class="stat-block"><div class="stat-num">Growing</div><div class="stat-label">Newsletter Community</div></div>
+  <div class="home-hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Independent Reviews · No Sponsored Content</div>
+      <h1>We test AI tools &amp; B2B software <em>so you buy right.</em></h1>
+      <p class="hero-desc">StackHK is an independent review publication. Every product goes through <strong>2–4 weeks of hands-on testing</strong> by real teams before we score it — <strong>43+ tools reviewed</strong> across 6 categories, with zero pay-for-play.</p>
+      <div class="hero-actions">
+        <a href="reviews.html" class="btn-gold">Browse All Reviews →</a>
+        <a href="articles/best-ai-writing-tools-2026.html" class="btn-ghost-light">Best AI Tools of 2026</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">43+</div><div class="lbl">Tools Reviewed</div></div>
+        <div class="hero-stat"><div class="num">6</div><div class="lbl">Categories</div></div>
+        <div class="hero-stat"><div class="num">2–4</div><div class="lbl">Weeks Tested Each</div></div>
+        <div class="hero-stat"><div class="num">17</div><div class="lbl">Buying Guides</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mini-card mc1">
+        <div class="mc-top"><div class="mc-logo" style="background:#EDFAF6;color:#0B8E72">💻</div><div class="mc-name">Cursor AI</div><span class="mc-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span></div>
+        <div class="mc-verdict">The best agentic AI editor we've tested. Tab, command-K, and the AI agent make pair programming feel native.</div>
+        <div class="mc-score"><span class="stars">★★★★★</span><span class="score-num">9.1</span></div>
+      </div>
+      <div class="mini-card mc2">
+        <div class="mc-top"><div class="mc-logo" style="background:#EEF4FF;color:#2C5EE8">✍️</div><div class="mc-name">Claude Pro</div><span class="mc-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span></div>
+        <div class="mc-verdict">Our top-rated writing assistant. Long-form quality and nuance no other model matches.</div>
+        <div class="mc-score"><span class="stars">★★★★★</span><span class="score-num">9.4</span></div>
+      </div>
+      <div class="mini-card mc3">
+        <div class="mc-top"><div class="mc-logo" style="background:#FFF7EC;color:#CC6B0B">🔍</div><div class="mc-name">Perplexity Pro</div><span class="mc-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span></div>
+        <div class="mc-verdict">Research-grade answers with live citations. The fastest way to turn questions into sources.</div>
+        <div class="mc-score"><span class="stars">★★★★★</span><span class="score-num">9.0</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- BROWSER BY CATEGORY -->
-<section>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item"><span class="t-ico">✓</span> We pay for every subscription</div>
+    <div class="trust-item"><span class="t-ico">✓</span> No sponsored reviews</div>
+    <div class="trust-item"><span class="t-ico">✓</span> 5-dimension scoring</div>
+    <div class="trust-item"><span class="t-ico">✓</span> Affiliate links disclosed</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="cat-section">
   <div class="section-label">Browse by Category</div>
   <h2 class="section-title-lg">Find tools for <span style="color:var(--gold)">your workflow</span></h2>
   <p class="section-desc">Every category has in-depth individual reviews and best-of roundups.</p>
-  <div class="section-pills">
-    <a href="categories/writing.html" class="pill">✍️ Writing Tools</a>
-    <a href="categories/coding.html" class="pill">💻 Coding Tools</a>
-    <a href="categories/productivity.html" class="pill">⚡ Productivity</a>
-    <a href="categories/image-video.html" class="pill">🎨 Image & Video</a>
-    <a href="categories/audio.html" class="pill">🎙️ Audio & Voice</a>
-    <a href="categories/business.html" class="pill">📊 Business AI</a>
-    <a href="compare.html" class="pill" style="border-color:var(--gold)">⚔️ Compare Tools</a>
-    <a href="deals.html" class="pill" style="border-color:#0B8E72">🏷️ Deals & Discounts</a>
-  </div>
-</section>
-
-<!-- BEST OF 2026 ARTICLES -->
-<section class="articles-section">
-  <div class="section-label">2026 Roundup Guides</div>
-  <h2 class="section-title-lg">The best AI tools of <span style="color:var(--gold)">2026</span>, ranked</h2>
-  <p class="section-desc">Comprehensive buying guides based on months of hands-on testing.</p>
-  <div class="articles-grid">
-    <a href="articles/best-ai-writing-tools-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)">✍️</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span>
-        <h3>10 Best AI Writing Tools</h3>
-        <p>Claude Pro (9.4), ChatGPT-4o (8.7), Jasper, Grammarly & more</p>
-      </div>
-    </a>
-    <a href="articles/best-ai-coding-tools-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)">💻</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span>
-        <h3>8 Best AI Coding Tools</h3>
-        <p>Cursor (9.1), GitHub Copilot (8.9), Llama 3.3 & more</p>
-      </div>
-    </a>
-    <a href="articles/best-ai-productivity-tools-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#fff7ec,#ffe4c4)">⚡</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span>
-        <h3>7 Best AI Productivity Tools</h3>
-        <p>Notion AI (8.6), ChatGPT-4o (8.7), Perplexity Pro & more</p>
-      </div>
-    </a>
-    <a href="articles/best-ai-image-generators-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#f9eeff,#edd4ff)">🎨</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#F9EEFF;color:#7A21C4">Image & Video</span>
-        <h3>7 Best AI Image Generators</h3>
-        <p>Midjourney v7 (8.8), DALL-E 3, Runway ML & more</p>
-      </div>
-    </a>
-    <a href="articles/best-ai-audio-tools-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#fef2f2,#fecaca)">🎙️</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#FEF2F2;color:#E83B3B">Audio & Voice</span>
-        <h3>8 Best AI Audio & Voice Tools</h3>
-        <p>ElevenLabs (9.0), Suno AI, Murf, Lovo & more</p>
-      </div>
-    </a>
-    <a href="articles/best-ai-business-tools-2026.html" class="article-card">
-      <div class="article-card-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">📊</div>
-      <div class="article-card-body">
-        <span class="article-card-tag" style="background:#F0FDF4;color:#166534">Business</span>
-        <h3>8 Best AI Business Tools</h3>
-        <p>Julius AI, ChatGPT Enterprise, Claude Teams & more</p>
-      </div>
-    </a>
+  <div class="cats-row">
+    <a href="categories/writing.html" class="cat-card"><span class="cat-emoji">✍️</span><span class="cat-name">Writing</span><span class="cat-count">AI writers & editors</span></a>
+    <a href="categories/coding.html" class="cat-card"><span class="cat-emoji">💻</span><span class="cat-name">Coding</span><span class="cat-count">AI dev tools</span></a>
+    <a href="categories/productivity.html" class="cat-card"><span class="cat-emoji">⚡</span><span class="cat-name">Productivity</span><span class="cat-count">Workflow & notes</span></a>
+    <a href="categories/image-video.html" class="cat-card"><span class="cat-emoji">🎨</span><span class="cat-name">Image & Video</span><span class="cat-count">Generators & editors</span></a>
+    <a href="categories/audio.html" class="cat-card"><span class="cat-emoji">🎙️</span><span class="cat-name">Audio & Voice</span><span class="cat-count">TTS & music</span></a>
+    <a href="categories/business.html" class="cat-card"><span class="cat-emoji">📊</span><span class="cat-name">Business AI</span><span class="cat-count">Automation & data</span></a>
   </div>
 </section>
 
@@ -218,7 +230,7 @@
 <section class="reviews-section">
   <div class="section-label">Editor's Picks</div>
   <h2 class="section-title-lg">Highest-rated <span style="color:var(--gold)">reviews</span></h2>
-  <p class="section-desc">Our most popular in-depth reviews, updated regularly.</p>
+  <p class="section-desc">Our most thorough in-depth reviews, updated regularly.</p>
   <div class="reviews-scroll">
     <a href="reviews/claude-pro.html" class="review-card">
       <div class="rc-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)"><span style="font-size:2.5rem">✍️</span><div class="rc-badge">9.4</div></div>
@@ -255,52 +267,96 @@
   </div>
 </section>
 
+<!-- LATEST CONTENT -->
+<section class="latest-section">
+  <div class="section-label">Fresh This Week</div>
+  <h2 class="section-title-lg">Latest reviews &amp; <span style="color:var(--gold)">guides</span></h2>
+  <p class="section-desc">New in-depth reviews and buying guides, published weekly.</p>
+  <div class="latest-grid">
+    <a href="reviews/windsurf.html" class="latest-item"><div class="li-emoji">🌊</div><div><div class="li-title">Windsurf Review: The AI Code Editor That Feels Like a Copilot</div><div class="li-meta"><span class="li-score">8.9</span><span>·</span><span>Aug 2026</span></div></div></a>
+    <a href="reviews/zapier.html" class="latest-item"><div class="li-emoji">⚡</div><div><div class="li-title">Zapier Review: The Automation Platform That Powers Everything</div><div class="li-meta"><span class="li-score">8.6</span><span>·</span><span>Aug 2026</span></div></div></a>
+    <a href="reviews/descript.html" class="latest-item"><div class="li-emoji">🎧</div><div><div class="li-title">Descript Review: The AI Editor That Replaces Video Editing</div><div class="li-meta"><span class="li-score">8.4</span><span>·</span><span>Aug 2026</span></div></div></a>
+    <a href="reviews/leonardo-ai.html" class="latest-item"><div class="li-emoji">🖌️</div><div><div class="li-title">Leonardo AI Review: The Design-First AI Image Generator</div><div class="li-meta"><span class="li-score">8.2</span><span>·</span><span>Aug 2026</span></div></div></a>
+    <a href="reviews/heygen.html" class="latest-item"><div class="li-emoji">🎬</div><div><div class="li-title">HeyGen Review: AI Video Avatars for Real Business Content</div><div class="li-meta"><span class="li-score">8.1</span><span>·</span><span>Aug 2026</span></div></div></a>
+    <a href="articles/how-to-choose-ai-tool-2026.html" class="latest-item"><div class="li-emoji">📖</div><div><div class="li-title">How to Choose the Right AI Tool: A Step-by-Step Framework</div><div class="li-meta"><span>Guide</span><span>·</span><span>Aug 2026</span></div></div></a>
+  </div>
+</section>
+
+<!-- ROUNDUP GUIDES -->
+<section class="articles-section">
+  <div class="section-label">2026 Roundup Guides</div>
+  <h2 class="section-title-lg">The best tools of <span style="color:var(--gold)">2026</span>, ranked</h2>
+  <p class="section-desc">Comprehensive buying guides based on months of hands-on testing.</p>
+  <div class="articles-grid">
+    <a href="articles/best-ai-writing-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f0f4ff,#dde8ff)">✍️</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#EEF4FF;color:#2C5EE8">Writing</span><h3>10 Best AI Writing Tools</h3><p>Claude Pro (9.4), ChatGPT-4o (8.7), Jasper, Grammarly &amp; more</p></div>
+    </a>
+    <a href="articles/best-ai-coding-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#edfaf6,#c8f2e8)">💻</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#EDFAF6;color:#0B8E72">Coding</span><h3>8 Best AI Coding Tools</h3><p>Cursor (9.1), GitHub Copilot (8.9), Llama 3.3 &amp; more</p></div>
+    </a>
+    <a href="articles/best-ai-productivity-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#fff7ec,#ffe4c4)">⚡</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#FFF7EC;color:#CC6B0B">Productivity</span><h3>7 Best AI Productivity Tools</h3><p>Notion AI (8.6), ChatGPT-4o (8.7), Perplexity Pro &amp; more</p></div>
+    </a>
+    <a href="articles/best-ai-image-generators-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f9eeff,#edd4ff)">🎨</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#F9EEFF;color:#7A21C4">Image & Video</span><h3>7 Best AI Image Generators</h3><p>Midjourney v7 (8.8), DALL·E 3, Runway ML &amp; more</p></div>
+    </a>
+    <a href="articles/best-ai-audio-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#fef2f2,#fecaca)">🎙️</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#FEF2F2;color:#E83B3B">Audio & Voice</span><h3>8 Best AI Audio & Voice Tools</h3><p>ElevenLabs (9.0), Suno AI, Murf, Lovo &amp; more</p></div>
+    </a>
+    <a href="articles/best-ai-business-tools-2026.html" class="article-card">
+      <div class="article-card-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">📊</div>
+      <div class="article-card-body"><span class="article-card-tag" style="background:#F0FDF4;color:#166534">Business</span><h3>8 Best AI Business Tools</h3><p>Julius AI, ChatGPT Enterprise, Claude Teams &amp; more</p></div>
+    </a>
+  </div>
+</section>
+
 <!-- B2B SaaS REVIEWS -->
-<section class="reviews-section">
+<section class="reviews-section" style="background:var(--bg2)">
   <div class="section-label">B2B Software Reviews</div>
   <h2 class="section-title-lg">Best <span style="color:var(--gold)">SaaS tools</span> for business</h2>
   <p class="section-desc">We review the software that powers modern companies — CRMs, sales platforms, and AI app builders.</p>
   <div class="reviews-scroll">
     <a href="saas/clay-review.html" class="review-card">
       <div class="rc-img" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe)"><span style="font-size:2.5rem">🟣</span><div class="rc-badge">9.2</div></div>
-      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#F3E8FF;color:#7C3AED">GTM Platform</span></div><div class="rc-title">Clay Review: The AI Sales Data Platform</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.2</span></div></div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#F3E8FF;color:#7C3AED">GTM Platform</span></div><div class="rc-title">Clay Review</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.2</span></div></div></div>
     </a>
     <a href="saas/lovable-review.html" class="review-card">
       <div class="rc-img" style="background:linear-gradient(135deg,#fef9c3,#fde68a)"><span style="font-size:2.5rem">💛</span><div class="rc-badge">9.0</div></div>
-      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#FEF3C7;color:#B45309">AI App Builder</span></div><div class="rc-title">Lovable Review: Build Apps With AI</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.0</span></div></div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#FEF3C7;color:#B45309">AI App Builder</span></div><div class="rc-title">Lovable Review</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.0</span></div></div></div>
     </a>
     <a href="saas/attio-review.html" class="review-card">
       <div class="rc-img" style="background:linear-gradient(135deg,#ffedd5,#fed7aa)"><span style="font-size:2.5rem">🟠</span><div class="rc-badge">9.0</div></div>
-      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#FFEDD5;color:#C2410C">Modern CRM</span></div><div class="rc-title">Attio Review: The Salesforce Replacement</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.0</span></div></div></div>
+      <div class="rc-body"><div class="rc-meta"><span class="rc-cat" style="background:#FFEDD5;color:#C2410C">Modern CRM</span></div><div class="rc-title">Attio Review</div><div class="rc-footer"><div class="rc-rating"><span style="color:var(--gold)">★★★★★</span><span style="font-family:var(--font-mono);font-size:.8rem">9.0</span></div></div></div>
     </a>
     <a href="saas.html" class="review-card" style="justify-content:center;align-items:center;text-align:center;border-style:dashed;display:flex;flex-direction:column;gap:.5rem">
-      <span style="font-size:2.5rem">📈</span>
-      <span style="font-weight:600;color:var(--text);font-size:.95rem">More SaaS Reviews</span>
-      <span style="font-size:.8rem;color:var(--muted)">CRM, marketing, project mgmt & more</span>
+      <span style="font-size:2.5rem">📈</span><span style="font-weight:600;color:var(--text);font-size:.95rem">All SaaS Reviews</span><span style="font-size:.8rem;color:var(--muted)">CRM, marketing, analytics &amp; more</span>
     </a>
   </div>
 </section>
 
-<!-- HOW WE REVIEW -->
-<section>
+<!-- METHODOLOGY -->
+<section class="method-section">
+  <div class="section-label">Our Methodology</div>
   <h2 class="section-title-lg">How we <span style="color:var(--gold)">review</span></h2>
-  <p class="section-desc">Every tool on StackHK goes through the same rigorous process.</p>
+  <p class="section-desc">Every tool on StackHK goes through the same rigorous, independent process.</p>
   <div class="method-strip">
-    <div class="method-card">
-      <div class="method-icon">⏱️</div>
-      <h4>2-4 Weeks of Testing</h4>
-      <p>We use each tool for real work before publishing — no first impressions, only sustained experience.</p>
-    </div>
-    <div class="method-card">
-      <div class="method-icon">📊</div>
-      <h4>5-Dimension Scoring</h4>
-      <p>Features, Ease of Use, Output Quality, Value for Money, and Support — scored independently.</p>
-    </div>
-    <div class="method-card">
-      <div class="method-icon">🔍</div>
-      <h4>100% Independent</h4>
-      <p>We pay for every subscription ourselves. No tool gets preferential treatment for sponsorship.</p>
-    </div>
+    <div class="method-card"><span class="method-icon">⏱️</span><h4>2–4 Weeks of Testing</h4><p>We use each tool for real work before publishing — no first impressions, only sustained experience.</p></div>
+    <div class="method-card"><span class="method-icon">📊</span><h4>5-Dimension Scoring</h4><p>Features, Ease of Use, Output Quality, Value for Money, and Support — scored independently.</p></div>
+    <div class="method-card"><span class="method-icon">🔍</span><h4>100% Independent</h4><p>We pay for every subscription ourselves. No tool gets preferential treatment for sponsorship.</p></div>
+    <div class="method-card"><span class="method-icon">🔄</span><h4>Continuously Updated</h4><p>Reviews are revisited as tools ship new features and pricing changes — scores reflect today's reality.</p></div>
+  </div>
+</section>
+
+<!-- DISCLOSURE (compliance) -->
+<section class="disclosure-banner">
+  <div class="disclosure-inner">
+    <span class="d-ico">💡</span>
+    <p><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you click through and buy, StackHK may earn a commission at no extra cost to you. This never influences our ratings or editorial independence. <a href="disclosure.html">Read our full disclosure →</a></p>
   </div>
 </section>
 
@@ -308,16 +364,13 @@
 <div class="cta-banner">
   <div class="cta-banner-inner">
     <h2>Stay ahead of the AI curve</h2>
-    <p>Get our best reviews and tool recommendations delivered every Thursday. A growing community of readers.</p>
+    <p>Get our best reviews and tool recommendations delivered every Thursday. Join a growing community of readers.</p>
     <form id="nlForm" class="nl-form">
       <div class="nl-field">
         <svg class="nl-field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         <input type="email" id="nlEmail" placeholder="Enter your email address" required>
       </div>
-      <button type="submit" class="nl-submit" id="nlSubmitBtn">
-        <span class="nl-submit-text">Subscribe</span>
-        <svg class="nl-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <button type="submit" class="nl-submit" id="nlSubmitBtn"><span class="nl-submit-text">Subscribe</span></button>
     </form>
     <p style="font-size:.75rem;color:rgba(255,255,255,.3);margin-top:1rem">No spam. Unsubscribe anytime.</p>
   </div>
@@ -331,7 +384,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo"><img src="images/logo-white.svg" alt="StackHK" class="logo-img" style="width:28px;height:28px;margin-right:8px;vertical-align:middle" loading="lazy"> Stack<span>HK</span></div>
-      <div class="footer-tagline">Hong Kong's go-to source for honest, in-depth AI tool reviews. We test so you don't have to.</div>
+      <div class="footer-tagline">Hong Kong's independent source for honest, in-depth AI tool and B2B SaaS reviews. We test so you don't have to.</div>
       <div class="footer-addr">7/F, Park Aura Building, 58 Electric Road, Tin Hau, Hong Kong</div>
     </div>
     <div>
@@ -351,9 +404,9 @@
         <li><a href="articles/best-ai-writing-tools-2026.html">Best AI Writing Tools 2026</a></li>
         <li><a href="articles/best-ai-coding-tools-2026.html">Best AI Coding Tools 2026</a></li>
         <li><a href="saas.html">SaaS Reviews</a></li>
-        <li><a href="articles.html">Articles & Guides</a></li>
+        <li><a href="articles.html">Articles &amp; Guides</a></li>
         <li><a href="compare.html">Tool Comparisons</a></li>
-        <li><a href="deals.html">Deals & Discounts</a></li>
+        <li><a href="deals.html">Deals &amp; Discounts</a></li>
         <li><a href="weekly.html">Weekly Newsletter</a></li>
       </ul>
     </div>
