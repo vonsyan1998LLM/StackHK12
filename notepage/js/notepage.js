@@ -3,8 +3,8 @@
 
 // Auth check
 function checkAuth() {
-  const isAuth = localStorage.getItem('stackhk_admin_auth');
-  if (!isAuth || isAuth !== 'true') {
+  const token = localStorage.getItem('stackhk_admin_token');
+  if (!token) {
     window.location.href = 'login.html';
     return false;
   }
@@ -17,9 +17,14 @@ function getCurrentUser() {
   return user ? JSON.parse(user) : null;
 }
 
+// Get auth token (for API requests)
+function getAuthToken() {
+  return localStorage.getItem('stackhk_admin_token') || '';
+}
+
 // Logout
 function logout() {
-  localStorage.removeItem('stackhk_admin_auth');
+  localStorage.removeItem('stackhk_admin_token');
   localStorage.removeItem('stackhk_admin_user');
   localStorage.removeItem('stackhk_admin_remember');
   window.location.href = 'login.html';
@@ -171,9 +176,13 @@ function debounce(func, wait) {
 // KV API sync helper
 async function syncToKV(collection, data) {
   try {
+    const token = getAuthToken();
     const response = await fetch('/api/data/' + collection, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
       body: JSON.stringify(data)
     });
     return response.ok;

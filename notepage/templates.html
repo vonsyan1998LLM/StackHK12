@@ -329,7 +329,7 @@ async function saveTemplate() {
 
   try {
     const response = await fetch('/api/templates', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getAuthToken() },
       body: JSON.stringify({ key, content })
     });
     if (response.ok) {
@@ -349,7 +349,7 @@ async function deleteTemplate(name) {
   delete templates[name];
   setStorageData('templates', templates);
   try {
-    await fetch('/api/templates', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: name }) });
+    await fetch('/api/templates', { method: 'DELETE', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getAuthToken() }, body: JSON.stringify({ key: name }) });
   } catch (e) { /* ignore API error */ }
   updateTemplateStats(); renderTemplatesTable();
   showToast('Template deleted');

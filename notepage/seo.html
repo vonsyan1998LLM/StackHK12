@@ -291,7 +291,7 @@ function updateStatus(id, ok) {
 
 // KV helper
 function saveToKV(key, data) {
-  fetch('/api/data/seo/' + key, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ value: data }) }).catch(() => {});
+  fetch('/api/data/seo/' + key, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getAuthToken() }, body: JSON.stringify({ value: data }) }).catch(() => {});
 }
 
 function validateAll() {
