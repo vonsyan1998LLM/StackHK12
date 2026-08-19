@@ -39,6 +39,16 @@
 | Copilot Vision | Productivity | 8.3 | https://www.airecmark.com/reviews/copilot-vision.html |
 | Suno AI | Audio | 8.2 | https://www.airecmark.com/reviews/suno-ai.html |
 | Adobe Firefly | Image | 7.8 | https://www.airecmark.com/reviews/adobe-firefly.html |
+| Windsurf | Coding | 8.9 | https://www.airecmark.com/reviews/windsurf.html |
+| Zapier | Automation | 8.6 | https://www.airecmark.com/reviews/zapier.html |
+| Descript | Audio & Video | 8.4 | https://www.airecmark.com/reviews/descript.html |
+| Leonardo AI | Image | 8.2 | https://www.airecmark.com/reviews/leonardo-ai.html |
+| HeyGen | Video | 8.1 | https://www.airecmark.com/reviews/heygen.html |
+| Make.com | Automation | 8.5 | https://www.airecmark.com/reviews/make-com.html |
+| Canva | Image & Video | 8.4 | https://www.airecmark.com/reviews/canva.html |
+| Jasper | Writing | 8.3 | https://www.airecmark.com/reviews/jasper.html |
+| Synthesia | Video | 8.2 | https://www.airecmark.com/reviews/synthesia.html |
+| Copy.ai | Writing | 8.0 | https://www.airecmark.com/reviews/copy-ai.html |
 
 ### SaaS Review Pages
 | Tool | Category | Score | URL |
