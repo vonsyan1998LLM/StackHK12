@@ -1,0 +1,32 @@
+name: IndexNow Auto-Submit
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch sitemap URLs
+        id: sitemap
+        run: |
+          curl -s https://www.airecmark.com/sitemap.xml -o sitemap.xml
+          grep -oP '(?<=<loc>)[^<]+' sitemap.xml | sort -u > urls.txt
+          echo "URL count: $(wc -l < urls.txt)"
+
+      - name: Submit to IndexNow
+        run: |
+          jq -n \
+            --arg host "www.airecmark.com" \
+            --arg key "3b7c906b8100fe0918222b559792cd8c" \
+            --arg keyLocation "https://www.airecmark.com/3b7c906b8100fe0918222b559792cd8c.txt" \
+            --rawfile urls urls.txt \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: ($urls | split("\n") | map(select(length > 0)))}' \
+            > payload.json
+          echo "Submitting $(jq '.urlList | length' payload.json) URLs..."
+          curl -s -o /dev/null -w "HTTP %{http_code}\n" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data @payload.json
