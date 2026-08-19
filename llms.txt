@@ -1,9 +1,10 @@
 # StackHK - AI Tool & SaaS Reviews
-> Hong Kong's premier AI tool and B2B SaaS review platform. We test, compare, and recommend the best products.
+> Hong Kong's independent AI tool and B2B SaaS review platform. We test, compare, and recommend the best products. Every tool tested 2-4 weeks with standardized 5-dimension scoring. No sponsored reviews.
 
 ## Core Information
 - Founded: 2025
-- Location: Hong Kong
+- Location: Hong Kong (7/F, Park Aura Building, 58 Electric Road, Tin Hau)
+- Contact: admin@airecmark.com
 - Coverage: AI tools (Writing, Coding, Productivity, Image, Audio, Business) and B2B SaaS (CRM, Marketing, Analytics, Dev tools)
 - Methodology: Each tool tested for 2-4 weeks with standardized scoring
 - Policy: No sponsored reviews. Affiliate links disclosed per FTC guidelines.
@@ -14,10 +15,14 @@
 - Home: https://www.airecmark.com/ — Latest reviews, comparisons, deals
 - AI Reviews: https://www.airecmark.com/reviews.html — Complete AI tool review index with scores
 - SaaS Reviews: https://www.airecmark.com/saas.html — B2B software reviews with scores
+- Articles & Guides: https://www.airecmark.com/articles.html — Buying guides, comparisons, how-tos
 - Comparison Tool: https://www.airecmark.com/compare.html — Head-to-head tool comparisons
 - Deals: https://www.airecmark.com/deals.html — Active coupons and discounts
 - Categories: https://www.airecmark.com/categories.html — Browse by tool category
 - Weekly Digest: https://www.airecmark.com/weekly.html — Newsletter archive
+- About: https://www.airecmark.com/about.html — Our methodology and team
+- Contact: https://www.airecmark.com/contact.html — Get in touch
+- Submit a Tool: https://www.airecmark.com/submit.html — Submit for review
 
 ### AI Review Pages
 | Tool | Category | Score | URL |
@@ -28,42 +33,51 @@
 | ElevenLabs v2 | Audio | 9.0 | https://www.airecmark.com/reviews/elevenlabs-v2.html |
 | GitHub Copilot | Coding | 8.9 | https://www.airecmark.com/reviews/github-copilot.html |
 | Claude 3.5 Haiku | Writing | 8.9 | https://www.airecmark.com/reviews/claude-3-5-haiku.html |
+| Windsurf | Coding | 8.9 | https://www.airecmark.com/reviews/windsurf.html |
 | Midjourney v7 | Image | 8.8 | https://www.airecmark.com/reviews/midjourney-v7.html |
 | ChatGPT-4o | Productivity | 8.7 | https://www.airecmark.com/reviews/chatgpt-4o.html |
 | Gemini 2.0 Pro | Productivity | 8.7 | https://www.airecmark.com/reviews/gemini-2-0-pro.html |
 | Notion AI | Productivity | 8.6 | https://www.airecmark.com/reviews/notion-ai.html |
+| Zapier | Automation | 8.6 | https://www.airecmark.com/reviews/zapier.html |
 | Llama 3.3 70B | Coding | 8.5 | https://www.airecmark.com/reviews/llama-3-3.html |
 | Grammarly AI | Writing | 8.5 | https://www.airecmark.com/reviews/grammarly-ai.html |
 | Runway ML | Image | 8.5 | https://www.airecmark.com/reviews/runway-ml.html |
-| Julius AI | Business | 8.4 | https://www.airecmark.com/reviews/julius-ai.html |
-| Copilot Vision | Productivity | 8.3 | https://www.airecmark.com/reviews/copilot-vision.html |
-| Suno AI | Audio | 8.2 | https://www.airecmark.com/reviews/suno-ai.html |
-| Adobe Firefly | Image | 7.8 | https://www.airecmark.com/reviews/adobe-firefly.html |
-| Windsurf | Coding | 8.9 | https://www.airecmark.com/reviews/windsurf.html |
-| Zapier | Automation | 8.6 | https://www.airecmark.com/reviews/zapier.html |
-| Descript | Audio & Video | 8.4 | https://www.airecmark.com/reviews/descript.html |
-| Leonardo AI | Image | 8.2 | https://www.airecmark.com/reviews/leonardo-ai.html |
-| HeyGen | Video | 8.1 | https://www.airecmark.com/reviews/heygen.html |
 | Make.com | Automation | 8.5 | https://www.airecmark.com/reviews/make-com.html |
-| Canva | Image & Video | 8.4 | https://www.airecmark.com/reviews/canva.html |
+| Julius AI | Business | 8.4 | https://www.airecmark.com/reviews/julius-ai.html |
+| Canva AI | Image & Video | 8.4 | https://www.airecmark.com/reviews/canva.html |
+| Descript | Audio & Video | 8.4 | https://www.airecmark.com/reviews/descript.html |
+| Copilot Vision | Productivity | 8.3 | https://www.airecmark.com/reviews/copilot-vision.html |
 | Jasper | Writing | 8.3 | https://www.airecmark.com/reviews/jasper.html |
+| Suno AI | Audio | 8.2 | https://www.airecmark.com/reviews/suno-ai.html |
+| Leonardo AI | Image | 8.2 | https://www.airecmark.com/reviews/leonardo-ai.html |
 | Synthesia | Video | 8.2 | https://www.airecmark.com/reviews/synthesia.html |
+| HeyGen | Video | 8.1 | https://www.airecmark.com/reviews/heygen.html |
 | Copy.ai | Writing | 8.0 | https://www.airecmark.com/reviews/copy-ai.html |
+| Adobe Firefly | Image | 7.8 | https://www.airecmark.com/reviews/adobe-firefly.html |
+| VoiceAppear | Audio | 7.5 | https://www.airecmark.com/reviews/voiceappear.html |
 
 ### SaaS Review Pages
 | Tool | Category | Score | URL |
 |------|----------|-------|-----|
 | Clay | GTM Data | 9.2 | https://www.airecmark.com/saas/clay-review.html |
 | Postman | API Dev | 9.2 | https://www.airecmark.com/saas/postman-review.html |
+| Apollo.io | Sales Intelligence | 9.0 | https://www.airecmark.com/saas/apollo-review.html |
 | HubSpot | CRM & Marketing | 9.0 | https://www.airecmark.com/saas/hubspot-review.html |
 | Attio | CRM | 9.0 | https://www.airecmark.com/saas/attio-review.html |
 | Slack | Team Comms | 9.0 | https://www.airecmark.com/saas/slack-review.html |
 | Deel | Global Payroll | 9.0 | https://www.airecmark.com/saas/deel-review.html |
 | Lovable | AI App Builder | 9.0 | https://www.airecmark.com/saas/lovable-review.html |
-| Monday.com | Project Mgmt | 8.8 | https://www.airecmark.com/saas/monday-review.html |
-| Mixpanel | Product Analytics | 8.8 | https://www.airecmark.com/saas/mixpanel-review.html |
+| Intercom | Customer Support | 8.8 | https://www.airecmark.com/saas/intercom-review.html |
 | Loom | Async Video | 8.8 | https://www.airecmark.com/saas/loom-review.html |
+| Mixpanel | Product Analytics | 8.8 | https://www.airecmark.com/saas/mixpanel-review.html |
+| Monday.com | Project Mgmt | 8.8 | https://www.airecmark.com/saas/monday-review.html |
 | ActiveCampaign | Marketing Auto | 8.7 | https://www.airecmark.com/saas/activecampaign-review.html |
+| Gorgias | Ecommerce Support | 8.7 | https://www.airecmark.com/saas/gorgias-review.html |
+| Amplitude | Product Analytics | 8.6 | https://www.airecmark.com/saas/amplitude-review.html |
+| ClickUp | Work OS | 8.6 | https://www.airecmark.com/saas/clickup-review.html |
+| Pipedrive | Sales CRM | 8.6 | https://www.airecmark.com/saas/pipedrive-review.html |
+| Omnisend | Ecommerce Marketing | 8.5 | https://www.airecmark.com/saas/omnisend-review.html |
+| GetResponse | Email Marketing | 8.3 | https://www.airecmark.com/saas/getresponse-review.html |
 
 ### Comparison Pages
 | Comparison | URL |
@@ -88,9 +102,22 @@
 |---------|-----|
 | 10 Best AI Writing Tools 2026 | https://www.airecmark.com/articles/best-ai-writing-tools-2026.html |
 | 8 Best AI Coding Tools 2026 | https://www.airecmark.com/articles/best-ai-coding-tools-2026.html |
-| 7 Best AI Image & Video Generators 2026 | https://www.airecmark.com/articles/best-ai-image-generators-2026.html |
+| 7 Best AI Image Generators 2026 | https://www.airecmark.com/articles/best-ai-image-generators-2026.html |
 | 7 Best AI Productivity Tools 2026 | https://www.airecmark.com/articles/best-ai-productivity-tools-2026.html |
 | 8 Best AI Audio & Voice Tools 2026 | https://www.airecmark.com/articles/best-ai-audio-tools-2026.html |
 | 8 Best AI Business Tools 2026 | https://www.airecmark.com/articles/best-ai-business-tools-2026.html |
 | 10 Best Free AI Tools 2026 | https://www.airecmark.com/articles/best-free-ai-tools-2026.html |
-| ChatGPT vs Claude vs Gemini 2026 | https://www.airecmark.com/articles/chatgpt-vs-claude-vs-gemini-2026.html |`r`n| How to Choose the Right AI Tool 2026 | https://www.airecmark.com/articles/how-to-choose-ai-tool-2026.html |
+| 7 Best Analytics Tools 2026 | https://www.airecmark.com/articles/best-analytics-tools-2026.html |
+| 7 Best CRM for Small Business 2026 | https://www.airecmark.com/articles/best-crm-small-business-2026.html |
+| 7 Best Email Marketing Tools 2026 | https://www.airecmark.com/articles/best-email-marketing-tools-2026.html |
+| 7 Best Project Management Tools 2026 | https://www.airecmark.com/articles/best-project-management-tools-2026.html |
+
+### Guides & Analysis Articles
+| Article | URL |
+|---------|-----|
+| ChatGPT vs Claude vs Gemini 2026 | https://www.airecmark.com/articles/chatgpt-vs-claude-vs-gemini-2026.html |
+| AI Agents Explained 2026 | https://www.airecmark.com/articles/ai-agents-explained-2026.html |
+| SaaS vs AI Tools 2026 | https://www.airecmark.com/articles/saas-vs-ai-2026.html |
+| How to Choose the Right AI Tool 2026 | https://www.airecmark.com/articles/how-to-choose-ai-tool-2026.html |
+| How to Start Using AI in Business 2026 | https://www.airecmark.com/articles/how-to-start-ai-business-2026.html |
+| 7 AI Tool Mistakes to Avoid 2026 | https://www.airecmark.com/articles/ai-tool-mistakes-2026.html |
