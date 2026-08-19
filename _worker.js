@@ -86,6 +86,7 @@ function handleAPI(request, env) {
 
   if (path === '/api/auth') return handleAuthAPI(request, env);
   if (path === '/api/auth/verify') return handleVerifyAPI(request, env);
+  if (path === '/api/secrets') return handleSecretsAPI(request, env);
   if (path === '/api/templates') return handleTemplatesAPI(request, env);
   if (path === '/api/pages') return handlePagesAPI(request, env);
   if (path.startsWith('/api/data/')) return handleDataAPI(request, env, path);
@@ -145,6 +146,57 @@ async function handleVerifyAPI(request, env) {
   const payload = await requireAuth(request, env);
   if (!payload) return json({ valid: false }, 401);
   return json({ valid: true, username: payload.username });
+}
+
+// ============================================================================
+// Secrets API — stores API keys on the server (KV), auth required for both read & write
+// ============================================================================
+async function handleSecretsAPI(request, env) {
+  const auth = await requireAuth(request, env);
+  if (!auth) return json({ error: 'Unauthorized' }, 401);
+
+  const kvPrefix = 'secret:';
+
+  if (request.method === 'GET') {
+    const list = await env.STACKHK.list({ prefix: kvPrefix });
+    const secrets = {};
+    for (const key of list.keys) {
+      const raw = await env.STACKHK.get(key.name, 'text');
+      if (raw) secrets[key.name.replace(kvPrefix, '')] = raw;
+    }
+    return json(secrets);
+  }
+
+  if (request.method === 'POST') {
+    try {
+      const body = await request.json();
+      if (!body || typeof body !== 'object') return json({ error: 'Expected object of key->value pairs' }, 400);
+      // Upsert each secret
+      for (const [name, value] of Object.entries(body)) {
+        if (value === null || value === undefined) {
+          await env.STACKHK.delete(kvPrefix + name);
+        } else {
+          await env.STACKHK.put(kvPrefix + name, String(value));
+        }
+      }
+      return json({ success: true });
+    } catch (e) {
+      return json({ error: 'Invalid JSON body' }, 400);
+    }
+  }
+
+  if (request.method === 'DELETE') {
+    try {
+      const { key } = await request.json();
+      if (!key) return json({ error: 'Missing key' }, 400);
+      await env.STACKHK.delete(kvPrefix + key);
+      return json({ success: true });
+    } catch (e) {
+      return json({ error: 'Invalid JSON body' }, 400);
+    }
+  }
+
+  return json({ error: 'Method not allowed' }, 405);
 }
 
 // ============================================================================

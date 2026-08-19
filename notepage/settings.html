@@ -256,23 +256,33 @@
 <script>
 function loadSettings() {
   const settings = getStorageData('settings');
-  if (!settings) return;
+  if (settings) {
+    if (settings.siteName) document.getElementById('siteName').value = settings.siteName;
+    if (settings.siteDescription) document.getElementById('siteDescription').value = settings.siteDescription;
+    if (settings.siteLogo) document.getElementById('siteLogo').value = settings.siteLogo;
+    if (settings.metaTitle) document.getElementById('metaTitle').value = settings.metaTitle;
+    if (settings.metaDescription) document.getElementById('metaDescription').value = settings.metaDescription;
+    if (settings.socialTwitter) document.getElementById('socialTwitter').value = settings.socialTwitter;
+    if (settings.socialGithub) document.getElementById('socialGithub').value = settings.socialGithub;
+    if (settings.socialLinkedin) document.getElementById('socialLinkedin').value = settings.socialLinkedin;
+    if (settings.socialYoutube) document.getElementById('socialYoutube').value = settings.socialYoutube;
+    if (settings.newsletterFromName) document.getElementById('newsletterFromName').value = settings.newsletterFromName;
+    if (settings.newsletterFromEmail) document.getElementById('newsletterFromEmail').value = settings.newsletterFromEmail;
+    if (settings.newsletterAutoSend !== undefined) document.getElementById('newsletterAutoSend').checked = settings.newsletterAutoSend;
+  }
 
-  if (settings.siteName) document.getElementById('siteName').value = settings.siteName;
-  if (settings.siteDescription) document.getElementById('siteDescription').value = settings.siteDescription;
-  if (settings.siteLogo) document.getElementById('siteLogo').value = settings.siteLogo;
-  if (settings.metaTitle) document.getElementById('metaTitle').value = settings.metaTitle;
-  if (settings.metaDescription) document.getElementById('metaDescription').value = settings.metaDescription;
-  if (settings.socialTwitter) document.getElementById('socialTwitter').value = settings.socialTwitter;
-  if (settings.socialGithub) document.getElementById('socialGithub').value = settings.socialGithub;
-  if (settings.socialLinkedin) document.getElementById('socialLinkedin').value = settings.socialLinkedin;
-  if (settings.socialYoutube) document.getElementById('socialYoutube').value = settings.socialYoutube;
-  if (settings.newsletterFromName) document.getElementById('newsletterFromName').value = settings.newsletterFromName;
-  if (settings.newsletterFromEmail) document.getElementById('newsletterFromEmail').value = settings.newsletterFromEmail;
-  if (settings.newsletterAutoSend !== undefined) document.getElementById('newsletterAutoSend').checked = settings.newsletterAutoSend;
-  if (settings.apiKeyOpenai) document.getElementById('apiKeyOpenai').value = settings.apiKeyOpenai;
-  if (settings.apiKeyAnalytics) document.getElementById('apiKeyAnalytics').value = settings.apiKeyAnalytics;
-  if (settings.apiKeyMailchimp) document.getElementById('apiKeyMailchimp').value = settings.apiKeyMailchimp;
+  // Load API keys from the server (not localStorage — never stored in plaintext client-side)
+  fetch('/api/secrets', {
+    headers: { 'Authorization': 'Bearer ' + getAuthToken() }
+  })
+  .then(r => r.ok ? r.json() : null)
+  .then(secrets => {
+    if (!secrets) return;
+    if (secrets.apiKeyOpenai) document.getElementById('apiKeyOpenai').value = secrets.apiKeyOpenai;
+    if (secrets.apiKeyAnalytics) document.getElementById('apiKeyAnalytics').value = secrets.apiKeyAnalytics;
+    if (secrets.apiKeyMailchimp) document.getElementById('apiKeyMailchimp').value = secrets.apiKeyMailchimp;
+  })
+  .catch(() => {});
 }
 
 function saveSettings() {
@@ -288,14 +298,35 @@ function saveSettings() {
     socialYoutube: document.getElementById('socialYoutube').value.trim(),
     newsletterFromName: document.getElementById('newsletterFromName').value.trim(),
     newsletterFromEmail: document.getElementById('newsletterFromEmail').value.trim(),
-    newsletterAutoSend: document.getElementById('newsletterAutoSend').checked,
-    apiKeyOpenai: document.getElementById('apiKeyOpenai').value.trim(),
-    apiKeyAnalytics: document.getElementById('apiKeyAnalytics').value.trim(),
-    apiKeyMailchimp: document.getElementById('apiKeyMailchimp').value.trim()
+    newsletterAutoSend: document.getElementById('newsletterAutoSend').checked
   };
 
+  // Save non-secret settings locally
   setStorageData('settings', settings);
-  showToast('Settings saved successfully');
+
+  // Save API keys to the server (auth required), never to localStorage
+  const apiKeyOpenai = document.getElementById('apiKeyOpenai').value.trim();
+  const apiKeyAnalytics = document.getElementById('apiKeyAnalytics').value.trim();
+  const apiKeyMailchimp = document.getElementById('apiKeyMailchimp').value.trim();
+  const secrets = {};
+  if (apiKeyOpenai) secrets.apiKeyOpenai = apiKeyOpenai;
+  if (apiKeyAnalytics) secrets.apiKeyAnalytics = apiKeyAnalytics;
+  if (apiKeyMailchimp) secrets.apiKeyMailchimp = apiKeyMailchimp;
+
+  fetch('/api/secrets', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getAuthToken() },
+    body: JSON.stringify(secrets)
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) {
+      showToast('Settings saved successfully');
+    } else {
+      showToast('Settings saved locally (API keys not saved)', 'warning');
+    }
+  })
+  .catch(() => showToast('Settings saved locally (API keys not saved)', 'warning'));
 }
 
 function resetSettings() {
@@ -318,6 +349,11 @@ function resetSettings() {
   document.getElementById('apiKeyMailchimp').value = '';
 
   localStorage.removeItem('stackhk_settings');
+  fetch('/api/secrets', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getAuthToken() },
+    body: JSON.stringify({ apiKeyOpenai: null, apiKeyAnalytics: null, apiKeyMailchimp: null })
+  }).catch(() => {});
   showToast('Settings reset to defaults');
 }
 
