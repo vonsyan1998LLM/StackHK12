@@ -1,3 +1,96 @@
+# ===== AI / LLM crawlers (explicitly allowed for GEO) =====
+User-agent: GPTBot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+User-agent: CCBot
+Allow: /
+Disallow: /notepage/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /scripts/
+
+# ===== Default (all other crawlers incl. Googlebot, Bingbot) =====
 User-agent: *
 Allow: /
 Disallow: /notepage/
