@@ -35,18 +35,23 @@
 | Claude 3.5 Haiku | Writing | 8.9 | https://www.airecmark.com/reviews/claude-3-5-haiku.html |
 | Windsurf | Coding | 8.9 | https://www.airecmark.com/reviews/windsurf.html |
 | Midjourney v7 | Image | 8.8 | https://www.airecmark.com/reviews/midjourney-v7.html |
+| DeepSeek | Productivity | 8.8 | https://www.airecmark.com/reviews/deepseek.html |
 | ChatGPT-4o | Productivity | 8.7 | https://www.airecmark.com/reviews/chatgpt-4o.html |
 | Gemini 2.0 Pro | Productivity | 8.7 | https://www.airecmark.com/reviews/gemini-2-0-pro.html |
 | Notion AI | Productivity | 8.6 | https://www.airecmark.com/reviews/notion-ai.html |
+| Flux | Image | 8.6 | https://www.airecmark.com/reviews/flux.html |
 | Zapier | Automation | 8.6 | https://www.airecmark.com/reviews/zapier.html |
 | Llama 3.3 70B | Coding | 8.5 | https://www.airecmark.com/reviews/llama-3-3.html |
 | Grammarly AI | Writing | 8.5 | https://www.airecmark.com/reviews/grammarly-ai.html |
 | Runway ML | Image | 8.5 | https://www.airecmark.com/reviews/runway-ml.html |
+| Sora | Image & Video | 8.5 | https://www.airecmark.com/reviews/sora.html |
 | Make.com | Automation | 8.5 | https://www.airecmark.com/reviews/make-com.html |
 | Julius AI | Business | 8.4 | https://www.airecmark.com/reviews/julius-ai.html |
+| Replit Agent | Coding | 8.4 | https://www.airecmark.com/reviews/replit-agent.html |
 | Canva AI | Image & Video | 8.4 | https://www.airecmark.com/reviews/canva.html |
 | Descript | Audio & Video | 8.4 | https://www.airecmark.com/reviews/descript.html |
 | Copilot Vision | Productivity | 8.3 | https://www.airecmark.com/reviews/copilot-vision.html |
+| Grok | Productivity | 8.3 | https://www.airecmark.com/reviews/grok.html |
 | Jasper | Writing | 8.3 | https://www.airecmark.com/reviews/jasper.html |
 | Suno AI | Audio | 8.2 | https://www.airecmark.com/reviews/suno-ai.html |
 | Leonardo AI | Image | 8.2 | https://www.airecmark.com/reviews/leonardo-ai.html |
